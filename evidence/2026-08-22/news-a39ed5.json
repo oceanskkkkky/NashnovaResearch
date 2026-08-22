@@ -1,0 +1,54 @@
+{
+  "as_of": null,
+  "coverage": "complete",
+  "data": [
+    {
+      "author": "",
+      "comprehensive_score": 1.0,
+      "content": "  数据显示，过去24小时加密货币市场共有超19万人被爆仓，全网合约爆仓15.75亿美元，其中多单爆仓3.1亿美元，空单爆仓12.7亿美元。",
+      "content_prefix": "数据显示，过去24小时加密货币市场共有超19万人被爆仓，全网合约爆仓15.75亿美元，其中多单爆仓3.1亿美元，空单爆仓12.7亿美元。",
+      "date": "2026-08-22T01:07:44Z",
+      "last_updated": "",
+      "provider": "es",
+      "publish_date": "2026-08-22T01:07:44Z",
+      "quality_score": 1.0,
+      "ranking_scores": {
+        "es_score": 1.0,
+        "source": "es"
+      },
+      "site_name": "ES",
+      "snippet": "数据显示，过去24小时加密货币市场共有超19万人被爆仓，全网合约爆仓15.75亿美元，其中多单爆仓3.1亿美元，空单爆仓12.7亿美元。",
+      "title": "数据显示，过去24小时加密货币市场共有超19万人被爆仓，全网合约爆仓15.75亿美元，其中多单爆仓3.1亿美元，空单爆仓12.7亿美元。",
+      "url": "https://www.zhitongcaijing.com/immediately.html?type=all&&data_id=7814999"
+    },
+    {
+      "author": "",
+      "comprehensive_score": 1.0,
+      "content": "  【过去24小时加密货币市场合约爆仓14.86亿美元 主爆空单】数据显示，过去24小时加密货币市场共有177,435人被爆仓，全网合约爆仓14.86亿美元，其中多单爆仓2.90亿美元，空单爆仓11.96亿美元。BTC爆仓总金额约8.71亿美元，ETH爆仓总金额约2.99亿美元。最大单笔爆仓单发生在Hyperliquid-BTC-USD价值$2359.68万。值得注意的是，8月19日加密暴涨期间市场爆仓金额达29.87亿美元，位列加密市场历史爆仓事件第八位。CoinGlass将此次事件背景标注为“美债回购及SEC加密监管利好”。",
+      "content_prefix": "【过去24小时加密货币市场合约爆仓14.86亿美元 主爆空单】数据显示，过去24小时加密货币市场共有177,435人被爆仓，全网合约爆仓14.86亿美元，其中多单爆仓2.90亿美元，空单爆仓11.96亿美元。BTC爆仓总金额约8.71亿美元，ETH爆仓总金额约2.99亿美元。最大单笔爆仓单发生在Hyperliquid-BTC-USD价值$2359.68万。值得注意的是，8月19日加密暴涨期间市场爆仓金额达29.87亿美元，位列加密市场历史爆仓事件第八位。CoinGlass将此次事件背景标注为“美债回购及SEC加密监管利好”。",
+      "date": "2026-08-21T15:29:21Z",
+      "last_updated": "",
+      "provider": "es",
+      "publish_date": "2026-08-21T15:29:21Z",
+      "quality_score": 1.0,
+      "ranking_scores": {
+        "es_score": 1.0,
+        "source": "es"
+      },
+      "site_name": "ES",
+      "snippet": "过去24小时加密货币市场合约爆仓14.86亿美元 主爆空单",
+      "title": "过去24小时加密货币市场合约爆仓14.86亿美元 主爆空单",
+      "url": "https://www.zhitongcaijing.com/immediately.html?type=all&&data_id=7814226"
+    }
+  ],
+  "data_notes": [],
+  "degraded": [],
+  "environment": "prod",
+  "fetched_at": "2026-08-22T16:26:28+08:00",
+  "request": {
+    "question": "过去72小时影响A股的主要财经事件与市场热点",
+    "since": "72h",
+    "size": 20
+  },
+  "source": "news"
+}

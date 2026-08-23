@@ -14,6 +14,7 @@ Skill 位于 `C:\Users\tizyt\.workbuddy\skills\nashnova-fin\`。
 
 ## 股市老黄历日报设计
 
+- Skill 已迁移至项目级：`D:\UGit\nashnova\.workbuddy\skills\stock-almanac-daily\`（随仓库 git 管理；原用户级目录已删除）。
 - Prompt 文件：`outputs/stock-almanac-skill-prompt.md`。
 - 老黄历只用于标题和一行宜/忌，金融评分不含玄学；推荐范围仅为沪深A股，不分析ETF。
 - V1 使用热点板块成份、龙虎榜、资金榜、研报及自选构成可追溯候选池，不做全A股扫描。

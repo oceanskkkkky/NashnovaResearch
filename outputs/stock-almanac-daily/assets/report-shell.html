@@ -13,14 +13,13 @@
 <header class="topbar"><div class="topbar-inner"><div class="brand"><span class="seal">历</span><div><strong>股市老黄历</strong><br><small>A-SHARE DAILY RESEARCH</small></div></div><nav class="nav" aria-label="日报章节"><a href="#macro">宏观</a><a href="#market">大盘</a><a href="#sectors">板块</a><a href="#picks">选股</a><a href="#watchlist">关注股</a></nav><span class="data-badge">{{DATA_STATUS}}</span></div></header>
 <main class="page">
 <header id="cover" class="hero"><div><div class="eyebrow">{{TRADE_DATE_AND_MODE}}</div><h1>今日 <strong>{{HEADLINE}}</strong></h1><p class="hero-copy">{{NARRATIVE}}</p><div class="ritual"><span><b>宜</b>{{DO}}</span><span class="avoid"><b>忌</b>{{AVOID}}</span></div></div><aside class="dark-summary"><div>{{GENERATED_AT}}</div><h2>{{MARKET_STATE}}</h2><p>{{RISK_GUIDANCE}}</p><div class="summary-stats"><div><b>{{SECTOR_COUNT}}</b><span>重点方向</span></div><div><b>{{PICK_COUNT}}</b><span>核心选股</span></div><div><b>{{CONFIDENCE}}</b><span>数据置信度</span></div></div></aside></header>
-<section id="executive-summary" class="section card"><div class="card-head"><div><div class="kicker">00 / executive brief</div><h2>执行摘要</h2></div></div>{{EXECUTIVE_SUMMARY}}</section>
+<section id="executive-summary" class="section card"><div class="card-head"><div><div class="kicker">00 / market brief</div><h2>行情摘要</h2></div></div>{{EXECUTIVE_SUMMARY}}</section>
 <section id="macro" class="section card"><div class="card-head"><div><div class="kicker">01 / macro pulse</div><h2>宏观大势</h2></div><span class="tag">增长 · 流动性 · 重点新闻</span></div>{{MACRO_CONTENT}}</section>
 <section id="market" class="section card"><div class="card-head"><div><div class="kicker">02 / broad market</div><h2>大盘判断</h2></div><span class="tag">截至 {{TRADE_DATE}}</span></div>{{MARKET_CONTENT}}</section>
 <section id="sectors" class="section card"><div class="card-head"><div><div class="kicker">03 / sector monitor</div><h2>重点板块</h2></div><span class="tag">趋势 · 资金 · 催化</span></div>{{SECTOR_CONTENT}}</section>
 <section id="picks" class="section card"><div class="card-head"><div><div class="kicker">04 / stock selection</div><h2>核心选股</h2></div><span class="tag">真实数据 · 条件建议</span></div>{{PICK_CONTENT}}</section>
 <section id="watchlist" class="section card"><div class="card-head"><div><div class="kicker">05 / personal watch</div><h2>关注股建议</h2></div></div>{{WATCHLIST_CONTENT}}</section>
 <section id="risks" class="section card strategy"><div class="kicker">06 / risk control</div><h2>风险提示</h2>{{RISK_CONTENT}}</section>
-<details id="evidence"><summary>证据、时间与数据缺口</summary>{{EVIDENCE_CONTENT}}</details>
 <details id="methodology"><summary>方法与免责声明</summary>{{METHOD_CONTENT}}</details>
 </main>
 <footer class="footer">{{FOOTER}}</footer>

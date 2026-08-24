@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""静态校验A股选股日报的结构、安全性、桌面布局与阅读预算。"""
+"""静态校验A股选股日报的结构、安全性、布局与阅读预算。支持桌面端与移动端两种格式。"""
 
 from __future__ import annotations
 
@@ -17,8 +17,10 @@ REQUIRED_IDS = {
     "sectors",
     "picks",
     "risks",
-    "evidence",
     "methodology",
+}
+BANNED_IDS = {
+    "evidence": "产物不得包含证据区（id=evidence）；证据台账请存旁车 evidence 文件",
 }
 FORBIDDEN_TERMS = {
     "必涨",
@@ -34,6 +36,23 @@ FORBIDDEN_TERMS = {
 REMOTE_URL = re.compile(r"^(?:https?:)?//", re.IGNORECASE)
 STYLE_REMOTE_URL = re.compile(r"url\(\s*[\"']?(?:https?:)?//", re.IGNORECASE)
 MOBILE_MEDIA = re.compile(r"@media\s*\([^)]*max-width", re.IGNORECASE)
+EVIDENCE_REF = re.compile(r"\[E\d{2}\]")
+EMOJI_PATTERN = re.compile(
+    "[\U0001f000-\U0001faff\u2600-\u27bf\u2b00-\u2bff\ufe0f]"
+)
+
+DESKTOP_SIGNATURES = (
+    ('class="topbar"', "深墨绿页头"),
+    ('class="seal"', "历字印章"),
+    ("--ink:#18332d", "深墨绿设计令牌"),
+    ("--gold:#b98532", "金色设计令牌"),
+)
+MOBILE_SIGNATURES = (
+    ('class="m-shell"', "移动端骨架"),
+    ('class="m-seal"', "移动端历字印章"),
+    ("--m-ink:#18332d", "移动端深墨绿设计令牌"),
+    ("--m-gold:#b98532", "移动端金色设计令牌"),
+)
 
 
 class ReportParser(HTMLParser):
@@ -107,10 +126,20 @@ def reading_units(text: str) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="校验A股桌面端HTML选股日报")
+    parser = argparse.ArgumentParser(description="校验A股HTML选股日报（桌面端/移动端）")
     parser.add_argument("report", type=Path)
-    parser.add_argument("--max-visible-units", type=int, default=3200)
+    parser.add_argument(
+        "--format",
+        choices=("desktop", "mobile"),
+        default="desktop",
+        help="产物格式：desktop 桌面研报（默认）或 mobile 竖屏卡片流",
+    )
+    parser.add_argument("--max-visible-units", type=int, default=None)
     args = parser.parse_args()
+
+    is_mobile = args.format == "mobile"
+    if args.max_visible_units is None:
+        args.max_visible_units = 1500 if is_mobile else 3200
 
     try:
         html = args.report.read_text(encoding="utf-8")
@@ -128,14 +157,12 @@ def main() -> int:
         findings.append("缺少 charset")
     if "name=\"viewport\"" not in lower and "name='viewport'" not in lower:
         findings.append("缺少 viewport")
-    for signature, label in (
-        ('class="topbar"', "深墨绿页头"),
-        ('class="seal"', "历字印章"),
-        ("--ink:#18332d", "深墨绿设计令牌"),
-        ("--gold:#b98532", "金色设计令牌"),
-    ):
+    signatures = MOBILE_SIGNATURES if is_mobile else DESKTOP_SIGNATURES
+    for signature, label in signatures:
         if signature not in lower:
             findings.append("缺少交易老黄历视觉特征：" + label)
+    if is_mobile and "min-width:1268px" in lower:
+        findings.append("移动端产物不得保留桌面端1268px最小宽度")
 
     report = ReportParser()
     report.feed(html)
@@ -147,11 +174,14 @@ def main() -> int:
     if STYLE_REMOTE_URL.search(styles):
         findings.append("内联样式中检测到远程资源URL")
     if MOBILE_MEDIA.search(styles):
-        findings.append("检测到移动端max-width响应式重排；本Skill要求桌面研报布局")
+        findings.append("检测到max-width响应式重排；本Skill要求固定布局（桌面或移动端骨架）")
 
     missing_ids = sorted(REQUIRED_IDS - report.ids)
     if missing_ids:
         findings.append("缺少必需栏目id：" + ", ".join(missing_ids))
+    banned_ids = sorted(BANNED_IDS.keys() & report.ids)
+    for banned in banned_ids:
+        findings.append(BANNED_IDS[banned])
     if "macro" in report.ids and "market" in report.ids:
         if report.id_order.index("macro") > report.id_order.index("market"):
             findings.append("宏观大势必须位于大盘判断之前")
@@ -162,9 +192,15 @@ def main() -> int:
     bad_terms = sorted(term for term in FORBIDDEN_TERMS if term in all_text)
     if bad_terms:
         findings.append("包含禁用内容或措辞：" + ", ".join(bad_terms))
+    if EVIDENCE_REF.search(all_text):
+        findings.append("产物正文不得出现 [E01] 等证据编号；证据台账请存旁车 evidence 文件")
     almanac_count = all_text.count("老黄历")
     if almanac_count > 3:
         findings.append(f"老黄历包装出现{almanac_count}次，正文主题化过重")
+    emoji_count = len(EMOJI_PATTERN.findall(all_text))
+    emoji_limit = 15 if is_mobile else 0
+    if emoji_count > emoji_limit:
+        findings.append(f"emoji出现{emoji_count}次，超出{args.format}格式上限{emoji_limit}")
 
     visible_units = reading_units(" ".join(report.visible_text))
     minutes = visible_units / 320
@@ -173,15 +209,18 @@ def main() -> int:
             f"首轮可见内容超出阅读预算：{visible_units}单位，约{minutes:.1f}分钟"
         )
 
+    print(f"format={args.format}")
     print(f"visible_units={visible_units}")
     print(f"estimated_minutes={minutes:.1f}")
     print(f"all_text_units={reading_units(all_text)}")
     print(f"almanac_mentions={almanac_count}")
+    print(f"emoji_count={emoji_count}")
     if findings:
         for item in findings:
             print(f"FAIL: {item}")
         return 1
-    print("PASS: A股范围、桌面布局、静态安全与10分钟阅读预算检查通过")
+    label = "移动端竖屏卡片流" if is_mobile else "桌面布局"
+    print(f"PASS: A股范围、{label}、静态安全与阅读预算检查通过")
     return 0
 
 

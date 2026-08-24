@@ -15,11 +15,12 @@
 
 ## 股市老黄历日报设计
 
-- Skill 位于项目级：`E:\WS\NashnovaResearch\.workbuddy\skills\stock-almanac-daily\`（WorkBuddy 实际加载）；`outputs/stock-almanac-daily\` 为镜像副本，改动后需同步（2026-08-24 发现 outputs 副本整体滞后，缺 mobile-spec.md 等文件）。
+- Skill 位于项目级：`E:\WS\NashnovaResearch\.workbuddy\skills\stock-almanac-daily\`（WorkBuddy 实际加载）；`outputs/stock-almanac-daily\` 为发布镜像，改动后必须全量同步。2026-08-24 已补齐 mobile-spec、移动端骨架和评分脚本，当前两目录完全一致。
 - Prompt 文件：`outputs/stock-almanac-skill-prompt.md`。
 - 老黄历只用于标题和一行宜/忌，金融评分不含玄学；推荐范围仅为沪深A股，不分析ETF。
 - V1 使用热点板块成份、龙虎榜、资金榜、研报及自选构成可追溯候选池，不做全A股扫描。
 - 2026-08-24 起数据源为 hithink-finance 与 WeStock 按能力域分工（hithink 管行情/指数/板块/财报/估值/特色数据，WeStock 管交易日历/大盘/宏观/资金/公告/风险，新闻研报事实核查走 WeStock+WebSearch），禁止同一事实双源重复计分；弱市允许零推荐。
+- 2026-08-24 板块评分 V2：原价格30%+资金25%改为35%量价正交趋势因子（完整板块横截面回归 `zF=α+βzP+ε`，以残差分位R提取独立资金信息），释放20分为拥挤风险预算；拥挤度由RSI/换手率/成交占比分位及5日加速度构成，最高扣20分并触发70/80/90三级预警。确定性实现为 `scripts/calculate_sector_score.py`。
 - 输出固定宽度桌面端常规金融研报网页，正文言简意赅，默认10分钟内读完。
 - 2026-08-23 起 skill 支持 `format=desktop|mobile|both`：mobile 为 460px 竖屏卡片流（可见预算≤1500单位、emoji≤15）+ 小红书笔记文案 `.md`，骨架 `assets/report-shell-mobile.html`，校验用 `--format mobile`。
 - 2026-08-23 规则更新：摘要栏目标题固定为「行情摘要」（id 仍为 executive-summary）；证据区不进产物，台账存 `YYYY-MM-DD-evidence.md` 旁车文件，正文禁止 `[E01]` 编号；入榜门槛放宽为常规≥65/中性≥68/防守≥70，选股上限5只。

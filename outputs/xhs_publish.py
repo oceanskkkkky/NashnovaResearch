@@ -25,13 +25,17 @@ def log(msg: str) -> None:
     print(f"[xhs] {msg}", flush=True)
 
 
-def wait_confirm(timeout_s: int = 900) -> str:
+def wait_confirm(timeout_s: int, since_ts: float) -> str:
     deadline = time.time() + timeout_s
     while time.time() < deadline:
         if CONFIRM_FILE.exists():
-            v = CONFIRM_FILE.read_text(encoding="utf-8").strip().lower()
-            if v in ("publish", "draft"):
-                return v
+            try:
+                if CONFIRM_FILE.stat().st_mtime > since_ts:
+                    v = CONFIRM_FILE.read_text(encoding="utf-8").strip().lower()
+                    if v in ("publish", "draft", "done", "exit"):
+                        return v
+            except OSError:
+                pass
         time.sleep(2)
     return "timeout"
 
@@ -42,9 +46,7 @@ def main() -> int:
         log("ERROR: 没有找到图片素材")
         return 2
     log(f"图片 {len(images)} 张")
-    if CONFIRM_FILE.exists():
-        CONFIRM_FILE.unlink()
-
+    script_start = time.time()
     pw = sync_playwright().start()
     context = pw.chromium.launch_persistent_context(
         user_data_dir=str(PROFILE),
@@ -115,18 +117,43 @@ def main() -> int:
 
     page.screenshot(path=str(OUT / "xhs-filled.png"))
     log("SCREENSHOT_READY: outputs/xhs-filled.png")
-    log("WAITING_CONFIRM: 用户写入 outputs/xhs-confirm.txt (publish/draft)")
+    log("FILLED_AND_WAITING: 请在浏览器窗口手动点击「发布」，完成后写入 done")
 
-    action = wait_confirm()
+    action = wait_confirm(timeout_s=1800, since_ts=script_start)
     if action == "timeout":
         log("超时未确认，保留页面（不发布）")
         sys.stdout.flush()
         os._exit(3)
 
-    if action == "publish":
-        btn = page.locator("button:has-text('发布')").first
-        btn.click()
-        log("已点击发布，等待结果…")
+    if action == "done":
+        page.wait_for_timeout(3000)
+        page.screenshot(path=str(OUT / "xhs-result.png"))
+        log(f"MANUAL_DONE URL={page.url}")
+    elif action == "publish":
+        page.wait_for_timeout(3000)
+        page.screenshot(path=str(OUT / "xhs-pre-publish.png"))
+        log("PRE_PUBLISH_SCREENSHOT: outputs/xhs-pre-publish.png")
+        clicked = False
+        for sel in ["button:has-text('发布')", "button.publish-btn", "button:has-text('发布笔记')"]:
+            loc = page.locator(sel).first
+            if loc.count() == 0:
+                continue
+            try:
+                loc.scroll_into_view_if_needed()
+                page.wait_for_timeout(400)
+                loc.click(force=True, timeout=10000)
+                log(f"已点击发布 ({sel})，等待结果…")
+                clicked = True
+                break
+            except Exception as e:
+                log(f"click {sel} 失败: {e!r}")
+        if not clicked:
+            log("所有发布按钮选择器均失败，尝试JS点击")
+            page.evaluate("""() => {
+                const btns = [...document.querySelectorAll('button')].filter(b => b.textContent.trim() === '发布' || b.textContent.trim().includes('发布笔记'));
+                if (btns[0]) btns[0].click();
+            }""")
+            page.wait_for_timeout(6000)
         page.wait_for_timeout(6000)
         page.screenshot(path=str(OUT / "xhs-result.png"))
         log(f"PUBLISHED? URL={page.url}")

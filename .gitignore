@@ -1,2 +1,6 @@
-
 .workbuddy/pw-browsers/
+.workbuddy/xhs-profile/
+outputs/_t*.py
+outputs/xhs-*.png
+outputs/xhs-confirm.txt
+outputs/xhs-dom.log

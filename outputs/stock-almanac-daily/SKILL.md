@@ -1,6 +1,6 @@
 ---
 name: stock-almanac-daily
-description: This skill should be used when the user asks for 股市老黄历、A股每日选股研报、热门板块与资金情绪复盘、自选股后续观察、条件式买卖建议，或HTML选股日报。组合NashNova与WeStock，基于最近完整交易日生成真实、可追溯、10分钟内可读的沪深A股研究报告。
+description: This skill should be used when the user asks for 股市老黄历、A股每日选股研报、热门板块与资金情绪复盘、自选股后续观察、条件式买卖建议、移动端/小红书风选股日报，或HTML选股日报。组合hithink-finance（同花顺）与WeStock，基于最近完整交易日生成真实、可追溯、10分钟内可读的沪深A股研究报告，支持桌面研报与移动端竖屏卡片流两种产物。
 agent_created: true
 ---
 
@@ -8,24 +8,32 @@ agent_created: true
 
 ## 目标
 
-生成一份面向桌面浏览器的单文件HTML研究报告。先给市场结论，再选出1—2个重点方向和0—3只高置信度A股，最后对用户关注股票给出条件式买入、持有、减仓或回避建议。
+生成单文件HTML研究报告。先给市场结论，再选出1—2个重点方向和0—3只（上限5只）高置信度A股，最后对用户关注股票给出条件式买入、持有、减仓或回避建议。
+
+支持两种产物格式（`format` 参数）：
+
+- `desktop`（默认）：面向桌面浏览器的固定宽度研报；
+- `mobile`：面向手机阅读的竖屏卡片流HTML，并额外输出一份小红书笔记文案 `.md`；
+- `both`：同一份分析同时产出桌面与移动端产物，数据只取一次。
 
 把“股市老黄历”限制在页首标题和一行“今日宜/忌”。正文使用常规金融研报设计，不使用仿古纸张、生肖、五行、吉时或玄学评分。
 
 ## 开始前
 
-1. 加载 `nashnova-fin` 与 `westock-data`，遵守两者的字段、证据和错误规则。
-2. 每个会话首次使用NashNova时执行一次 `nashnova update`，同一会话不重复。
+1. 加载 `hithink-finance` 与 `westock-data`，遵守两者的字段、证据和错误规则。
+2. hithink-finance 统一凭据读取顺序：环境变量 `HITHINK_FINANCE_API_KEY` → 用户级 `credentials.env`（Windows 为 `%APPDATA%\hithink-finance\credentials.env`）；密钥不写入命令参数、日志或项目文件。CLI 完整路径 `C:\Users\tizytian\.workbuddy\binaries\node\versions\22.22.2-1\hithink-finance`，所有取数加 `--format json`。
 3. 读取：
    - `references/data-routing.md`：数据职责、代码和时间窗口；
    - `references/scoring.md`：市场、板块、个股和交易建议规则；
    - `references/report-spec.md`：桌面网页、内容预算和栏目格式；
-   - `references/visual-style.md`：交易老黄历视觉令牌、页头、Hero、卡片和表格规范。
-4. 以 `assets/report-shell.html` 为静态页面骨架，替换模板字段并按实际数据增删内容；不得保留未替换占位符。
-5. 生成HTML后运行：
+   - `references/visual-style.md`：交易老黄历视觉令牌、页头、Hero、卡片和表格规范；
+   - `references/mobile-spec.md`（`format` 含 mobile 时必读）：移动端竖屏布局、阅读预算、小红书语感与笔记文案结构；
+   - `references/xhs-preflight.md`（`format` 含 mobile 时必读）：小红书发布合规微调规则（个股点位弱化、免责声明可见化等）。
+4. 以 `assets/report-shell.html`（桌面）或 `assets/report-shell-mobile.html`（移动端）为静态页面骨架，替换模板字段并按实际数据增删内容；不得保留未替换占位符。
+5. 生成HTML后运行（移动端加 `--format mobile`）：
 
 ```bash
-python <skill-dir>/scripts/validate_report.py <report.html>
+python <skill-dir>/scripts/validate_report.py <report.html> [--format mobile]
 ```
 
 校验失败时修正报告并重跑，不绕过校验。
@@ -45,6 +53,7 @@ python <skill-dir>/scripts/validate_report.py <report.html>
   "horizon": "5-20_trading_days",
   "max_sectors": 2,
   "max_picks": 3,
+  "format": "desktop",
   "output_path": null
 }
 ```
@@ -55,8 +64,9 @@ python <skill-dir>/scripts/validate_report.py <report.html>
 - `risk_profile=balanced`，可选 `conservative|balanced|aggressive`
 - `horizon=5-20_trading_days`
 - `max_sectors=2`，限制为1—3
-- `max_picks=3`，限制为1—4
-- `output_path=<cwd>/reports/stock-almanac/YYYY-MM-DD-stock-almanac.html`
+- `max_picks=3`，限制为1—5
+- `format=desktop`，可选 `desktop|mobile|both`
+- `output_path=<cwd>/reports/stock-almanac/YYYY-MM-DD-stock-almanac.html`；移动端为 `YYYY-MM-DD-stock-almanac-mobile.html`，小红书文案为 `YYYY-MM-DD-xiaohongshu-note.md`
 
 仅有公司名时先搜索证券代码；结果不唯一时询问。自动化任务中无法确认则跳过，不猜代码。未提供关注股时省略个性化栏目。
 
@@ -74,8 +84,9 @@ python <skill-dir>/scripts/validate_report.py <report.html>
 
 按能力域指定唯一主来源：
 
-- 使用WeStock获取交易日历、A股大盘、市场宽度、宏观、板块、龙虎榜、资金、A股财务、公告、风险和历史技术数据。
-- 使用NashNova获取财经主题新闻、公开事实核查、机构研报语义检索、行情补充和Evidence证据链。
+- 使用WeStock获取交易日历、A股大盘、市场宽度、宏观、资金流向（主力/两融/北向/大宗）、公告、风险和部分板块数据。
+- 使用hithink-finance（同花顺）获取A股行情快照与历史日线、指数行情与成份、板块行情、财报与财务指标、估值，以及特色数据（涨停池含原因、连板天梯、涨停/跌停/炸板池、龙虎榜、个股异动原因、热股榜）。
+- 新闻、研报语义与公开事实核查不由hithink-finance承担：用WeStock代码级新闻与结构化研报，辅以WebSearch核实定性事件（只核实事件真实性，不补造数据）。
 - 不对同一事实双源比价，不重复计分。
 - 完整路由见 `references/data-routing.md`。
 
@@ -104,14 +115,15 @@ python <skill-dir>/scripts/validate_report.py <report.html>
 
 ### 3. 选重点板块
 
-先从板块涨跌、资金和市场热度建立初选，再补充成份股广度、新闻、研报、盈利趋势与估值。满足以下条件才入选：
+先从板块涨跌、资金和市场热度建立初选，再补充成份股广度、新闻、研报、盈利趋势与估值。`SectorHeat` 公式、量价正交合成与拥挤度反向分见 `references/scoring.md`。满足以下条件才入选：
 
 - `SectorHeat >= 65`；
 - 至少两个独立维度支持；
 - 不是仅靠单日涨停或一条消息驱动；
-- 有可交易的沪深A股候选。
+- 有可交易的沪深A股候选；
+- 拥挤度分位 ≥75% 时板块卡片必须标注预警（≥90% 时当期入选板块限1个）。
 
-默认输出1—2个板块，最多3个。每个板块只回答：为什么现在、资金是否确认、后续催化、最大风险。
+默认输出1—2个板块，最多3个。每个板块只回答：为什么现在、资金是否确认、拥挤度位置、后续催化、最大风险。
 
 ### 4. 建立候选池
 
@@ -139,7 +151,7 @@ python <skill-dir>/scripts/validate_report.py <report.html>
 
 ### 6. 输出选股与交易建议
 
-按 `references/scoring.md` 选择0—3只，最多4只，不强行凑数。每只股票必须给出：
+按 `references/scoring.md` 选择0—3只，最多5只，不强行凑数。每只股票必须给出：
 
 - 一句话投资逻辑；
 - 关键事实：最多3条；
@@ -162,30 +174,34 @@ python <skill-dir>/scripts/validate_report.py <report.html>
 
 不得根据未知资金规模给仓位百分比，不得给确定收益或保证成交的价格。
 
-### 8. 生成桌面HTML
+### 8. 生成HTML与配套文案
 
-严格执行 `references/report-spec.md`：
+严格执行 `references/report-spec.md`（桌面）或 `references/mobile-spec.md`（移动端）：
 
-- 采用常规金融研究网页，固定桌面内容宽度；不设计移动端卡片流。
+- 桌面端采用常规金融研究网页，固定桌面内容宽度；移动端采用竖屏单列卡片流，不做响应式重排。
 - “股市老黄历”只出现在标题栏和一行今日宜/忌。
 - 首屏必须直接显示市场状态、重点板块、首选股票和最大风险。
-- 默认可见正文控制在10分钟内；证据、计算口径和数据缺口放入折叠区。
-- 完成后运行验证脚本，再展示HTML给用户。
+- 桌面默认可见正文控制在10分钟内，移动端控制在4分钟内；方法与免责声明放入折叠区。
+- 证据台账（`[E01]`编号、来源、口径、降级）在分析过程中完整维护，并存为同目录旁车文件 `YYYY-MM-DD-evidence.md`；但最终产物HTML不出现证据区和证据编号，正文用"数据显示/公告称/龙虎榜显示"等自然语言归因，关键数据缺口并入风险提示或方法折叠区。
+- `format` 含 mobile 时，额外按 `references/mobile-spec.md` 输出小红书笔记文案 `.md`（标题+正文+话题标签），文案与HTML使用同一次取数。
+- 移动端HTML与小红书文案在生成时执行 `references/xhs-preflight.md` 的小红书合规微调与自检（个股不写精确买卖价位、免责声明置于可见位置、绝对化措辞软化）；桌面端保持完整点位。
+- 完成后运行验证脚本（移动端加 `--format mobile`），再展示产物给用户。
 
 ## 证据与真实性
 
 为关键事实分配 `[E01]` 等编号。每个入选板块和股票至少有两个独立证据维度。
 
-NashNova结果保留 `as_of`、`coverage`、`degraded`、`data_notes` 和Evidence路径，精确数值从Evidence读取。WeStock结果记录完整命令、字段、日期和口径。
+hithink-finance结果记录完整命令、`--format json` 信封的 `ok`/`error` 字段、数据日期和口径，精确数值从JSON输出读取，不从截断摘要计算。WeStock结果记录完整命令、字段、日期和口径。WebSearch核实结果记录链接与发布日期，只作定性证据。
 
 严格区分：事实数据、派生评分、分析判断。无法验证的产业链关系写成“市场映射/待公告确认”，不得写成确定供应关系。
 
 ## 失败与降级
 
-- NashNova退出码2时修正参数一次；3时记录无覆盖；4时最多重试一次；5时停止并提示重新登录。
-- `coverage != complete` 或 `degraded` 非空时显著披露。
+- hithink-finance退出码非0或JSON信封 `ok!=true` 时：参数错误修正参数一次；认证失效（401/403）停止并提示检查统一凭据，不重试原请求、不打印密钥。
+- 响应字段缺失或为空时显著披露，区分“不支持、无披露、无事件、接口故障”，不把空结果解释为利好或利空。
 - WeStock独占的宏观、大盘、板块、资金和A股基本面失败时，不用网页或模型记忆补造。
-- WeStock技术失败可降级为NashNova日线技术；NashNova主题新闻失败可改用WeStock代码级新闻；NashNova研报失败只保留WeStock结构化研报。
+- WeStock行情/技术失败可降级为hithink-finance（`market snapshot`/`market history`，仅1d日线，前复权）；hithink-finance行情/特色数据失败可降级回WeStock对应接口，并在台账披露。
+- 新闻与研报语义检索失败时，用WebSearch核实定性事件（只核实事件、不补造数据），并在台账披露降级。
 - 关键评分覆盖低于60%时不输出选股榜，只给数据缺口和风险说明。
 
 ## 表述与合规
@@ -193,3 +209,5 @@ NashNova结果保留 `as_of`、`coverage`、`degraded`、`data_notes` 和Evidenc
 允许给出有明确数据条件的买入、持有、减仓和回避建议，但必须说明触发条件和失效条件。禁止“必涨、稳赚、抄底、必中、最佳买点、保证收益、明日一定”以及未经校准的胜率。
 
 明确声明：报告是基于公开与授权数据的条件化研究意见，不了解用户完整财务状况，不构成收益承诺或代客交易指令。
+
+面向小红书发布的移动端产物额外遵循 `references/xhs-preflight.md`：个股建议不写精确买卖价位（用均线/形态条件表达）、免责声明必须出现在可见正文、绝对化措辞改为带口径的数据陈述、无导流与诱导互动话术。

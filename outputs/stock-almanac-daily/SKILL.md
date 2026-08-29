@@ -115,7 +115,7 @@ python <skill-dir>/scripts/validate_report.py <report.html> [--format mobile]
 
 ### 3. 选重点板块
 
-先用同一板块分类体系构建不少于20个板块的完整横截面，计算价格动量与正交资金残差；不得只在最终候选板块上做回归。再补充成份股广度、新闻、研报、盈利趋势、估值和拥挤度。`SectorHeat` 公式、量价正交回归、降级规则与最高20分拥挤惩罚见 `references/scoring.md`。满足以下条件才入选：
+默认使用板块评分 **V3**。先用同一板块分类体系构建不少于20个板块的完整横截面，计算价格动量与正交资金残差；不得只在最终候选板块上做回归。再补充成份股广度、新闻、研报、盈利趋势、估值和拥挤度。V3的 `SectorHeat` 公式、量价正交回归、绝对方向约束、硬上限、降级规则与最高20分纯拥挤惩罚见 `references/scoring.md`。满足以下条件才入选：
 
 - `SectorHeat >= 65`；
 - 至少两个独立维度支持；
@@ -128,10 +128,10 @@ python <skill-dir>/scripts/validate_report.py <report.html> [--format mobile]
 将完整板块横截面的原始收益、标准化资金强度和其他分项写入临时JSON，使用确定性脚本计算，不手工估算回归残差：
 
 ```bash
-python <skill-dir>/scripts/calculate_sector_score.py <sector-input.json> --output <sector-score.json>
+python <skill-dir>/scripts/calculate_sector_score.py <sector-input.json> --output <trade-date>-sector-score-v3.json
 ```
 
-输入字段与算法口径见脚本顶部说明和 `references/scoring.md`。将输出中的回归样本数、覆盖率、`P/F/R/T`、拥挤度扣分、预警标签和降级原因写入证据台账。
+输入字段与算法口径见脚本顶部说明和 `references/scoring.md`。输出后必须校验 `method == cross_sectional_price_flow_orthogonalization_v3`；不满足则停止生成报告，禁止继续沿用V2结果。将输出中的回归样本数、覆盖率、`R²`、`P/F/R/T`、绝对方向约束、硬上限、拥挤度扣分、预警标签、板块置信度和降级原因写入证据台账。
 
 ### 4. 建立候选池
 

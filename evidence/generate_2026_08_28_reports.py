@@ -11,7 +11,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 market = json.loads((EV / f"{TARGET}-market-raw.json").read_text(encoding="utf-8"))
 market_score = json.loads((EV / f"{TARGET}-market-score.json").read_text(encoding="utf-8"))
-sector_score = json.loads((EV / f"{TARGET}-sector-score-v2.json").read_text(encoding="utf-8"))
+sector_score = json.loads((EV / f"{TARGET}-sector-score-v3.json").read_text(encoding="utf-8"))
+if sector_score.get("method") != "cross_sectional_price_flow_orthogonalization_v3":
+    raise RuntimeError("行业评分不是V3，停止生成报告")
 sector_raw = json.loads((EV / f"{TARGET}-sector-raw-v2.json").read_text(encoding="utf-8"))
 
 idx = market["indices"]
@@ -68,8 +70,8 @@ def sector_cards() -> str:
     cards = []
     labels = {
         "化学原料": "趋势与独立资金均强，但拥挤加速压低最终热度。",
+        "汽车零部件": "独立资金残差靠前，但价格确认不足，仅作潜伏观察。",
         "炼化及贸易": "量价趋势靠前，当前已进入高拥挤区。",
-        "种植业": "价格与资金最强，但三项拥挤指标均处极端分位。",
     }
     for x in top_sectors[:3]:
         c = x["crowding"]
@@ -109,13 +111,13 @@ css = """
 :root{--paper:#f3efe6;--deep:#e8e0d0;--ink:#18332d;--body:#293631;--red:#a83e32;--green:#17705e;--gold:#b98532;--line:rgba(24,51,45,.22);--card:#fffdf7;--muted:#68736d;--serif:STSong,SimSun,serif;--sans:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}*{box-sizing:border-box}body{margin:0;background:var(--deep);color:var(--body);font:14px/1.68 var(--sans)}.topbar{background:var(--ink);color:#f8f2e5;border-bottom:3px solid var(--gold)}.topin,.page{width:1220px;margin:auto}.topin{min-height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font:700 23px var(--serif)}.badge,.tag{border:1px solid var(--line);padding:6px 9px}.topbar .badge{border-color:#8d947f;color:#e8c887}.seal{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin-right:10px;border:1px solid #e8c887;color:#e8c887;font:700 20px var(--serif)}.page{background:var(--paper);padding:34px 24px 48px}.hero{display:grid;grid-template-columns:1.45fr .75fr;gap:20px}.hero h1{font:700 45px/1.15 var(--serif);color:var(--ink);margin:8px 0}.eyebrow,.kicker{color:var(--gold);font-weight:700;letter-spacing:.12em;font-size:11px}.dark{background:var(--ink);color:#f8f2e5;padding:22px;border-left:5px solid var(--gold)}.dark h2{font:700 25px var(--serif);color:#e8c887}.section{margin-top:18px}.card{background:var(--card);border:1px solid var(--line);padding:20px}.head{display:flex;justify-content:space-between;align-items:center}.head h2{font:700 29px var(--serif);color:var(--ink);margin:2px 0 12px}.grid{display:grid;gap:12px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.metric,.panel,.sector-card{padding:13px;border:1px solid var(--line);background:#fffaf0}.metric span{display:block;color:var(--muted);font-size:12px}.metric b{font-size:18px;color:var(--ink)}.up{color:var(--red)}.down{color:var(--green)}.muted,.note{color:var(--muted)}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left}.empty{padding:24px;border:1px solid var(--line);background:#fffaf0;border-left:5px solid var(--gold)}.risk{border-left:5px solid var(--red)}details{margin-top:18px;background:var(--card);border:1px solid var(--line);padding:14px}.footer{text-align:center;padding:24px;color:#e3ddd1;background:var(--ink)}
 """
 
-desktop = f"""<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='description' content='2026年8月28日A股盘后研究日报'><title>A股选股日报｜{TARGET}</title><style>{css}</style></head><body><header class="topbar"><div class='topin'><div class='brand'><span class="seal">历</span>股市老黄历 · A股研究</div><span class='badge'>盘后 · V2</span></div></header><main class='page'><header id='cover' class='hero'><div><div class='eyebrow'>评分交易日 {TARGET} · 北京时间盘后</div><h1>指数回调，<span class='up'>结构轮动</span></h1><p>{market_summary} 指数走弱但个股涨多跌少，农业、化工、房地产等方向轮动活跃。</p><p><b>宜</b> 观察回踩与资金延续　<b>忌</b> 追逐拥挤加速段</p><p class='note'>老黄历仅为标题包装，正文为公开数据研究。</p></div><aside class='dark'><div>数据截至 {TARGET} 收盘</div><h2>{state} · 今日零推荐</h2><p>环境分{score:.1f}。29个行业中最高热度为{top_sectors[0]['name']} {top_sectors[0]['sector_heat']:.2f}，未达到65分门槛，不建立个股候选池。</p></aside></header>
+desktop = f"""<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='description' content='2026年8月28日A股盘后研究日报'><title>A股选股日报｜{TARGET}</title><style>{css}</style></head><body><header class="topbar"><div class='topin'><div class='brand'><span class="seal">历</span>股市老黄历 · A股研究</div><span class='badge'>盘后 · V3</span></div></header><main class='page'><header id='cover' class='hero'><div><div class='eyebrow'>评分交易日 {TARGET} · 北京时间盘后</div><h1>指数回调，<span class='up'>结构轮动</span></h1><p>{market_summary} 指数走弱但个股涨多跌少，农业、化工、房地产等方向轮动活跃。</p><p><b>宜</b> 观察回踩与资金延续　<b>忌</b> 追逐拥挤加速段</p><p class='note'>标题仅为栏目包装，正文为数据研究；仅供研究参考，不构成投资建议。</p></div><aside class='dark'><div>数据截至 {TARGET} 收盘</div><h2>{state} · 今日零推荐</h2><p>环境分{score:.1f}。29个行业中最高热度为{top_sectors[0]['name']} {top_sectors[0]['sector_heat']:.2f}，未达到65分门槛，不建立个股候选池。</p></aside></header>
 <section id='executive-summary' class='section card'><div class='head'><div><div class='kicker'>00 / brief</div><h2>行情摘要</h2></div><span class='tag'>结论先行</span></div><div class='grid g4'><div class='metric'><span>市场状态</span><b>{state} {score:.1f}</b></div><div class='metric'><span>市场宽度</span><b>涨{breadth['CNT_RED']} / 跌{breadth['CNT_GREEN']}</b></div><div class='metric'><span>两市成交</span><b>{turnover['amount_100m_cny']:.0f}亿元</b></div><div class='metric'><span>最高行业热度</span><b>{top_sectors[0]['name']} {top_sectors[0]['sector_heat']:.2f}</b></div></div><p>周五指数回落，但上涨占比仍为{breadth['RATIO_UP']:.2f}%。热点切换至周期与农业，行业热度却被拥挤度明显削弱。今日不强行给出个股推荐。</p></section>
 <section id='macro' class='section card'><div class='head'><div><div class='kicker'>01 / macro</div><h2>宏观大势</h2></div><span class='tag'>流动性 · 风险</span></div><div class='grid g3'><div class='panel'><b>国内流动性温和</b><p>截至目标日已发布的低频宏观数据未显示流动性骤变，宏观维度按58分处理。</p></div><div class='panel'><b>行业轮动加快</b><p>农业、化工和房地产获得关注，科技硬件回调，市场更偏结构性交易。</p></div><div class='panel'><b>全球风险中性降级</b><p>缺少同一时点可审计的VIX、美元和美债数据，按50分处理，不代表外部风险低。</p></div></div></section>
 <section id='market' class='section card'><div class='head'><div><div class='kicker'>02 / market</div><h2>大盘判断</h2></div><span class='tag'>{TARGET} 收盘</span></div><div class='grid g4'><div class='metric'><span>上证指数</span><b>{idx['上证指数']['close']:.2f} <i class='down'>{idx['上证指数']['change_pct']:+.2f}%</i></b></div><div class='metric'><span>深证成指</span><b>{idx['深证成指']['close']:.2f} <i class='down'>{idx['深证成指']['change_pct']:+.2f}%</i></b></div><div class='metric'><span>创业板指</span><b>{idx['创业板指']['close']:.2f} <i class='down'>{idx['创业板指']['change_pct']:+.2f}%</i></b></div><div class='metric'><span>成交/20日均量</span><b>{turnover['vs_twenty_day_average_pct']:.2f}%</b></div></div><div class='grid g3' style='margin-top:12px'><div class='panel'><b>宽度强于指数</b><p>上涨占比{breadth['RATIO_UP']:.2f}%，带日期口径涨停{breadth['CNT_REACH_UPLIMIT']}家、跌停{breadth['CNT_REACH_DNLIMIT']}家。</p></div><div class='panel'><b>成交保持高位</b><p>两市成交约{turnover['amount_100m_cny']:.0f}亿元，达到5日均量106.41%，但仅为20日均量93.64%。</p></div><div class='panel'><b>中期修复未完成</b><p>上证5日收益为正，深证与创业板5日转弱，三大指数60日收益仍为负。</p></div></div><p class='note'>涨停家数存在WeStock带日期76、实时分布83、hithink池81的口径差异；正式评分采用76，不取平均。</p></section>
 <section id='sectors' class='section card'><div class='head'><div><div class='kicker'>03 / sectors</div><h2>板块筛选</h2></div><span class='tag'>0个方向达标</span></div><table><thead><tr><th>行业</th><th>价格P</th><th>正交R</th><th>趋势T</th><th>拥挤C</th><th>扣分</th><th>热度</th><th>预警</th></tr></thead><tbody>{sector_rows()}</tbody></table><div class='grid g3' style='margin-top:12px'>{sector_cards()}</div><p class='note'>29行业完整横截面回归：样本{reg['sample_size']}、覆盖率{reg['coverage']:.0%}、beta={reg['beta']:.4f}。最高行业热度仍低于65分，因此只列观察方向。</p></section>
-<section id='picks' class='section card'><div class='head'><div><div class='kicker'>04 / picks</div><h2>今日结论</h2></div><span class='tag'>零推荐</span></div><div class='empty'><h3>本期不建立个股推荐榜</h3><p>原因不是数据缺失，而是29行业完整横截面没有任何方向达到65分。化学原料、炼化及贸易、种植业虽有趋势或资金支持，但拥挤度和加速风险显著；按规则停止向个股层下钻。</p><p><b>观察条件：</b>后续需看到行业热度重新站上65分、独立资金保持确认，同时拥挤度不再加速，才重启候选池。</p></div></section>
-<section id='risks' class='section card risk'><div class='kicker'>05 / risks</div><h2>风险提示</h2><ul><li>化学原料热度63.41，拥挤度75.59且5日上升20.99，存在加速风险。</li><li>种植业趋势与资金居前，但拥挤度97.26，三项子指标均处极端分位。</li><li>指数回调而热点轮动，追逐单日涨幅可能面临次日风格切换。</li><li>全球风险与部分宏观高频字段缺失，按中性降级。</li></ul><p><b>免责声明</b>：以上内容基于公开与授权数据，仅供研究参考，不构成投资建议。市场有风险，投资需谨慎。</p></section>
+<section id='picks' class='section card'><div class='head'><div><div class='kicker'>04 / picks</div><h2>今日结论</h2></div><span class='tag'>零推荐</span></div><div class='empty'><h3>本期不建立个股推荐榜</h3><p>原因不是数据缺失，而是29行业完整横截面没有任何方向达到65分。{top_sectors[0]['name']}、{top_sectors[1]['name']}、{top_sectors[2]['name']}虽有趋势或资金支持，但分别受到拥挤惩罚或价格确认不足的约束；按规则停止向个股层下钻。</p><p><b>观察条件：</b>后续需看到行业热度重新站上65分、独立资金保持确认，同时拥挤度不再加速，才重启候选池。</p></div></section>
+<section id='risks' class='section card risk'><div class='kicker'>05 / risks</div><h2>风险提示</h2><ul><li>{top_sectors[0]['name']}热度{top_sectors[0]['sector_heat']:.2f}，拥挤度{top_sectors[0]['crowding']['crowding_score']:.2f}且5日变化{top_sectors[0]['crowding']['delta_5d']:+.2f}，存在波动放大风险。</li><li>{top_sectors[1]['name']}独立资金R={top_sectors[1]['orthogonal_flow_r']:.2f}，但价格P={top_sectors[1]['price_momentum_p']:.2f}，尚需价格确认。</li><li>指数回调而热点轮动，追逐单日涨幅可能面临次日风格切换。</li><li>全球风险与部分宏观高频字段缺失，按中性降级。</li></ul><p><b>免责声明</b>：以上内容基于公开与授权数据，仅供研究参考，不构成投资建议。市场有风险，投资需谨慎。</p></section>
 <details id='methodology'><summary>方法与数据降级说明</summary><p>市场环境=30%指数与风格+25%宽度与情绪+20%成交与流动性+15%国内宏观+10%全球风险。行业以1/5/20日价格和资金横截面正交，板块热度扣最高20分拥挤惩罚。</p><p>行业广度已由成份股相邻交易日收盘计算；催化与基本面缺少统一横截面证据，按50分降级。外部信息只作定性核验，缺失项不补造。</p></details></main><footer class='footer'>数据来源：WeStock、hithink-finance与公开资料复核｜评分日 {TARGET}｜证据台账 {TARGET}-evidence.md</footer></body></html>"""
 
 mobile_css = """
@@ -126,7 +128,7 @@ mobile_sector_cards = "".join(
     f"<div class='stock'><h3>{x['name']} {x['sector_heat']:.2f}</h3><p>趋势T={x['trend_confirmation_t']:.2f}，独立资金R={x['orthogonal_flow_r']:.2f}。</p><p>拥挤C={x['crowding']['crowding_score']:.2f}，扣分{x['crowding']['penalty']:.2f}；{format_crowding_warnings(x['crowding']['warnings'])}。</p></div>"
     for x in top_sectors[:3]
 )
-mobile = f"""<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='description' content='2026年8月28日A股盘后研究日报移动版'><title>股市老黄历｜{TARGET}</title><style>{mobile_css}</style></head><body><div class="m-shell"><header class='top'><b><span class="m-seal">历</span>股市老黄历 · A股研究</b></header><header id='cover' class='cover'><div class='date'>评分交易日 {TARGET}</div><h1>指数回调，结构轮动</h1><p><b>宜</b> 等资金延续　<b>忌</b> 追拥挤加速</p><div class='state'><b>{state} · 今日零推荐</b><br>环境分{score:.1f}，行业最高热度{top_sectors[0]['sector_heat']:.2f}。</div><p class='note'>标题仅为包装，正文为数据研究。</p></header><section id='executive-summary' class='sec'><div class='kicker'>00 / brief</div><h2>行情摘要</h2><div class='line'><span class='k'>指数</span><span>上证{idx['上证指数']['change_pct']:+.2f}%｜创业板{idx['创业板指']['change_pct']:+.2f}%</span></div><div class='line'><span class='k'>宽度</span><span>涨{breadth['CNT_RED']} / 跌{breadth['CNT_GREEN']}</span></div><div class='line'><span class='k'>成交</span><span>{turnover['amount_100m_cny']:.0f}亿元</span></div><div class='line'><span class='k'>结论</span><span>行业均未过65分门槛</span></div><p><b>仅供研究参考，不构成投资建议。</b></p></section><section id='macro' class='sec'><div class='kicker'>01 / macro</div><h2>宏观大势</h2><div class='kv'><span class='k'>国内</span><span>流动性维持温和，未见目标日骤变。</span></div><div class='kv'><span class='k'>外部</span><span>全球风险字段缺失，按中性降级。</span></div></section><section id='market' class='sec'><div class='kicker'>02 / market</div><h2>大盘判断</h2><div class='line'><span class='k'>上证</span><span>{idx['上证指数']['close']:.2f} <span class='down'>{idx['上证指数']['change_pct']:+.2f}% 下跌</span></span></div><div class='line'><span class='k'>深证</span><span>{idx['深证成指']['close']:.2f} <span class='down'>{idx['深证成指']['change_pct']:+.2f}% 下跌</span></span></div><div class='line'><span class='k'>创业板</span><span>{idx['创业板指']['close']:.2f} <span class='down'>{idx['创业板指']['change_pct']:+.2f}% 下跌</span></span></div><p>指数回调，但上涨家数仍多于下跌家数。成交为20日均量93.64%，结构轮动快于指数趋势。</p></section><section id='sectors' class='sec'><div class='kicker'>03 / sectors</div><h2>板块观察</h2>{mobile_sector_cards}<p class='note'>均未达到65分正式门槛，只作观察。</p></section><section id='picks' class='sec'><div class='kicker'>04 / picks</div><h2>今日结论</h2><div class='stock'><h3>本期零推荐</h3><p>没有行业过线，因此不向个股层强行下钻。</p><p><b>重启条件：</b>行业热度站上65分，独立资金延续，拥挤度不再加速。</p><p><b>失效条件：</b>指数继续放量走弱，或轮动方向资金转为持续净流出。</p></div></section><section id='risks' class='sec risk'><div class='kicker'>05 / risks</div><h2>风险提示</h2><ul><li>化学原料拥挤加速。</li><li>种植业处严重拥挤区。</li><li>热点切换较快，追涨风险上升。</li><li>全球风险字段按中性降级。</li></ul><p><b>仅供研究参考，不构成投资建议。</b></p></section><details id='methodology'><summary>方法与免责声明</summary><p>行业采用29板块完整横截面做量价正交，并扣最高20分拥挤惩罚。缺失项按中性降级，不补造。</p><p>本报告不构成收益承诺或代客交易指令。</p></details><footer>数据来源：WeStock、hithink-finance｜评分日 {TARGET}</footer></div></body></html>"""
+mobile = f"""<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><meta name='description' content='2026年8月28日A股盘后研究日报移动版'><title>行情老黄历｜{TARGET}</title><style>{mobile_css}</style></head><body><div class="m-shell"><header class='top'><b><span class="m-seal">历</span>行情老黄历 · A股研究</b></header><header id='cover' class='cover'><div class='date'>评分交易日 {TARGET}</div><h1>指数回调，结构轮动</h1><p><b>宜</b> 等资金延续　<b>忌</b> 追拥挤加速</p><div class='state'><b>{state} · 今日零推荐</b><br>环境分{score:.1f}，行业最高热度{top_sectors[0]['sector_heat']:.2f}。</div><p class='note'>标题仅为栏目包装，正文为数据研究。<br>仅供研究参考，不构成投资建议。</p></header><section id='executive-summary' class='sec'><div class='kicker'>00 / brief</div><h2>行情摘要</h2><div class='line'><span class='k'>指数</span><span>上证{idx['上证指数']['change_pct']:+.2f}%｜创业板{idx['创业板指']['change_pct']:+.2f}%</span></div><div class='line'><span class='k'>宽度</span><span>涨{breadth['CNT_RED']} / 跌{breadth['CNT_GREEN']}</span></div><div class='line'><span class='k'>成交</span><span>{turnover['amount_100m_cny']:.0f}亿元</span></div><div class='line'><span class='k'>结论</span><span>行业均未过65分门槛</span></div><p><b>仅供研究参考，不构成投资建议。</b></p></section><section id='macro' class='sec'><div class='kicker'>01 / macro</div><h2>宏观大势</h2><div class='kv'><span class='k'>国内</span><span>流动性维持温和，未见目标日骤变。</span></div><div class='kv'><span class='k'>外部</span><span>全球风险字段缺失，按中性降级。</span></div></section><section id='market' class='sec'><div class='kicker'>02 / market</div><h2>大盘判断</h2><div class='line'><span class='k'>上证</span><span>{idx['上证指数']['close']:.2f} <span class='down'>{idx['上证指数']['change_pct']:+.2f}% 下跌</span></span></div><div class='line'><span class='k'>深证</span><span>{idx['深证成指']['close']:.2f} <span class='down'>{idx['深证成指']['change_pct']:+.2f}% 下跌</span></span></div><div class='line'><span class='k'>创业板</span><span>{idx['创业板指']['close']:.2f} <span class='down'>{idx['创业板指']['change_pct']:+.2f}% 下跌</span></span></div><p>指数回调，但上涨家数仍多于下跌家数。成交为20日均量93.64%，结构轮动快于指数趋势。</p></section><section id='sectors' class='sec'><div class='kicker'>03 / sectors</div><h2>板块观察</h2>{mobile_sector_cards}<p class='note'>均未达到65分正式门槛，只作观察。</p></section><section id='picks' class='sec'><div class='kicker'>04 / picks</div><h2>今日结论</h2><div class='stock'><h3>本期零推荐</h3><p>没有行业过线，因此不向个股层强行下钻。</p><p><b>重启条件：</b>行业热度站上65分，独立资金延续，拥挤度不再加速。</p><p><b>失效条件：</b>指数继续放量走弱，或轮动方向资金转为持续净流出。</p></div></section><section id='risks' class='sec risk'><div class='kicker'>05 / risks</div><h2>风险提示</h2><ul><li>{top_sectors[0]['name']}拥挤加速，注意波动放大。</li><li>{top_sectors[1]['name']}资金先行，仍待价格确认。</li><li>热点切换较快，追涨风险上升。</li><li>全球风险字段按中性降级。</li></ul><p><b>仅供研究参考，不构成投资建议。</b></p></section><details id='methodology'><summary>方法与免责声明</summary><p>行业采用29板块完整横截面做量价正交，并扣最高20分拥挤惩罚。缺失项按中性降级，不补造。</p><p>本报告不构成收益承诺或代客交易指令。</p></details><footer>数据来源：WeStock、hithink-finance｜评分日 {TARGET}</footer></div></body></html>"""
 
 note = f"""# 8月28日A股复盘｜轮动加快，今日零推荐
 
@@ -137,9 +139,9 @@ note = f"""# 8月28日A股复盘｜轮动加快，今日零推荐
 
 **板块观察**
 
-1. 化学原料：趋势与独立资金均强，但热度只有63.41；拥挤度升至75.59，5日加速明显。
-2. 炼化及贸易：趋势靠前，热度62.16；拥挤度82.57，已处高拥挤区。
-3. 种植业：价格与资金居前，但拥挤度97.26，三项指标均处极端分位。
+1. {top_sectors[0]['name']}：趋势T={top_sectors[0]['trend_confirmation_t']:.2f}、独立资金R={top_sectors[0]['orthogonal_flow_r']:.2f}，最终热度{top_sectors[0]['sector_heat']:.2f}；拥挤度{top_sectors[0]['crowding']['crowding_score']:.2f}。
+2. {top_sectors[1]['name']}：趋势T={top_sectors[1]['trend_confirmation_t']:.2f}、独立资金R={top_sectors[1]['orthogonal_flow_r']:.2f}，最终热度{top_sectors[1]['sector_heat']:.2f}；当前仍缺少价格确认。
+3. {top_sectors[2]['name']}：趋势T={top_sectors[2]['trend_confirmation_t']:.2f}、独立资金R={top_sectors[2]['orthogonal_flow_r']:.2f}，最终热度{top_sectors[2]['sector_heat']:.2f}；拥挤度{top_sectors[2]['crowding']['crowding_score']:.2f}。
 
 **今日结论**
 
@@ -150,7 +152,7 @@ note = f"""# 8月28日A股复盘｜轮动加快，今日零推荐
 **风险提醒**
 
 - 指数回调但个股涨多跌少，结构轮动较快。
-- 农业、化工等强势方向拥挤度偏高。
+- {top_sectors[0]['name']}与{top_sectors[2]['name']}虽有趋势或资金支持，但拥挤度偏高。
 - 全球风险与部分宏观高频字段缺失，按中性处理。
 
 仅供研究参考，不构成投资建议。市场有风险，投资需谨慎。
@@ -187,18 +189,21 @@ MarketEnvironment = {score:.1f}，状态为{state}。
 - 上涨{breadth['CNT_RED']}、下跌{breadth['CNT_GREEN']}、平盘{breadth['CNT_ZERO']}；带日期口径涨停{breadth['CNT_REACH_UPLIMIT']}、跌停{breadth['CNT_REACH_DNLIMIT']}。
 - 两市成交{turnover['amount_100m_cny']:.2f}亿元，为5日均量106.41%、20日均量93.64%。
 
-## 二、行业量价正交 V2
+## 二、行业量价正交 V3
 
+- 方法标识：`{sector_score['method']}`。
 - 分类：固定29个申万二级行业。
-- 回归：enabled={str(reg['enabled']).lower()}，sample_size={reg['sample_size']}，coverage={reg['coverage']:.0%}，beta={reg['beta']:.10f}。
-- 公式：P=20%×P1+35%×P5+45%×P20；F同权重；对zF~zP回归取残差分位R；T=70%×P+30%×R；SectorHeat=CoreHeat+20-CrowdPenalty。
-- 催化和基本面缺少统一可审计横截面，按50分降级。
+- 回归：enabled={str(reg['enabled']).lower()}，sample_size={reg['sample_size']}，coverage={reg['coverage']:.0%}，beta={reg['beta']:.10f}，R²={reg['r_squared']:.4f}。
+- 公式：P=20%×P1+35%×P5+45%×P20；F同权重；对zF~zP回归取残差分位R；T=70%×P+30%×R；Opportunity=CoreHeat/0.8；SectorHeat=Opportunity-CrowdPenalty。
+- 方向约束：5日与20日收益同时非正时T上限55；5日与20日资金强度同时非正时R上限50。
+- 硬上限：P<=50且R>=80为资金潜伏，P>=70且R<=20为量价背离，两类情形SectorHeat均不高于60。
+- 催化和基本面缺少统一可审计横截面，按50分降级；板块置信度由有效分项覆盖与降级情况计算。
 
 | 排名 | 行业 | P | F | R | T | C | ΔC5 | 扣分 | SectorHeat |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|---:|
 {chr(10).join(sector_lines)}
 
-正式过线：0个。最高为化学原料63.41；炼化及贸易62.16；种植业61.75。三者均受到拥挤惩罚，未达到65分。
+正式过线：{len(qualified)}个。前三为{top_sectors[0]['name']}{top_sectors[0]['sector_heat']:.2f}、{top_sectors[1]['name']}{top_sectors[1]['sector_heat']:.2f}、{top_sectors[2]['name']}{top_sectors[2]['sector_heat']:.2f}，均未达到65分。
 
 ## 三、候选池与个股结论
 

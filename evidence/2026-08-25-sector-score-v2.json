@@ -1,0 +1,936 @@
+{
+  "method": "cross_sectional_price_flow_orthogonalization_v2",
+  "regression": {
+    "enabled": true,
+    "reason": null,
+    "coverage": 1.0,
+    "sample_size": 29,
+    "alpha": 1.4809089374929288e-16,
+    "beta": 0.7098278637220404
+  },
+  "sectors": [
+    {
+      "name": "汽车零部件",
+      "price_momentum_p": 57.142857142857146,
+      "fund_flow_f": 73.03571428571428,
+      "orthogonal_flow_r": 92.85714285714286,
+      "trend_confirmation_t": 67.85714285714286,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 39.669421,
+          "turnover_pct": 0.0,
+          "share_pct": 15.289256
+        },
+        "weighted_mean": 18.47107415,
+        "crowding_score": 23.7706608625,
+        "delta_5d": -12.4483471375,
+        "level_penalty": 3.803305738,
+        "acceleration_penalty": 0.0,
+        "penalty": 3.803305738,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 54.6186067,
+      "sector_heat": 70.815300962,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "消费电子",
+      "price_momentum_p": 40.892857142857146,
+      "fund_flow_f": 49.82142857142857,
+      "orthogonal_flow_r": 60.71428571428571,
+      "trend_confirmation_t": 46.83928571428571,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 31.404959,
+          "turnover_pct": 9.090909,
+          "share_pct": 29.752066
+        },
+        "weighted_mean": 23.0991736,
+        "crowding_score": 25.17561995,
+        "delta_5d": -14.426653049999995,
+        "level_penalty": 4.028099192,
+        "acceleration_penalty": 0.0,
+        "penalty": 4.028099192,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 48.042101599999995,
+      "sector_heat": 64.014002408,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "软件开发",
+      "price_momentum_p": 46.25,
+      "fund_flow_f": 41.964285714285715,
+      "orthogonal_flow_r": 39.285714285714285,
+      "trend_confirmation_t": 44.160714285714285,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 33.471074,
+          "turnover_pct": 0.413223,
+          "share_pct": 8.264463
+        },
+        "weighted_mean": 14.338842849999999,
+        "crowding_score": 19.121900637499998,
+        "delta_5d": -43.3522733625,
+        "level_penalty": 3.0595041019999996,
+        "acceleration_penalty": 0.0,
+        "penalty": 3.0595041019999996,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 46.4672391,
+      "sector_heat": 63.407734998,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "化学原料",
+      "price_momentum_p": 62.5,
+      "fund_flow_f": 76.60714285714286,
+      "orthogonal_flow_r": 89.28571428571429,
+      "trend_confirmation_t": 70.53571428571429,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 59.917355,
+          "turnover_pct": 32.644628,
+          "share_pct": 81.404959
+        },
+        "weighted_mean": 56.818181749999994,
+        "crowding_score": 62.9648760625,
+        "delta_5d": 13.197314062499998,
+        "level_penalty": 10.07438017,
+        "acceleration_penalty": 2.5,
+        "penalty": 12.57438017,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 52.6762218,
+      "sector_heat": 60.10184163000001,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "通信设备",
+      "price_momentum_p": 38.57142857142857,
+      "fund_flow_f": 54.642857142857146,
+      "orthogonal_flow_r": 82.14285714285714,
+      "trend_confirmation_t": 51.64285714285714,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 13.636364,
+          "turnover_pct": 26.033058,
+          "share_pct": 93.38843
+        },
+        "weighted_mean": 41.900826699999996,
+        "crowding_score": 54.77272752499999,
+        "delta_5d": -16.492768475000005,
+        "level_penalty": 8.763636404,
+        "acceleration_penalty": 0.0,
+        "penalty": 8.763636404,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 48.30609234999999,
+      "sector_heat": 59.542455946000004,
+      "warnings": [
+        "资金先行潜伏，等待价格确认"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "种植业",
+      "price_momentum_p": 80.89285714285714,
+      "fund_flow_f": 91.42857142857143,
+      "orthogonal_flow_r": 78.57142857142857,
+      "trend_confirmation_t": 80.19642857142856,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 88.842975,
+          "turnover_pct": 98.347107,
+          "share_pct": 99.173554
+        },
+        "weighted_mean": 95.26859489999998,
+        "crowding_score": 96.24483467499999,
+        "delta_5d": 8.910123674999994,
+        "level_penalty": 15.399173547999998,
+        "acceleration_penalty": 1.0,
+        "penalty": 16.399173548,
+        "degraded": false,
+        "warnings": [
+          "严重拥挤，追高风险",
+          "turnover_pct达到近一年极端分位",
+          "share_pct达到近一年极端分位"
+        ]
+      },
+      "core_heat": 54.7473214,
+      "sector_heat": 58.348147852000004,
+      "warnings": [
+        "严重拥挤，追高风险",
+        "turnover_pct达到近一年极端分位",
+        "share_pct达到近一年极端分位"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "房地产开发",
+      "price_momentum_p": 49.82142857142857,
+      "fund_flow_f": 40.53571428571429,
+      "orthogonal_flow_r": 25.0,
+      "trend_confirmation_t": 42.37499999999999,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 49.586777,
+          "turnover_pct": 21.900826,
+          "share_pct": 28.512397
+        },
+        "weighted_mean": 33.574380149999996,
+        "crowding_score": 37.5774793625,
+        "delta_5d": -16.219008637499996,
+        "level_penalty": 6.012396698,
+        "acceleration_penalty": 0.0,
+        "penalty": 6.012396698,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 42.66257535,
+      "sector_heat": 56.650178651999994,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "光伏设备",
+      "price_momentum_p": 32.67857142857142,
+      "fund_flow_f": 32.67857142857143,
+      "orthogonal_flow_r": 42.857142857142854,
+      "trend_confirmation_t": 35.732142857142854,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 30.165289,
+          "turnover_pct": 0.826446,
+          "share_pct": 3.719008
+        },
+        "weighted_mean": 11.962809649999999,
+        "crowding_score": 16.513429487499998,
+        "delta_5d": -21.027892512500003,
+        "level_penalty": 2.6421487179999996,
+        "acceleration_penalty": 0.0,
+        "penalty": 2.6421487179999996,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 38.837418899999996,
+      "sector_heat": 56.195270181999994,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "化学制药",
+      "price_momentum_p": 29.82142857142857,
+      "fund_flow_f": 50.714285714285715,
+      "orthogonal_flow_r": 96.42857142857143,
+      "trend_confirmation_t": 49.80357142857142,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 38.016529,
+          "turnover_pct": 99.173554,
+          "share_pct": 99.173554
+        },
+        "weighted_mean": 77.76859524999999,
+        "crowding_score": 83.1198349375,
+        "delta_5d": -8.419421062499993,
+        "level_penalty": 13.29917359,
+        "acceleration_penalty": 0.0,
+        "penalty": 13.29917359,
+        "degraded": false,
+        "warnings": [
+          "高拥挤，仅观察回调，不追高",
+          "turnover_pct达到近一年极端分位",
+          "share_pct达到近一年极端分位"
+        ]
+      },
+      "core_heat": 49.0443851,
+      "sector_heat": 55.74521151,
+      "warnings": [
+        "资金先行潜伏，等待价格确认",
+        "高拥挤，仅观察回调，不追高",
+        "turnover_pct达到近一年极端分位",
+        "share_pct达到近一年极端分位"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "生物制品",
+      "price_momentum_p": 68.03571428571429,
+      "fund_flow_f": 69.10714285714286,
+      "orthogonal_flow_r": 50.0,
+      "trend_confirmation_t": 62.625,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 70.661157,
+          "turnover_pct": 100.0,
+          "share_pct": 100.0
+        },
+        "weighted_mean": 89.73140495,
+        "crowding_score": 92.2985537125,
+        "delta_5d": -0.08264428750000263,
+        "level_penalty": 14.767768594,
+        "acceleration_penalty": 0.0,
+        "penalty": 14.767768594,
+        "degraded": false,
+        "warnings": [
+          "严重拥挤，追高风险",
+          "turnover_pct达到近一年极端分位",
+          "share_pct达到近一年极端分位"
+        ]
+      },
+      "core_heat": 50.406144950000005,
+      "sector_heat": 55.638376355999995,
+      "warnings": [
+        "严重拥挤，追高风险",
+        "turnover_pct达到近一年极端分位",
+        "share_pct达到近一年极端分位"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "计算机设备",
+      "price_momentum_p": 32.67857142857143,
+      "fund_flow_f": 23.214285714285715,
+      "orthogonal_flow_r": 21.428571428571427,
+      "trend_confirmation_t": 29.303571428571427,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 29.338843,
+          "turnover_pct": 2.892562,
+          "share_pct": 7.024793
+        },
+        "weighted_mean": 13.388429649999999,
+        "crowding_score": 17.3760329875,
+        "delta_5d": -28.703512012500003,
+        "level_penalty": 2.780165278,
+        "acceleration_penalty": 0.0,
+        "penalty": 2.780165278,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 38.40084935,
+      "sector_heat": 55.620684072,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "饮料乳品",
+      "price_momentum_p": 41.24999999999999,
+      "fund_flow_f": 57.14285714285714,
+      "orthogonal_flow_r": 85.71428571428571,
+      "trend_confirmation_t": 54.58928571428571,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 50.0,
+          "turnover_pct": 64.876033,
+          "share_pct": 80.578512
+        },
+        "weighted_mean": 64.38016515000001,
+        "crowding_score": 68.42975186250001,
+        "delta_5d": -14.054752137499989,
+        "level_penalty": 10.948760298000002,
+        "acceleration_penalty": 0.0,
+        "penalty": 10.948760298000002,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 45.8095467,
+      "sector_heat": 54.860786401999995,
+      "warnings": [
+        "资金先行潜伏，等待价格确认"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "燃气Ⅱ",
+      "price_momentum_p": 68.39285714285714,
+      "fund_flow_f": 38.75,
+      "orthogonal_flow_r": 3.571428571428571,
+      "trend_confirmation_t": 48.94642857142856,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 59.917355,
+          "turnover_pct": 9.710744,
+          "share_pct": 31.818182
+        },
+        "weighted_mean": 33.915289249999994,
+        "crowding_score": 40.4158056875,
+        "delta_5d": -6.5728303125000025,
+        "level_penalty": 6.466528909999999,
+        "acceleration_penalty": 0.0,
+        "penalty": 6.466528909999999,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 41.23839285,
+      "sector_heat": 54.771863939999996,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "电力",
+      "price_momentum_p": 35.714285714285715,
+      "fund_flow_f": 22.678571428571427,
+      "orthogonal_flow_r": 14.285714285714285,
+      "trend_confirmation_t": 29.285714285714285,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 20.661157,
+          "turnover_pct": 12.809917,
+          "share_pct": 28.512397
+        },
+        "weighted_mean": 20.268594999999998,
+        "crowding_score": 22.3295455,
+        "delta_5d": -26.1286155,
+        "level_penalty": 3.5727272799999996,
+        "acceleration_penalty": 0.0,
+        "penalty": 3.5727272799999996,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 38.126802049999995,
+      "sector_heat": 54.55407476999999,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "工程机械",
+      "price_momentum_p": 27.14285714285714,
+      "fund_flow_f": 33.035714285714285,
+      "orthogonal_flow_r": 46.42857142857143,
+      "trend_confirmation_t": 32.92857142857142,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 24.380165,
+          "turnover_pct": 0.0,
+          "share_pct": 1.652893
+        },
+        "weighted_mean": 9.02892565,
+        "crowding_score": 12.866735487500002,
+        "delta_5d": -3.3961775124999996,
+        "level_penalty": 2.0586776780000005,
+        "acceleration_penalty": 0.0,
+        "penalty": 2.0586776780000005,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 35.45357145,
+      "sector_heat": 53.394893771999996,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "水泥",
+      "price_momentum_p": 56.785714285714285,
+      "fund_flow_f": 47.5,
+      "orthogonal_flow_r": 28.57142857142857,
+      "trend_confirmation_t": 48.32142857142857,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 71.487603,
+          "turnover_pct": 0.826446,
+          "share_pct": 4.958678
+        },
+        "weighted_mean": 26.797520549999998,
+        "crowding_score": 37.970041162499996,
+        "delta_5d": 8.094008162499996,
+        "level_penalty": 6.075206585999999,
+        "acceleration_penalty": 1.0,
+        "penalty": 7.075206585999999,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 39.769642899999994,
+      "sector_heat": 52.694436313999994,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "煤炭开采",
+      "price_momentum_p": 74.46428571428571,
+      "fund_flow_f": 80.53571428571428,
+      "orthogonal_flow_r": 71.42857142857143,
+      "trend_confirmation_t": 73.55357142857142,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 86.77686,
+          "turnover_pct": 35.743802,
+          "share_pct": 71.487603
+        },
+        "weighted_mean": 64.3285126,
+        "crowding_score": 69.94059945,
+        "delta_5d": 25.75154944999999,
+        "level_penalty": 11.190495912,
+        "acceleration_penalty": 4.0,
+        "penalty": 15.190495912,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 47.309684,
+      "sector_heat": 52.119188088,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "证券Ⅱ",
+      "price_momentum_p": 23.571428571428573,
+      "fund_flow_f": 12.321428571428571,
+      "orthogonal_flow_r": 17.857142857142858,
+      "trend_confirmation_t": 21.857142857142858,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 20.661157,
+          "turnover_pct": 0.413223,
+          "share_pct": 2.892562
+        },
+        "weighted_mean": 8.2438016,
+        "crowding_score": 11.348140449999999,
+        "delta_5d": -8.08367755,
+        "level_penalty": 1.815702472,
+        "acceleration_penalty": 0.0,
+        "penalty": 1.815702472,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 33.864285699999996,
+      "sector_heat": 52.048583228,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "工业金属",
+      "price_momentum_p": 51.607142857142854,
+      "fund_flow_f": 58.74999999999999,
+      "orthogonal_flow_r": 57.14285714285714,
+      "trend_confirmation_t": 53.26785714285714,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 40.909091,
+          "turnover_pct": 22.31405,
+          "share_pct": 75.206612
+        },
+        "weighted_mean": 44.69008295,
+        "crowding_score": 52.3192152125,
+        "delta_5d": 14.261364212499998,
+        "level_penalty": 8.371074434,
+        "acceleration_penalty": 2.5,
+        "penalty": 10.871074434,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 42.5541616,
+      "sector_heat": 51.683087166,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "焦炭Ⅱ",
+      "price_momentum_p": 83.39285714285715,
+      "fund_flow_f": 86.42857142857143,
+      "orthogonal_flow_r": 64.28571428571429,
+      "trend_confirmation_t": 77.66071428571429,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 85.53719,
+          "turnover_pct": 78.92562,
+          "share_pct": 71.487603
+        },
+        "weighted_mean": 79.00826439999999,
+        "crowding_score": 80.6404958,
+        "delta_5d": 43.36776879999999,
+        "level_penalty": 12.902479328,
+        "acceleration_penalty": 4.0,
+        "penalty": 16.902479328,
+        "degraded": false,
+        "warnings": [
+          "高拥挤，仅观察回调，不追高",
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 46.46696425,
+      "sector_heat": 49.56448492199999,
+      "warnings": [
+        "高拥挤，仅观察回调，不追高",
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "食品加工",
+      "price_momentum_p": 38.75,
+      "fund_flow_f": 71.78571428571429,
+      "orthogonal_flow_r": 100.0,
+      "trend_confirmation_t": 57.125,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 52.066116,
+          "turnover_pct": 92.975207,
+          "share_pct": 81.818182
+        },
+        "weighted_mean": 75.30991764999999,
+        "crowding_score": 79.7262399875,
+        "delta_5d": -8.334194012500006,
+        "level_penalty": 12.756198397999999,
+        "acceleration_penalty": 0.0,
+        "penalty": 12.756198397999999,
+        "degraded": false,
+        "warnings": [
+          "拥挤升温，注意波动放大"
+        ]
+      },
+      "core_heat": 42.2223214,
+      "sector_heat": 49.466123002,
+      "warnings": [
+        "资金先行潜伏，等待价格确认",
+        "拥挤升温，注意波动放大"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "普钢",
+      "price_momentum_p": 54.64285714285714,
+      "fund_flow_f": 18.214285714285715,
+      "orthogonal_flow_r": 0.0,
+      "trend_confirmation_t": 38.24999999999999,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 66.528926,
+          "turnover_pct": 2.066116,
+          "share_pct": 15.702479
+        },
+        "weighted_mean": 28.719008399999996,
+        "crowding_score": 38.171487799999994,
+        "delta_5d": 11.120867799999996,
+        "level_penalty": 6.107438047999999,
+        "acceleration_penalty": 2.5,
+        "penalty": 8.607438047999999,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 36.73165589999999,
+      "sector_heat": 48.124217851999994,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "炼化及贸易",
+      "price_momentum_p": 68.21428571428571,
+      "fund_flow_f": 58.035714285714285,
+      "orthogonal_flow_r": 35.714285714285715,
+      "trend_confirmation_t": 58.46428571428571,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 78.099174,
+          "turnover_pct": 67.14876,
+          "share_pct": 86.363636
+        },
+        "weighted_mean": 76.74586769999999,
+        "crowding_score": 79.150309775,
+        "delta_5d": 30.183367774999994,
+        "level_penalty": 12.664049563999999,
+        "acceleration_penalty": 4.0,
+        "penalty": 16.664049564,
+        "degraded": false,
+        "warnings": [
+          "拥挤升温，注意波动放大",
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 44.74821435,
+      "sector_heat": 48.084164786,
+      "warnings": [
+        "拥挤升温，注意波动放大",
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "半导体",
+      "price_momentum_p": 11.428571428571427,
+      "fund_flow_f": 28.21428571428571,
+      "orthogonal_flow_r": 67.85714285714286,
+      "trend_confirmation_t": 28.357142857142854,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 9.917355,
+          "turnover_pct": 44.834711,
+          "share_pct": 76.446281
+        },
+        "weighted_mean": 42.0971074,
+        "crowding_score": 50.6844008,
+        "delta_5d": -13.974690200000005,
+        "level_penalty": 8.109504128,
+        "acceleration_penalty": 0.0,
+        "penalty": 8.109504128,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 36.09166665,
+      "sector_heat": 47.982162522,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "白酒Ⅱ",
+      "price_momentum_p": 35.0,
+      "fund_flow_f": 16.428571428571427,
+      "orthogonal_flow_r": 10.714285714285714,
+      "trend_confirmation_t": 27.714285714285715,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 64.049587,
+          "turnover_pct": 33.471074,
+          "share_pct": 23.140496
+        },
+        "weighted_mean": 41.074380149999996,
+        "crowding_score": 46.8181818625,
+        "delta_5d": -24.230372137499998,
+        "level_penalty": 7.4909090979999995,
+        "acceleration_penalty": 0.0,
+        "penalty": 7.4909090979999995,
+        "degraded": false,
+        "warnings": []
+      },
+      "core_heat": 35.1135338,
+      "sector_heat": 47.622624701999996,
+      "warnings": [],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "白色家电",
+      "price_momentum_p": 58.57142857142858,
+      "fund_flow_f": 32.85714285714286,
+      "orthogonal_flow_r": 7.142857142857142,
+      "trend_confirmation_t": 43.142857142857146,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 79.752066,
+          "turnover_pct": 8.884298,
+          "share_pct": 58.677686
+        },
+        "weighted_mean": 48.6260332,
+        "crowding_score": 56.4075414,
+        "delta_5d": 29.5996904,
+        "level_penalty": 9.025206623999999,
+        "acceleration_penalty": 4.0,
+        "penalty": 13.025206623999999,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 39.872727299999994,
+      "sector_heat": 46.847520675999995,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "贵金属",
+      "price_momentum_p": 80.0,
+      "fund_flow_f": 80.53571428571429,
+      "orthogonal_flow_r": 53.57142857142857,
+      "trend_confirmation_t": 72.07142857142857,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 82.644628,
+          "turnover_pct": 92.561983,
+          "share_pct": 94.628099
+        },
+        "weighted_mean": 89.71074354999999,
+        "crowding_score": 90.9400824125,
+        "delta_5d": 19.0599174125,
+        "level_penalty": 14.550413186,
+        "acceleration_penalty": 2.5,
+        "penalty": 17.050413186,
+        "degraded": false,
+        "warnings": [
+          "严重拥挤，追高风险",
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 42.724999999999994,
+      "sector_heat": 45.674586813999994,
+      "warnings": [
+        "严重拥挤，追高风险",
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "保险Ⅱ",
+      "price_momentum_p": 52.32142857142857,
+      "fund_flow_f": 44.107142857142854,
+      "orthogonal_flow_r": 32.142857142857146,
+      "trend_confirmation_t": 46.26785714285714,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 82.231405,
+          "turnover_pct": 48.966942,
+          "share_pct": 66.528926
+        },
+        "weighted_mean": 65.87809924999999,
+        "crowding_score": 69.96642568749999,
+        "delta_5d": 53.90237568749999,
+        "level_penalty": 11.194628109999998,
+        "acceleration_penalty": 4.0,
+        "penalty": 15.194628109999998,
+        "degraded": false,
+        "warnings": [
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 38.4080357,
+      "sector_heat": 43.21340759,
+      "warnings": [
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    },
+    {
+      "name": "农商行Ⅱ",
+      "price_momentum_p": 49.46428571428571,
+      "fund_flow_f": 58.92857142857143,
+      "orthogonal_flow_r": 75.0,
+      "trend_confirmation_t": 57.12499999999999,
+      "crowding": {
+        "component_scores": {
+          "rsi_pct": 88.016529,
+          "turnover_pct": 78.099174,
+          "share_pct": 80.991736
+        },
+        "weighted_mean": 82.43801685,
+        "crowding_score": 83.8326448875,
+        "delta_5d": 40.960743887499994,
+        "level_penalty": 13.413223182,
+        "acceleration_penalty": 4.0,
+        "penalty": 17.413223182,
+        "degraded": false,
+        "warnings": [
+          "高拥挤，仅观察回调，不追高",
+          "拥挤加速"
+        ]
+      },
+      "core_heat": 33.35089289999999,
+      "sector_heat": 35.937669717999995,
+      "warnings": [
+        "高拥挤，仅观察回调，不追高",
+        "拥挤加速"
+      ],
+      "degraded_reasons": [
+        "非趋势分项存在缺失，按50分处理"
+      ],
+      "severe_crowding_can_remain": false
+    }
+  ]
+}

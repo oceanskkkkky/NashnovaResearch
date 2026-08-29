@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.1",
+  "as_of_date": "2026-08-28",
+  "scope": {
+    "eligible_sectors": [],
+    "candidate_pool_count": 0,
+    "deep_verification_count_planned": 0
+  },
+  "methodology": {
+    "sector_gate": "SectorHeat>=65，严重拥挤板块还需SectorHeat>=70且R>=50",
+    "stock_gate": "中性市场FinalScore>=68且置信度>=75%"
+  },
+  "candidate_pool": [],
+  "deep_verified": [],
+  "selected": [],
+  "zero_recommendation_reason": "29行业完整横截面中没有行业达到65分门槛，因此不建立个股候选池，不强行凑股。"
+}

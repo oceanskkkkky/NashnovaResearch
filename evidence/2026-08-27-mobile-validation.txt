@@ -1,0 +1,11 @@
+format=mobile
+visible_units=766
+estimated_minutes=2.4
+all_text_units=805
+almanac_mentions=2
+emoji_count=0
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細绉诲姩绔鏋?
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細绉诲姩绔巻瀛楀嵃绔?
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細绉诲姩绔繁澧ㄧ豢璁捐浠ょ墝
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細绉诲姩绔噾鑹茶璁′护鐗?
+FAIL: 缂哄皯蹇呴渶鏍忕洰id锛歝over, methodology

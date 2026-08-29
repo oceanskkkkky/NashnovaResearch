@@ -4,3 +4,5 @@ outputs/_t*.py
 outputs/xhs-*.png
 outputs/xhs-confirm.txt
 outputs/xhs-dom.log
+**/__pycache__/
+*.py[cod]

@@ -1,0 +1,383 @@
+{
+  "schema": "MarketEnvironmentDeterministicScore/v1",
+  "as_of_date": "2026-08-25",
+  "timezone": "Asia/Shanghai",
+  "market_phase": "盘后",
+  "score_type": "确定性评分",
+  "input_file": "E:/WS/NashnovaResearch/evidence/2026-08-25-market-raw.json",
+  "scoring_spec": "E:/WS/NashnovaResearch/.workbuddy/skills/stock-almanac-daily/references/scoring.md",
+  "method": {
+    "formula": "30%×指数与风格趋势 + 25%×市场宽度和情绪 + 20%×成交与流动性 + 15%×国内宏观流动性 + 10%×全球风险",
+    "normalization": "所有分项为0-100；缺失但本应可用的叶子项按中性50分，并降低置信度；过期数据视为缺失。",
+    "rounding": "分项、加权贡献和总分均保留1位小数。",
+    "market_state_mapping": {
+      ">=65": "进攻",
+      "45-64.9": "中性",
+      "<45": "防守"
+    }
+  },
+  "dimensions": [
+    {
+      "id": "index_style_trend",
+      "name": "指数与风格趋势",
+      "weight": 0.3,
+      "score": 43.0,
+      "weighted_contribution": 12.9,
+      "status": "偏弱，短期回撤但20日尚有正收益，小盘中期相对占优",
+      "leaf_scores": [
+        {
+          "name": "上证指数趋势",
+          "score": 44.0,
+          "basis": "收盘3889.44，日涨0.19%；5日-2.53%、20日+2.00%、60日-4.15%；收盘低于MA20 3898.271和MA60 3964.4572。"
+        },
+        {
+          "name": "深证成指趋势",
+          "score": 43.0,
+          "basis": "收盘13745.87，日跌0.35%；5日-6.00%、20日+1.75%、60日-10.39%。原始证据未提供深证成指MA20/60。"
+        },
+        {
+          "name": "创业板指趋势",
+          "score": 39.0,
+          "basis": "收盘3397.52，日跌1.00%；5日-8.31%、20日+2.12%、60日-14.01%。原始证据未提供创业板指MA20/60。"
+        },
+        {
+          "name": "大小盘相对强弱",
+          "score": 49.0,
+          "basis": "中证1000相对沪深300：5日-1.59个百分点、10日+0.18个百分点、20日+7.51个百分点、60日-3.77个百分点；中期小盘占优但短期和60日并不一致。"
+        },
+        {
+          "name": "成长价值相对强弱",
+          "score": 43.0,
+          "basis": "全指成长相对全指价值：5日-6.38个百分点、10日-3.86个百分点、20日+1.68个百分点、60日-1.15个百分点；短期价值明显占优。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "WeStock market-overview interval",
+          "date": "2026-08-25",
+          "fields": [
+            "CHG_5D/20D/60D_SZZS",
+            "CHG_5D/20D/60D_SZCZ",
+            "CHG_5D/20D/60D_CYBZ"
+          ]
+        },
+        {
+          "source": "WeStock market-overview technical",
+          "date": "2026-08-25",
+          "fields": [
+            "上证指数 close=3889.44",
+            "MA20=3898.271",
+            "MA60=3964.4572"
+          ]
+        },
+        {
+          "source": "WeStock market-overview rotation",
+          "date": "2026-08-25",
+          "fields": [
+            "沪深300/中证1000/全指成长/全指价值的5日、10日、20日、60日收益"
+          ]
+        }
+      ],
+      "missing_items": [
+        "深证成指MA20、MA60及斜率",
+        "创业板指MA20、MA60及斜率",
+        "三大指数MA20/60历史斜率"
+      ],
+      "degradation": "深证成指和创业板指缺失MA20/60时，不推断均线位置；相应叶子评分仅依据日、5日、20日、60日收益，缺失信息按中性50的原则约束评分上限。"
+    },
+    {
+      "id": "breadth_sentiment",
+      "name": "市场宽度和情绪",
+      "weight": 0.25,
+      "score": 76.0,
+      "weighted_contribution": 19.0,
+      "status": "单日普涨、涨停显著多于跌停，但多周期新低结构仍偏弱",
+      "leaf_scores": [
+        {
+          "name": "上涨占比",
+          "score": 88.0,
+          "basis": "上涨4234家、下跌1245家、平盘71家，总数5550家；上涨占比76.29%，涨跌比3.40。"
+        },
+        {
+          "name": "涨跌停结构",
+          "score": 82.0,
+          "basis": "带日期market-overview口径为涨停66家、跌停1家；盘后changedist复核为涨停70家、跌停4家，方向一致但供应商口径有差异。"
+        },
+        {
+          "name": "新高新低结构",
+          "score": 48.0,
+          "basis": "5日新高1325/新低2106，10日620/1871，20日461/472，60日95/82，120日28/68，250日21/54；短周期新低明显多于新高，20日接近平衡。"
+        },
+        {
+          "name": "连板与题材情绪",
+          "score": 78.0,
+          "basis": "hithink涨停池65只，最高5连板，另有4连板、3连板梯队；情绪活跃，但统计池与全市场涨停数存在口径差异。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "WeStock market-overview updown",
+          "date": "2026-08-25",
+          "fields": [
+            "CNT_RED=4234",
+            "CNT_GREEN=1245",
+            "CNT_TOTAL=5550",
+            "RATIO_UP=76.29",
+            "RATIO_UPDOWN=3.4",
+            "各周期新高新低数",
+            "涨停66",
+            "跌停1"
+          ]
+        },
+        {
+          "source": "WeStock changedist",
+          "queried_at": "2026-08-25T21:42:25+08:00",
+          "fields": [
+            "upCount=4234",
+            "downCount=1246",
+            "upLimitCount=70",
+            "downLimitCount=4"
+          ]
+        },
+        {
+          "source": "hithink-finance limit-up-pool",
+          "date": "2026-08-25",
+          "fields": [
+            "pool_count=65",
+            "highest_continue_day=5"
+          ]
+        }
+      ],
+      "missing_items": [
+        "昨日涨停股次日收益和晋级率的同口径完整时间序列",
+        "炸板率的结构化原始字段"
+      ],
+      "degradation": "主评分采用带目标日期的market-overview；changedist仅作盘后实时复核，涨跌停口径冲突不取平均、不静默合并。缺失的炸板率和连续情绪时间序列不作正向推断。"
+    },
+    {
+      "id": "turnover_liquidity",
+      "name": "成交与流动性",
+      "weight": 0.2,
+      "score": 42.0,
+      "weighted_contribution": 8.4,
+      "status": "成交绝对额较高但相对多周期均值明显缩量，量能确认不足",
+      "leaf_scores": [
+        {
+          "name": "两市成交额相对20日均值",
+          "score": 40.0,
+          "basis": "两市成交额18318.44亿元，为20日均值23016.312亿元的79.59%。"
+        },
+        {
+          "name": "短周期量能",
+          "score": 46.0,
+          "basis": "当日成交额为5日均值的88.85%、10日均值的83.48%，且较前一交易日减少1756.12亿元。"
+        },
+        {
+          "name": "中长周期量能",
+          "score": 36.0,
+          "basis": "当日成交额为60日均值的67.42%、120日均值的69.33%、250日均值的74.18%。"
+        },
+        {
+          "name": "价格与量能配合",
+          "score": 46.0,
+          "basis": "上证小涨0.19%，深证和创业板分别下跌0.35%、1.00%，同时全市场76.29%个股上涨；属于缩量结构性修复，未触发‘放量下跌最高55分’，但也缺少趋势确认。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "WeStock market-overview trade",
+          "date": "2026-08-25",
+          "fields": [
+            "MONEY=18318.44亿元",
+            "MONEY_5DAVG_RATIO=88.85%",
+            "MONEY_10DAVG_RATIO=83.48%",
+            "MONEY_20DAVG_RATIO=79.59%",
+            "MONEY_60DAVG_RATIO=67.42%",
+            "MONEY_120DAVG_RATIO=69.33%",
+            "MONEY_250DAVG_RATIO=74.18%"
+          ]
+        },
+        {
+          "source": "WeStock changedist",
+          "queried_at": "2026-08-25T21:42:25+08:00",
+          "fields": [
+            "amountChange=-175611938216.11768元"
+          ]
+        }
+      ],
+      "missing_items": [
+        "全市场换手率及其历史分位",
+        "分市场或分风格成交占比变化"
+      ],
+      "degradation": "评分严格锚定两市成交额相对20日均值，并用5/10/60/120/250日均值做一致性复核；缺失换手率和成交结构时不额外加分。"
+    },
+    {
+      "id": "domestic_macro_liquidity",
+      "name": "国内宏观流动性",
+      "weight": 0.15,
+      "score": 56.0,
+      "weighted_contribution": 8.4,
+      "status": "资金成本偏低、M2与社融存量温和增长，但M1偏弱且新增社融同比下降",
+      "leaf_scores": [
+        {
+          "name": "货币供应",
+          "score": 53.0,
+          "basis": "2026年7月M1同比4.0%、M2同比7.7%，M1-M2剪刀差-3.7个百分点，流动性总量尚可但企业活期资金活化偏弱。"
+        },
+        {
+          "name": "社融",
+          "score": 51.0,
+          "basis": "2026年7月社融存量同比7.4%，但当月新增社融同比-7.251089%，存量稳定、增量偏弱。"
+        },
+        {
+          "name": "资金成本",
+          "score": 68.0,
+          "basis": "截至2026-08-24，DR007 1.43%、R007 1.45%、Shibor隔夜1.419%、Shibor 1周1.432%，短端资金成本偏低。"
+        },
+        {
+          "name": "两融",
+          "score": 50.0,
+          "basis": "目标日结构化两融行row=null，按规范以中性50分处理。"
+        },
+        {
+          "name": "股债风险溢价",
+          "score": 50.0,
+          "basis": "虽有中证全指PE与10年国债收益率，但规范所需的股债风险溢价历史分位缺失，按中性50分处理。"
+        }
+      ],
+      "evidence": [
+        {
+          "source": "WeStock macro indicator cn_core",
+          "period": "2026-07",
+          "released_at": "2026-08-14",
+          "fields": [
+            "M1同比=4.0%",
+            "M2同比=7.7%",
+            "M1-M2=-3.7个百分点",
+            "社融存量同比=7.4%",
+            "新增社融同比=-7.251089%"
+          ]
+        },
+        {
+          "source": "WeStock macro indicator cn_core",
+          "date": "2026-08-24",
+          "fields": [
+            "DR007=1.43%",
+            "R007=1.45%",
+            "Shibor隔夜=1.419%",
+            "Shibor 1周=1.432%",
+            "10年国债收益率=1.6784%"
+          ]
+        },
+        {
+          "source": "WeStock market-overview margin",
+          "date": "2026-08-25",
+          "fields": [
+            "row=null"
+          ]
+        }
+      ],
+      "missing_items": [
+        "2026-08-25目标日两融余额多周期变动",
+        "股债风险溢价及历史分位",
+        "公开市场净投放/净回笼的目标日完整口径"
+      ],
+      "degradation": "两融和股债风险溢价均为规范明确要求但原始证据缺失的叶子项，各按50分；宏观月度数据采用截至评分日最新已发布的2026年7月数据，不将其误表述为8月数据。"
+    },
+    {
+      "id": "global_risk",
+      "name": "全球风险",
+      "weight": 0.1,
+      "score": 50.0,
+      "weighted_contribution": 5.0,
+      "status": "关键全球风险指标缺失，按中性降级",
+      "leaf_scores": [
+        {
+          "name": "VIX",
+          "score": 50.0,
+          "basis": "原始证据未覆盖，按中性50分。"
+        },
+        {
+          "name": "美元指数",
+          "score": 50.0,
+          "basis": "原始证据未覆盖，按中性50分。"
+        },
+        {
+          "name": "美债利率",
+          "score": 50.0,
+          "basis": "原始证据未覆盖，按中性50分。"
+        },
+        {
+          "name": "海外指数",
+          "score": 50.0,
+          "basis": "原始证据未提供可审计的海外指数收盘或同一时点行情，按中性50分。"
+        },
+        {
+          "name": "对A股有明确传导的全球事件",
+          "score": 50.0,
+          "basis": "原始证据未保存可审计、可定量映射的事件字段，按中性50分。"
+        }
+      ],
+      "evidence": [],
+      "missing_items": [
+        "VIX",
+        "美元指数DXY",
+        "美国国债收益率",
+        "主要海外指数的对齐时点表现",
+        "可验证且对A股有明确传导的全球事件"
+      ],
+      "degradation": "全球风险维度全部叶子项缺失，依据评分规范统一按中性50分计入，不将缺失解释为低风险或高风险；该维度有效权重为0。"
+    }
+  ],
+  "result": {
+    "total_score": 53.7,
+    "calculation": "0.30×43.0 + 0.25×76.0 + 0.20×42.0 + 0.15×56.0 + 0.10×50.0 = 53.7",
+    "market_state": "中性",
+    "summary": "短期指数与量能偏弱，单日市场宽度和题材情绪较强，国内资金成本提供一定支撑；全球风险指标缺失并按中性处理。"
+  },
+  "missing_items_summary": [
+    "深证成指和创业板指MA20/60及斜率",
+    "炸板率和连续情绪时间序列",
+    "全市场换手率及成交结构",
+    "目标日两融余额多周期变动",
+    "股债风险溢价历史分位",
+    "VIX、DXY、美债利率、海外指数和全球事件结构化证据"
+  ],
+  "degradation_summary": [
+    "缺失但应可用的叶子项按中性50分，不补造数据。",
+    "供应商口径冲突分别保留，主证据优先采用带目标日期的数据，不取未经依据的平均值。",
+    "过期或错日数据不用于目标日评分。",
+    "全球风险维度因全部关键叶子项缺失，维度分固定为50且不贡献有效置信权重。"
+  ],
+  "confidence": {
+    "effective_weight_pct": 72.5,
+    "grade": "C",
+    "method": "按各维度中时点合格且有效叶子指标占该维度评分结构的比例估算，再乘维度理论权重；指数与风格80%、宽度与情绪90%、成交与流动性85%、国内宏观流动性60%、全球风险0%。",
+    "calculation": "30%×80% + 25%×90% + 20%×85% + 15%×60% + 10%×0% = 72.5%。",
+    "caveat": "置信度为覆盖率估算，不是行情预测概率；全球风险完全缺失是主要限制。"
+  },
+  "data_quality": {
+    "trade_date_confirmed": true,
+    "market_data_through_close": true,
+    "primary_data_generated_at": "2026-08-25T21:42:21+08:00",
+    "conflicts": [
+      {
+        "topic": "涨跌停家数",
+        "dated_market_overview": "涨停66、跌停1",
+        "realtime_changedist": "涨停70、跌停4",
+        "hithink_limit_up_pool": "涨停池65",
+        "handling": "评分方向判断一致；主证据采用带目标日期的market-overview，其余作为口径复核。"
+      }
+    ],
+    "excluded_stale_data": [
+      "hithink-finance龙虎榜trade_date=2026-08-24，未作为2026-08-25当日证据"
+    ],
+    "no_fabrication": true
+  },
+  "research_verification": {
+    "agentic_search_used": true,
+    "purpose": "核验2026-08-25盘后A股市场宽度、成交额、涨跌停及两融情绪描述。",
+    "handling": "外部检索仅用于交叉核验；评分数值优先取输入JSON中可审计的结构化字段。",
+    "source_note": "外部媒体及第三方数据均属非一手来源，需核实原文。"
+  }
+}

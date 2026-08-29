@@ -1,0 +1,1982 @@
+{
+  "as_of_date": "2026-08-24",
+  "generated_at": "2026-08-24T21:48:57+08:00",
+  "method": "sector_input_v2_data_engineering",
+  "sectors": [
+    {
+      "name": "贵金属",
+      "code": "pt01801053",
+      "return_1d": 1.376792,
+      "return_5d": 13.734438,
+      "return_20d": 31.569909,
+      "flow_1d": 0.0050634984,
+      "flow_5d": 0.0406631729,
+      "flow_20d": 0.0102466082,
+      "breadth": 63.636364,
+      "attention": 67.857143,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 92.116183,
+      "turnover_pct": 87.551867,
+      "share_pct": 92.116183,
+      "crowding_5d_ago": 79.823651,
+      "data_quality": {
+        "constituent_count": 11,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 11,
+            "expected_stock_days": 11,
+            "coverage": 1.0,
+            "net_flow_sum": 195762140.0,
+            "sector_amount_sum": 38661440000.0
+          },
+          "5": {
+            "observed_stock_days": 53,
+            "expected_stock_days": 55,
+            "coverage": 0.963636,
+            "net_flow_sum": 5351385788.82,
+            "sector_amount_sum": 131602760000.0
+          },
+          "20": {
+            "observed_stock_days": 218,
+            "expected_stock_days": 220,
+            "coverage": 0.990909,
+            "net_flow_sum": 4213651414.2,
+            "sector_amount_sum": 411224020000.0
+          }
+        },
+        "breadth": {
+          "observed": 11,
+          "expected": 11,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "焦炭Ⅱ",
+      "code": "pt01801952",
+      "return_1d": 5.392268,
+      "return_5d": 6.855752,
+      "return_20d": 10.667848,
+      "flow_1d": 0.1368249318,
+      "flow_5d": 0.0709787947,
+      "flow_20d": 0.0315739075,
+      "breadth": 71.428571,
+      "attention": 7.142857,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 85.062241,
+      "turnover_pct": 75.518672,
+      "share_pct": 66.804979,
+      "crowding_5d_ago": 36.032158,
+      "data_quality": {
+        "constituent_count": 7,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 7,
+            "expected_stock_days": 7,
+            "coverage": 1.0,
+            "net_flow_sum": 333553187.0,
+            "sector_amount_sum": 2437810000.0
+          },
+          "5": {
+            "observed_stock_days": 35,
+            "expected_stock_days": 35,
+            "coverage": 1.0,
+            "net_flow_sum": 790368043.02,
+            "sector_amount_sum": 11135270000.0
+          },
+          "20": {
+            "observed_stock_days": 140,
+            "expected_stock_days": 140,
+            "coverage": 1.0,
+            "net_flow_sum": 728053893.5,
+            "sector_amount_sum": 23058720000.0
+          }
+        },
+        "breadth": {
+          "observed": 7,
+          "expected": 7,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "煤炭开采",
+      "code": "pt01801951",
+      "return_1d": 2.16912,
+      "return_5d": 4.492676,
+      "return_20d": 8.433628,
+      "flow_1d": 0.038132467,
+      "flow_5d": 0.0118936633,
+      "flow_20d": 0.0024439441,
+      "breadth": 88.461538,
+      "attention": 42.857143,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 90.871369,
+      "turnover_pct": 28.838174,
+      "share_pct": 61.410788,
+      "crowding_5d_ago": 43.589212,
+      "data_quality": {
+        "constituent_count": 26,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 26,
+            "expected_stock_days": 26,
+            "coverage": 1.0,
+            "net_flow_sum": 544985024.0,
+            "sector_amount_sum": 14291890000.0
+          },
+          "5": {
+            "observed_stock_days": 130,
+            "expected_stock_days": 130,
+            "coverage": 1.0,
+            "net_flow_sum": 710934208.64,
+            "sector_amount_sum": 59774200000.0
+          },
+          "20": {
+            "observed_stock_days": 520,
+            "expected_stock_days": 520,
+            "coverage": 1.0,
+            "net_flow_sum": 535369240.57,
+            "sector_amount_sum": 219059530000.0
+          }
+        },
+        "breadth": {
+          "observed": 26,
+          "expected": 26,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "种植业",
+      "code": "pt01801016",
+      "return_1d": 2.063428,
+      "return_5d": 5.274364,
+      "return_20d": 14.223884,
+      "flow_1d": 0.0321168006,
+      "flow_5d": 0.0272904037,
+      "flow_20d": 0.0138678918,
+      "breadth": 65.0,
+      "attention": 39.285714,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 82.157676,
+      "turnover_pct": 98.755187,
+      "share_pct": 98.755187,
+      "crowding_5d_ago": 57.525934,
+      "data_quality": {
+        "constituent_count": 22,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 20,
+            "expected_stock_days": 22,
+            "coverage": 0.909091,
+            "net_flow_sum": 288363585.0,
+            "sector_amount_sum": 8978590000.0
+          },
+          "5": {
+            "observed_stock_days": 100,
+            "expected_stock_days": 110,
+            "coverage": 0.909091,
+            "net_flow_sum": 1592991899.33,
+            "sector_amount_sum": 58371870000.0
+          },
+          "20": {
+            "observed_stock_days": 400,
+            "expected_stock_days": 440,
+            "coverage": 0.909091,
+            "net_flow_sum": 1479055869.36,
+            "sector_amount_sum": 106653260000.0
+          }
+        },
+        "breadth": {
+          "observed": 20,
+          "expected": 22,
+          "coverage": 0.909091
+        },
+        "anomalies": [
+          "2只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "保险Ⅱ",
+      "code": "pt01801194",
+      "return_1d": 2.57874,
+      "return_5d": 4.79009,
+      "return_20d": 0.811788,
+      "flow_1d": 0.0084961721,
+      "flow_5d": 0.013760682,
+      "flow_20d": -0.018681615,
+      "breadth": 100.0,
+      "attention": 32.142857,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 80.497925,
+      "turnover_pct": 41.493776,
+      "share_pct": 49.792531,
+      "crowding_5d_ago": 21.792012,
+      "data_quality": {
+        "constituent_count": 5,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 5,
+            "expected_stock_days": 5,
+            "coverage": 1.0,
+            "net_flow_sum": 107449474.0,
+            "sector_amount_sum": 12646810000.0
+          },
+          "5": {
+            "observed_stock_days": 25,
+            "expected_stock_days": 25,
+            "coverage": 1.0,
+            "net_flow_sum": 566679194.27,
+            "sector_amount_sum": 41181040000.0
+          },
+          "20": {
+            "observed_stock_days": 100,
+            "expected_stock_days": 100,
+            "coverage": 1.0,
+            "net_flow_sum": -3056032931.63,
+            "sector_amount_sum": 163585050000.0
+          }
+        },
+        "breadth": {
+          "observed": 5,
+          "expected": 5,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "农商行Ⅱ",
+      "code": "pt01801785",
+      "return_1d": 2.029941,
+      "return_5d": 4.014172,
+      "return_20d": 3.967786,
+      "flow_1d": -0.0038407759,
+      "flow_5d": 0.0061532353,
+      "flow_20d": 0.0093291456,
+      "breadth": 100.0,
+      "attention": 3.571429,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 98.340249,
+      "turnover_pct": 71.161826,
+      "share_pct": 63.900415,
+      "crowding_5d_ago": 43.848548,
+      "data_quality": {
+        "constituent_count": 10,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 10,
+            "expected_stock_days": 10,
+            "coverage": 1.0,
+            "net_flow_sum": -8813006.0,
+            "sector_amount_sum": 2294590000.0
+          },
+          "5": {
+            "observed_stock_days": 50,
+            "expected_stock_days": 50,
+            "coverage": 1.0,
+            "net_flow_sum": 57837704.07,
+            "sector_amount_sum": 9399560000.0
+          },
+          "20": {
+            "observed_stock_days": 200,
+            "expected_stock_days": 200,
+            "coverage": 1.0,
+            "net_flow_sum": 372871956.71,
+            "sector_amount_sum": 39968500000.0
+          }
+        },
+        "breadth": {
+          "observed": 10,
+          "expected": 10,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "白酒Ⅱ",
+      "code": "pt01801125",
+      "return_1d": 1.729959,
+      "return_5d": -0.178079,
+      "return_20d": 0.514526,
+      "flow_1d": -0.008505882,
+      "flow_5d": -0.0425273011,
+      "flow_20d": -0.0115847742,
+      "breadth": 57.894737,
+      "attention": 35.714286,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 64.315353,
+      "turnover_pct": 40.871369,
+      "share_pct": 27.385892,
+      "crowding_5d_ago": 71.441909,
+      "data_quality": {
+        "constituent_count": 19,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 19,
+            "expected_stock_days": 19,
+            "coverage": 1.0,
+            "net_flow_sum": -99932545.0,
+            "sector_amount_sum": 11748640000.0
+          },
+          "5": {
+            "observed_stock_days": 95,
+            "expected_stock_days": 95,
+            "coverage": 1.0,
+            "net_flow_sum": -2151818918.89,
+            "sector_amount_sum": 50598530000.0
+          },
+          "20": {
+            "observed_stock_days": 380,
+            "expected_stock_days": 380,
+            "coverage": 1.0,
+            "net_flow_sum": -3424219331.02,
+            "sector_amount_sum": 295579290000.0
+          }
+        },
+        "breadth": {
+          "observed": 19,
+          "expected": 19,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "工业金属",
+      "code": "pt01801055",
+      "return_1d": 0.413445,
+      "return_5d": 0.667776,
+      "return_20d": 7.511098,
+      "flow_1d": 0.0195301331,
+      "flow_5d": 0.0146720084,
+      "flow_20d": -0.0038100318,
+      "breadth": 59.322034,
+      "attention": 85.714286,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 58.506224,
+      "turnover_pct": 16.59751,
+      "share_pct": 56.846473,
+      "crowding_5d_ago": 51.037344,
+      "data_quality": {
+        "constituent_count": 60,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 59,
+            "expected_stock_days": 60,
+            "coverage": 0.983333,
+            "net_flow_sum": 1313574489.0,
+            "sector_amount_sum": 67258860000.0
+          },
+          "5": {
+            "observed_stock_days": 295,
+            "expected_stock_days": 300,
+            "coverage": 0.983333,
+            "net_flow_sum": 4032176014.63,
+            "sector_amount_sum": 274821000000.0
+          },
+          "20": {
+            "observed_stock_days": 1180,
+            "expected_stock_days": 1200,
+            "coverage": 0.983333,
+            "net_flow_sum": -4284761163.93,
+            "sector_amount_sum": 1124599850000.0
+          }
+        },
+        "breadth": {
+          "observed": 59,
+          "expected": 60,
+          "coverage": 0.983333
+        },
+        "anomalies": [
+          "1只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "化学原料",
+      "code": "pt01801033",
+      "return_1d": -0.864836,
+      "return_5d": -0.802056,
+      "return_20d": 3.094277,
+      "flow_1d": 0.0223592086,
+      "flow_5d": 0.0171525025,
+      "flow_20d": 0.0001353783,
+      "breadth": 42.105263,
+      "attention": 53.571429,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 50.622407,
+      "turnover_pct": 30.290456,
+      "share_pct": 74.688797,
+      "crowding_5d_ago": 46.400415,
+      "data_quality": {
+        "constituent_count": 59,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 57,
+            "expected_stock_days": 59,
+            "coverage": 0.966102,
+            "net_flow_sum": 420369667.0,
+            "sector_amount_sum": 18800740000.0
+          },
+          "5": {
+            "observed_stock_days": 285,
+            "expected_stock_days": 295,
+            "coverage": 0.966102,
+            "net_flow_sum": 1590614502.09,
+            "sector_amount_sum": 92733670000.0
+          },
+          "20": {
+            "observed_stock_days": 1140,
+            "expected_stock_days": 1180,
+            "coverage": 0.966102,
+            "net_flow_sum": 44469426.24,
+            "sector_amount_sum": 328482680000.0
+          }
+        },
+        "breadth": {
+          "observed": 57,
+          "expected": 59,
+          "coverage": 0.966102
+        },
+        "anomalies": [
+          "2只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "半导体",
+      "code": "pt01801081",
+      "return_1d": -3.130424,
+      "return_5d": -10.572219,
+      "return_20d": -8.923495,
+      "flow_1d": -0.0648325347,
+      "flow_5d": -0.0447263253,
+      "flow_20d": -0.0133677303,
+      "breadth": 19.444444,
+      "attention": 100.0,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 10.373444,
+      "turnover_pct": 50.207469,
+      "share_pct": 80.912863,
+      "crowding_5d_ago": 63.350622,
+      "data_quality": {
+        "constituent_count": 186,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 180,
+            "expected_stock_days": 186,
+            "coverage": 0.967742,
+            "net_flow_sum": -18097450327.0,
+            "sector_amount_sum": 279141490000.0
+          },
+          "5": {
+            "observed_stock_days": 900,
+            "expected_stock_days": 930,
+            "coverage": 0.967742,
+            "net_flow_sum": -71740704620.0,
+            "sector_amount_sum": 1603992820000.0
+          },
+          "20": {
+            "observed_stock_days": 3591,
+            "expected_stock_days": 3720,
+            "coverage": 0.965323,
+            "net_flow_sum": -93255497211.59,
+            "sector_amount_sum": 6976165370000.0
+          }
+        },
+        "breadth": {
+          "observed": 180,
+          "expected": 186,
+          "coverage": 0.967742
+        },
+        "anomalies": [
+          "6只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "通信设备",
+      "code": "pt01801102",
+      "return_1d": -5.207303,
+      "return_5d": -10.301728,
+      "return_20d": -6.431718,
+      "flow_1d": -0.0821515577,
+      "flow_5d": -0.0475976564,
+      "flow_20d": -0.0072959928,
+      "breadth": 21.176471,
+      "attention": 96.428571,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 14.522822,
+      "turnover_pct": 30.290456,
+      "share_pct": 87.966805,
+      "crowding_5d_ago": 66.623444,
+      "data_quality": {
+        "constituent_count": 89,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 85,
+            "expected_stock_days": 89,
+            "coverage": 0.955056,
+            "net_flow_sum": -13956595059.0,
+            "sector_amount_sum": 169888380000.0
+          },
+          "5": {
+            "observed_stock_days": 425,
+            "expected_stock_days": 445,
+            "coverage": 0.955056,
+            "net_flow_sum": -40291210975.13,
+            "sector_amount_sum": 846495690000.0
+          },
+          "20": {
+            "observed_stock_days": 1696,
+            "expected_stock_days": 1780,
+            "coverage": 0.952809,
+            "net_flow_sum": -26522297728.33,
+            "sector_amount_sum": 3635186930000.0
+          }
+        },
+        "breadth": {
+          "observed": 85,
+          "expected": 89,
+          "coverage": 0.955056
+        },
+        "anomalies": [
+          "4只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "生物制品",
+      "code": "pt01801152",
+      "return_1d": -4.750106,
+      "return_5d": -5.044159,
+      "return_20d": 3.893048,
+      "flow_1d": -0.0367864462,
+      "flow_5d": -0.0053873556,
+      "flow_20d": -0.004571327,
+      "breadth": 3.921569,
+      "attention": 60.714286,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 60.165975,
+      "turnover_pct": 100.0,
+      "share_pct": 100.0,
+      "crowding_5d_ago": 95.194502,
+      "data_quality": {
+        "constituent_count": 55,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 51,
+            "expected_stock_days": 55,
+            "coverage": 0.927273,
+            "net_flow_sum": -880341227.0,
+            "sector_amount_sum": 23931130000.0
+          },
+          "5": {
+            "observed_stock_days": 255,
+            "expected_stock_days": 275,
+            "coverage": 0.927273,
+            "net_flow_sum": -655208570.89,
+            "sector_amount_sum": 121619700000.0
+          },
+          "20": {
+            "observed_stock_days": 1020,
+            "expected_stock_days": 1100,
+            "coverage": 0.927273,
+            "net_flow_sum": -1534275990.66,
+            "sector_amount_sum": 335630330000.0
+          }
+        },
+        "breadth": {
+          "observed": 51,
+          "expected": 55,
+          "coverage": 0.927273
+        },
+        "anomalies": [
+          "4只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "普钢",
+      "code": "pt01801044",
+      "return_1d": 1.512,
+      "return_5d": 0.483318,
+      "return_20d": 1.072173,
+      "flow_1d": 0.0425986515,
+      "flow_5d": -0.0202874929,
+      "flow_20d": -0.0144084465,
+      "breadth": 63.636364,
+      "attention": 10.714286,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 63.070539,
+      "turnover_pct": 1.244813,
+      "share_pct": 9.128631,
+      "crowding_5d_ago": 28.667012,
+      "data_quality": {
+        "constituent_count": 22,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 22,
+            "expected_stock_days": 22,
+            "coverage": 1.0,
+            "net_flow_sum": 183665364.0,
+            "sector_amount_sum": 4311530000.0
+          },
+          "5": {
+            "observed_stock_days": 110,
+            "expected_stock_days": 110,
+            "coverage": 1.0,
+            "net_flow_sum": -339709199.28,
+            "sector_amount_sum": 16744760000.0
+          },
+          "20": {
+            "observed_stock_days": 440,
+            "expected_stock_days": 440,
+            "coverage": 1.0,
+            "net_flow_sum": -1178261084.15,
+            "sector_amount_sum": 81775720000.0
+          }
+        },
+        "breadth": {
+          "observed": 22,
+          "expected": 22,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "水泥",
+      "code": "pt01801711",
+      "return_1d": 0.771507,
+      "return_5d": -0.011614,
+      "return_20d": 3.780097,
+      "flow_1d": 0.0020221872,
+      "flow_5d": -0.0040762844,
+      "flow_20d": -0.0102526174,
+      "breadth": 42.857143,
+      "attention": 0.0,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 66.804979,
+      "turnover_pct": 0.0,
+      "share_pct": 1.659751,
+      "crowding_5d_ago": 37.645228,
+      "data_quality": {
+        "constituent_count": 21,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 21,
+            "expected_stock_days": 21,
+            "coverage": 1.0,
+            "net_flow_sum": 4450106.0,
+            "sector_amount_sum": 2200640000.0
+          },
+          "5": {
+            "observed_stock_days": 105,
+            "expected_stock_days": 105,
+            "coverage": 1.0,
+            "net_flow_sum": -37692953.5,
+            "sector_amount_sum": 9246890000.0
+          },
+          "20": {
+            "observed_stock_days": 420,
+            "expected_stock_days": 420,
+            "coverage": 1.0,
+            "net_flow_sum": -517439860.68,
+            "sector_amount_sum": 50469050000.0
+          }
+        },
+        "breadth": {
+          "observed": 21,
+          "expected": 21,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "工程机械",
+      "code": "pt01801077",
+      "return_1d": -0.677217,
+      "return_5d": -1.618167,
+      "return_20d": -3.535072,
+      "flow_1d": -0.0012996568,
+      "flow_5d": -0.0196233038,
+      "flow_20d": -0.0161678903,
+      "breadth": 25.0,
+      "attention": 21.428571,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 13.278008,
+      "turnover_pct": 0.0,
+      "share_pct": 0.414938,
+      "crowding_5d_ago": 14.424274,
+      "data_quality": {
+        "constituent_count": 35,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 28,
+            "expected_stock_days": 35,
+            "coverage": 0.8,
+            "net_flow_sum": -6991153.0,
+            "sector_amount_sum": 5379230000.0
+          },
+          "5": {
+            "observed_stock_days": 136,
+            "expected_stock_days": 175,
+            "coverage": 0.777143,
+            "net_flow_sum": -534456770.86,
+            "sector_amount_sum": 27235820000.0
+          },
+          "20": {
+            "observed_stock_days": 551,
+            "expected_stock_days": 700,
+            "coverage": 0.787143,
+            "net_flow_sum": -2212070220.36,
+            "sector_amount_sum": 136818730000.0
+          }
+        },
+        "breadth": {
+          "observed": 28,
+          "expected": 35,
+          "coverage": 0.8
+        },
+        "anomalies": [
+          "7只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "房地产开发",
+      "code": "pt01801181",
+      "return_1d": -1.54332,
+      "return_5d": -3.898651,
+      "return_20d": 3.278107,
+      "flow_1d": 0.0238034426,
+      "flow_5d": -0.0061488221,
+      "flow_20d": -0.0084878928,
+      "breadth": 13.253012,
+      "attention": 50.0,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 40.6639,
+      "turnover_pct": 18.879668,
+      "share_pct": 21.576763,
+      "crowding_5d_ago": 55.321577,
+      "data_quality": {
+        "constituent_count": 83,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 83,
+            "expected_stock_days": 83,
+            "coverage": 1.0,
+            "net_flow_sum": 287325167.0,
+            "sector_amount_sum": 12070740000.0
+          },
+          "5": {
+            "observed_stock_days": 415,
+            "expected_stock_days": 415,
+            "coverage": 1.0,
+            "net_flow_sum": -440594710.67,
+            "sector_amount_sum": 71655140000.0
+          },
+          "20": {
+            "observed_stock_days": 1655,
+            "expected_stock_days": 1660,
+            "coverage": 0.996988,
+            "net_flow_sum": -2533154991.23,
+            "sector_amount_sum": 298443330000.0
+          }
+        },
+        "breadth": {
+          "observed": 83,
+          "expected": 83,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "炼化及贸易",
+      "code": "pt01801963",
+      "return_1d": -0.194928,
+      "return_5d": 5.105081,
+      "return_20d": 8.58086,
+      "flow_1d": 0.0085069417,
+      "flow_5d": 0.0144102758,
+      "flow_20d": -0.0016280395,
+      "breadth": 30.0,
+      "attention": 46.428571,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 87.551867,
+      "turnover_pct": 63.070539,
+      "share_pct": 83.817427,
+      "crowding_5d_ago": 43.752593,
+      "data_quality": {
+        "constituent_count": 30,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 30,
+            "expected_stock_days": 30,
+            "coverage": 1.0,
+            "net_flow_sum": 119693690.0,
+            "sector_amount_sum": 14070120000.0
+          },
+          "5": {
+            "observed_stock_days": 150,
+            "expected_stock_days": 150,
+            "coverage": 1.0,
+            "net_flow_sum": 863023057.76,
+            "sector_amount_sum": 59889420000.0
+          },
+          "20": {
+            "observed_stock_days": 600,
+            "expected_stock_days": 600,
+            "coverage": 1.0,
+            "net_flow_sum": -311464489.97,
+            "sector_amount_sum": 191312610000.0
+          }
+        },
+        "breadth": {
+          "observed": 30,
+          "expected": 30,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "汽车零部件",
+      "code": "pt01801093",
+      "return_1d": -1.641475,
+      "return_5d": -5.841191,
+      "return_20d": 1.920597,
+      "flow_1d": -0.0079982416,
+      "flow_5d": -0.0077418034,
+      "flow_20d": -0.0001974531,
+      "breadth": 25.514403,
+      "attention": 82.142857,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 30.290456,
+      "turnover_pct": 0.414938,
+      "share_pct": 12.863071,
+      "crowding_5d_ago": 36.23444,
+      "data_quality": {
+        "constituent_count": 274,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 243,
+            "expected_stock_days": 274,
+            "coverage": 0.886861,
+            "net_flow_sum": -311520393.0,
+            "sector_amount_sum": 38948610000.0
+          },
+          "5": {
+            "observed_stock_days": 1207,
+            "expected_stock_days": 1370,
+            "coverage": 0.881022,
+            "net_flow_sum": -1585133709.09,
+            "sector_amount_sum": 204749930000.0
+          },
+          "20": {
+            "observed_stock_days": 4834,
+            "expected_stock_days": 5480,
+            "coverage": 0.882117,
+            "net_flow_sum": -168444959.15,
+            "sector_amount_sum": 853088630000.0
+          }
+        },
+        "breadth": {
+          "observed": 243,
+          "expected": 274,
+          "coverage": 0.886861
+        },
+        "anomalies": [
+          "31只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "白色家电",
+      "code": "pt01801111",
+      "return_1d": 1.38889,
+      "return_5d": 2.913434,
+      "return_20d": 1.394199,
+      "flow_1d": -0.0394393558,
+      "flow_5d": 0.0020206516,
+      "flow_20d": -0.0118381886,
+      "breadth": 45.454545,
+      "attention": 25.0,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 70.954357,
+      "turnover_pct": 19.294606,
+      "share_pct": 49.792531,
+      "crowding_5d_ago": 18.791494,
+      "data_quality": {
+        "constituent_count": 11,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 11,
+            "expected_stock_days": 11,
+            "coverage": 1.0,
+            "net_flow_sum": -240775295.0,
+            "sector_amount_sum": 6104950000.0
+          },
+          "5": {
+            "observed_stock_days": 55,
+            "expected_stock_days": 55,
+            "coverage": 1.0,
+            "net_flow_sum": 59394084.43,
+            "sector_amount_sum": 29393530000.0
+          },
+          "20": {
+            "observed_stock_days": 220,
+            "expected_stock_days": 220,
+            "coverage": 1.0,
+            "net_flow_sum": -1480455928.71,
+            "sector_amount_sum": 125057640000.0
+          }
+        },
+        "breadth": {
+          "observed": 11,
+          "expected": 11,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "食品加工",
+      "code": "pt01801124",
+      "return_1d": -0.214456,
+      "return_5d": -1.51826,
+      "return_20d": 1.526909,
+      "flow_1d": -0.0076670247,
+      "flow_5d": 0.0029520709,
+      "flow_20d": -0.0008205734,
+      "breadth": 40.0,
+      "attention": 14.285714,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 44.813278,
+      "turnover_pct": 93.775934,
+      "share_pct": 79.66805,
+      "crowding_5d_ago": 77.842324,
+      "data_quality": {
+        "constituent_count": 27,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 25,
+            "expected_stock_days": 27,
+            "coverage": 0.925926,
+            "net_flow_sum": -23594655.0,
+            "sector_amount_sum": 3077420000.0
+          },
+          "5": {
+            "observed_stock_days": 125,
+            "expected_stock_days": 135,
+            "coverage": 0.925926,
+            "net_flow_sum": 55134766.21,
+            "sector_amount_sum": 18676640000.0
+          },
+          "20": {
+            "observed_stock_days": 499,
+            "expected_stock_days": 540,
+            "coverage": 0.924074,
+            "net_flow_sum": -56879003.75,
+            "sector_amount_sum": 69316170000.0
+          }
+        },
+        "breadth": {
+          "observed": 25,
+          "expected": 27,
+          "coverage": 0.925926
+        },
+        "anomalies": [
+          "2只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "饮料乳品",
+      "code": "pt01801127",
+      "return_1d": -0.173993,
+      "return_5d": -1.028044,
+      "return_20d": 2.329979,
+      "flow_1d": -0.0245523456,
+      "flow_5d": -0.0092320432,
+      "flow_20d": -0.0054191804,
+      "breadth": 23.076923,
+      "attention": 28.571429,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 48.547718,
+      "turnover_pct": 76.763485,
+      "share_pct": 81.742739,
+      "crowding_5d_ago": 80.94917,
+      "data_quality": {
+        "constituent_count": 27,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 26,
+            "expected_stock_days": 27,
+            "coverage": 0.962963,
+            "net_flow_sum": -136487226.0,
+            "sector_amount_sum": 5559030000.0
+          },
+          "5": {
+            "observed_stock_days": 130,
+            "expected_stock_days": 135,
+            "coverage": 0.962963,
+            "net_flow_sum": -301142602.07,
+            "sector_amount_sum": 32619280000.0
+          },
+          "20": {
+            "observed_stock_days": 520,
+            "expected_stock_days": 540,
+            "coverage": 0.962963,
+            "net_flow_sum": -787213451.4,
+            "sector_amount_sum": 145264300000.0
+          }
+        },
+        "breadth": {
+          "observed": 26,
+          "expected": 27,
+          "coverage": 0.962963
+        },
+        "anomalies": [
+          "1只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "软件开发",
+      "code": "pt01801104",
+      "return_1d": -1.831533,
+      "return_5d": -7.51408,
+      "return_20d": 3.573275,
+      "flow_1d": -0.0406356026,
+      "flow_5d": -0.0384012844,
+      "flow_20d": -0.0148699413,
+      "breadth": 10.0,
+      "attention": 78.571429,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 17.842324,
+      "turnover_pct": 3.73444,
+      "share_pct": 12.033195,
+      "crowding_5d_ago": 67.624481,
+      "data_quality": {
+        "constituent_count": 135,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 130,
+            "expected_stock_days": 135,
+            "coverage": 0.962963,
+            "net_flow_sum": -1312286557.0,
+            "sector_amount_sum": 32294010000.0
+          },
+          "5": {
+            "observed_stock_days": 650,
+            "expected_stock_days": 675,
+            "coverage": 0.962963,
+            "net_flow_sum": -7428344075.03,
+            "sector_amount_sum": 193439990000.0
+          },
+          "20": {
+            "observed_stock_days": 2597,
+            "expected_stock_days": 2700,
+            "coverage": 0.961852,
+            "net_flow_sum": -15861150433.98,
+            "sector_amount_sum": 1066658580000.0
+          }
+        },
+        "breadth": {
+          "observed": 130,
+          "expected": 135,
+          "coverage": 0.962963
+        },
+        "anomalies": [
+          "5只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "计算机设备",
+      "code": "pt01801101",
+      "return_1d": -1.99457,
+      "return_5d": -6.30219,
+      "return_20d": -5.056834,
+      "flow_1d": -0.0798184432,
+      "flow_5d": -0.0541992599,
+      "flow_20d": -0.0235957871,
+      "breadth": 15.853659,
+      "attention": 64.285714,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 16.59751,
+      "turnover_pct": 3.319502,
+      "share_pct": 11.20332,
+      "crowding_5d_ago": 44.445021,
+      "data_quality": {
+        "constituent_count": 88,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 82,
+            "expected_stock_days": 88,
+            "coverage": 0.931818,
+            "net_flow_sum": -1712526249.0,
+            "sector_amount_sum": 21455270000.0
+          },
+          "5": {
+            "observed_stock_days": 410,
+            "expected_stock_days": 440,
+            "coverage": 0.931818,
+            "net_flow_sum": -6788403643.28,
+            "sector_amount_sum": 125249010000.0
+          },
+          "20": {
+            "observed_stock_days": 1630,
+            "expected_stock_days": 1760,
+            "coverage": 0.926136,
+            "net_flow_sum": -14710498776.06,
+            "sector_amount_sum": 623437510000.0
+          }
+        },
+        "breadth": {
+          "observed": 82,
+          "expected": 88,
+          "coverage": 0.931818
+        },
+        "anomalies": [
+          "6只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "光伏设备",
+      "code": "pt01801735",
+      "return_1d": -1.139169,
+      "return_5d": -4.708043,
+      "return_20d": 2.596067,
+      "flow_1d": -0.0159623439,
+      "flow_5d": -0.0259843052,
+      "flow_20d": -0.0076294481,
+      "breadth": 25.757576,
+      "attention": 71.428571,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 31.53527,
+      "turnover_pct": 0.829876,
+      "share_pct": 6.224066,
+      "crowding_5d_ago": 34.08195,
+      "data_quality": {
+        "constituent_count": 72,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 66,
+            "expected_stock_days": 72,
+            "coverage": 0.916667,
+            "net_flow_sum": -448833016.0,
+            "sector_amount_sum": 28118240000.0
+          },
+          "5": {
+            "observed_stock_days": 330,
+            "expected_stock_days": 360,
+            "coverage": 0.916667,
+            "net_flow_sum": -3684830948.69,
+            "sector_amount_sum": 141809870000.0
+          },
+          "20": {
+            "observed_stock_days": 1320,
+            "expected_stock_days": 1440,
+            "coverage": 0.916667,
+            "net_flow_sum": -4560844811.27,
+            "sector_amount_sum": 597794850000.0
+          }
+        },
+        "breadth": {
+          "observed": 66,
+          "expected": 72,
+          "coverage": 0.916667
+        },
+        "anomalies": [
+          "6只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "消费电子",
+      "code": "pt01801085",
+      "return_1d": -2.266803,
+      "return_5d": -8.039974,
+      "return_20d": -3.574344,
+      "flow_1d": -0.0539939878,
+      "flow_5d": -0.0397320629,
+      "flow_20d": -0.012927266,
+      "breadth": 16.483516,
+      "attention": 92.857143,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 24.481328,
+      "turnover_pct": 12.033195,
+      "share_pct": 30.290456,
+      "crowding_5d_ago": 38.324689,
+      "data_quality": {
+        "constituent_count": 100,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 91,
+            "expected_stock_days": 100,
+            "coverage": 0.91,
+            "net_flow_sum": -3328167808.0,
+            "sector_amount_sum": 61639600000.0
+          },
+          "5": {
+            "observed_stock_days": 455,
+            "expected_stock_days": 500,
+            "coverage": 0.91,
+            "net_flow_sum": -13444225929.22,
+            "sector_amount_sum": 338372210000.0
+          },
+          "20": {
+            "observed_stock_days": 1820,
+            "expected_stock_days": 2000,
+            "coverage": 0.91,
+            "net_flow_sum": -18688606587.11,
+            "sector_amount_sum": 1445673560000.0
+          }
+        },
+        "breadth": {
+          "observed": 91,
+          "expected": 100,
+          "coverage": 0.91
+        },
+        "anomalies": [
+          "9只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "电力",
+      "code": "pt01801161",
+      "return_1d": 0.729644,
+      "return_5d": -1.52518,
+      "return_20d": -2.550153,
+      "flow_1d": -0.0053557703,
+      "flow_5d": -0.0377031174,
+      "flow_20d": -0.0188683348,
+      "breadth": 54.12844,
+      "attention": 75.0,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 16.59751,
+      "turnover_pct": 14.937759,
+      "share_pct": 28.215768,
+      "crowding_5d_ago": 51.986515,
+      "data_quality": {
+        "constituent_count": 109,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 109,
+            "expected_stock_days": 109,
+            "coverage": 1.0,
+            "net_flow_sum": -148722832.0,
+            "sector_amount_sum": 27768710000.0
+          },
+          "5": {
+            "observed_stock_days": 545,
+            "expected_stock_days": 545,
+            "coverage": 1.0,
+            "net_flow_sum": -5637531490.42,
+            "sector_amount_sum": 149524280000.0
+          },
+          "20": {
+            "observed_stock_days": 2179,
+            "expected_stock_days": 2180,
+            "coverage": 0.999541,
+            "net_flow_sum": -16233859391.62,
+            "sector_amount_sum": 860375840000.0
+          }
+        },
+        "breadth": {
+          "observed": 109,
+          "expected": 109,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "燃气Ⅱ",
+      "code": "pt01801163",
+      "return_1d": -1.085456,
+      "return_5d": -2.245353,
+      "return_20d": 4.378769,
+      "flow_1d": -0.037302661,
+      "flow_5d": -0.0094128887,
+      "flow_20d": -0.0182742577,
+      "breadth": 25.0,
+      "attention": 17.857143,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 39.419087,
+      "turnover_pct": 11.20332,
+      "share_pct": 31.950207,
+      "crowding_5d_ago": 41.073651,
+      "data_quality": {
+        "constituent_count": 30,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 28,
+            "expected_stock_days": 30,
+            "coverage": 0.933333,
+            "net_flow_sum": -144793263.0,
+            "sector_amount_sum": 3881580000.0
+          },
+          "5": {
+            "observed_stock_days": 140,
+            "expected_stock_days": 150,
+            "coverage": 0.933333,
+            "net_flow_sum": -213863467.29,
+            "sector_amount_sum": 22720280000.0
+          },
+          "20": {
+            "observed_stock_days": 560,
+            "expected_stock_days": 600,
+            "coverage": 0.933333,
+            "net_flow_sum": -1556236519.18,
+            "sector_amount_sum": 85160040000.0
+          }
+        },
+        "breadth": {
+          "observed": 28,
+          "expected": 30,
+          "coverage": 0.933333
+        },
+        "anomalies": [
+          "2只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "证券Ⅱ",
+      "code": "pt01801193",
+      "return_1d": 0.356999,
+      "return_5d": -2.558299,
+      "return_20d": -3.739264,
+      "flow_1d": -0.0286240257,
+      "flow_5d": -0.0625953809,
+      "flow_20d": -0.0435771005,
+      "breadth": 72.0,
+      "attention": 57.142857,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 21.991701,
+      "turnover_pct": 2.489627,
+      "share_pct": 4.149378,
+      "crowding_5d_ago": 28.490664,
+      "data_quality": {
+        "constituent_count": 50,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 50,
+            "expected_stock_days": 50,
+            "coverage": 1.0,
+            "net_flow_sum": -581463020.0,
+            "sector_amount_sum": 20313810000.0
+          },
+          "5": {
+            "observed_stock_days": 250,
+            "expected_stock_days": 250,
+            "coverage": 1.0,
+            "net_flow_sum": -6457711309.21,
+            "sector_amount_sum": 103165940000.0
+          },
+          "20": {
+            "observed_stock_days": 1000,
+            "expected_stock_days": 1000,
+            "coverage": 1.0,
+            "net_flow_sum": -21929493404.9,
+            "sector_amount_sum": 503234340000.0
+          }
+        },
+        "breadth": {
+          "observed": 50,
+          "expected": 50,
+          "coverage": 1.0
+        },
+        "anomalies": []
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    },
+    {
+      "name": "化学制药",
+      "code": "pt01801151",
+      "return_1d": -3.659329,
+      "return_5d": -8.297337,
+      "return_20d": -3.263142,
+      "flow_1d": -0.0402326824,
+      "flow_5d": -0.0214976746,
+      "flow_20d": -0.0123036356,
+      "breadth": 11.409396,
+      "attention": 89.285714,
+      "catalyst": null,
+      "fundamental": null,
+      "rsi_pct": 26.556017,
+      "turnover_pct": 99.170124,
+      "share_pct": 98.755187,
+      "crowding_5d_ago": 94.476141,
+      "data_quality": {
+        "constituent_count": 157,
+        "kline": {
+          "rows": 301,
+          "first_date": "2025-06-03",
+          "last_date": "2026-08-24",
+          "expected_market_dates": 301,
+          "matching_market_dates": 301,
+          "coverage": 1.0
+        },
+        "fund_flow": {
+          "1": {
+            "observed_stock_days": 149,
+            "expected_stock_days": 157,
+            "coverage": 0.949045,
+            "net_flow_sum": -2213624316.0,
+            "sector_amount_sum": 55020550000.0
+          },
+          "5": {
+            "observed_stock_days": 745,
+            "expected_stock_days": 785,
+            "coverage": 0.949045,
+            "net_flow_sum": -6763605918.91,
+            "sector_amount_sum": 314620350000.0
+          },
+          "20": {
+            "observed_stock_days": 2980,
+            "expected_stock_days": 3140,
+            "coverage": 0.949045,
+            "net_flow_sum": -13089210649.44,
+            "sector_amount_sum": 1063849020000.0
+          }
+        },
+        "breadth": {
+          "observed": 149,
+          "expected": 157,
+          "coverage": 0.949045
+        },
+        "anomalies": [
+          "8只非沪深代码不在fund flow支持范围"
+        ]
+      },
+      "source_notes": [
+        "行业代码由 westock-data search --type sector 获取，且严格匹配申万二级行业清单",
+        "成份股由 sector constituent --raw 获取",
+        "板块日线由 kline --period day --start 2025-06-01 --end 2026-08-24 --raw 获取",
+        "资金由成份股批量 fund flow --start 2026-07-27 --end 2026-08-24 --raw 获取并按行业/交易日汇总 MainNetFlow",
+        "资金强度=行业成份股主力净流入合计/板块同期成交额合计",
+        "breadth=可获得相邻两交易日收盘价的成份股中当日上涨占比",
+        "catalyst/fundamental 无结构化证据，设为 null"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "schema": "MarketEnvironmentDeterministicScore/v1",
+  "as_of_date": "2026-08-28",
+  "timezone": "Asia/Shanghai",
+  "market_phase": "盘后",
+  "score_type": "确定性评分",
+  "input_file": "E:/WS/NashnovaResearch/evidence/2026-08-28-market-raw.json",
+  "method": {
+    "formula": "30%×指数与风格趋势 + 25%×市场宽度和情绪 + 20%×成交与流动性 + 15%×国内宏观流动性 + 10%×全球风险",
+    "normalization": "分项0-100；错日或盘中数据排除；缺失叶子按50分并降低置信度。",
+    "market_state_mapping": {
+      ">=65": "进攻",
+      "45-64.9": "中性",
+      "<45": "防守"
+    }
+  },
+  "dimensions": [
+    {
+      "id": "index_style_trend",
+      "name": "指数与风格趋势",
+      "weight": 0.3,
+      "score": 53.0,
+      "weighted_contribution": 15.9,
+      "status": "指数分化回调，上证5日仍正收益，深证与创业板5日走弱，60日趋势均未扭转",
+      "leaf_scores": [
+        {
+          "name": "上证指数趋势",
+          "score": 60,
+          "basis": "收盘3952.18，日涨跌-0.11%；5日+1.20%、20日+3.13%、60日-2.60%。"
+        },
+        {
+          "name": "深证成指趋势",
+          "score": 52,
+          "basis": "收盘13953.07，日涨跌-0.68%；5日-1.00%、20日+2.76%、60日-10.91%。"
+        },
+        {
+          "name": "创业板指趋势",
+          "score": 47,
+          "basis": "收盘3424.4，日涨跌-1.41%；5日-3.42%、20日+2.41%、60日-16.25%。"
+        }
+      ],
+      "degradation": "深证与创业板同口径均线斜率缺失，不额外加分。"
+    },
+    {
+      "id": "breadth_sentiment",
+      "name": "市场宽度和情绪",
+      "weight": 0.25,
+      "score": 66.0,
+      "weighted_contribution": 16.5,
+      "status": "指数回调但上涨家数仍占优，涨停活跃，新高数量明显多于新低",
+      "leaf_scores": [
+        {
+          "name": "上涨占比",
+          "score": 61,
+          "basis": "上涨3013、下跌2390、平盘148，上涨占比54.28%。"
+        },
+        {
+          "name": "涨跌停结构",
+          "score": 74,
+          "basis": "带日期口径涨停76、跌停0。"
+        },
+        {
+          "name": "新高新低结构",
+          "score": 72,
+          "basis": "5日新高/新低2627/279，20日866/99，60日262/14。"
+        }
+      ],
+      "degradation": "changedist涨跌停口径与带日期总览存在差异，主评分采用market-overview。"
+    },
+    {
+      "id": "turnover_liquidity",
+      "name": "成交与流动性",
+      "weight": 0.2,
+      "score": 56.0,
+      "weighted_contribution": 11.2,
+      "status": "成交略低于前日，仍高于5日均量，接近10日均量但低于20日及中长期均量",
+      "leaf_scores": [
+        {
+          "name": "两市成交额",
+          "score": 59,
+          "basis": "两市成交21017.15亿元，为5日均量106.41%、10日均量99.45%。"
+        },
+        {
+          "name": "20日相对量能",
+          "score": 55,
+          "basis": "成交为20日均值93.64%。"
+        },
+        {
+          "name": "中长期量能",
+          "score": 48,
+          "basis": "成交为60日均值78.63%、120日79.78%、250日85.29%。"
+        },
+        {
+          "name": "量价配合",
+          "score": 55,
+          "basis": "指数回调而个股涨多跌少，成交较前日小幅减少，反映结构性轮动而非全面放量上攻。"
+        }
+      ]
+    },
+    {
+      "id": "domestic_macro_liquidity",
+      "name": "国内宏观流动性",
+      "weight": 0.15,
+      "score": 58.0,
+      "weighted_contribution": 8.7,
+      "status": "沿用截至目标日已发布宏观数据，短端流动性温和",
+      "leaf_scores": [
+        {
+          "name": "货币与资金成本",
+          "score": 58,
+          "basis": "结构化宏观数据主要覆盖2026年7月及目标日前最新资金利率；未用未来数据。"
+        },
+        {
+          "name": "目标日两融与风险溢价",
+          "score": 50,
+          "basis": "同一时点有效值缺失，按中性处理。"
+        }
+      ],
+      "degradation": "宏观低频数据不代表8月28日当日变化。"
+    },
+    {
+      "id": "global_risk",
+      "name": "全球风险",
+      "weight": 0.1,
+      "score": 50.0,
+      "weighted_contribution": 5.0,
+      "status": "缺少同一时点结构化全球风险数据，按中性降级",
+      "leaf_scores": [
+        {
+          "name": "VIX、美元、美债和海外指数",
+          "score": 50,
+          "basis": "未取得统一可审计时点数据。"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "total_score": 57.3,
+    "calculation": "0.30×53.0 + 0.25×66.0 + 0.20×56.0 + 0.15×58.0 + 0.10×50.0 = 57.3",
+    "market_state": "中性",
+    "summary": "指数回调但个股涨多跌少，成交维持高位且低于20日均量；行业机会转向农业、化工和地产等轮动，维持中性而非全面进攻。"
+  },
+  "confidence": {
+    "effective_weight_pct": 76.0,
+    "grade": "C",
+    "caveat": "置信度是数据覆盖率估算，不是行情预测概率。"
+  },
+  "data_quality": {
+    "trade_date_confirmed": true,
+    "market_data_through_close": true,
+    "conflicts": [
+      {
+        "topic": "市场宽度与涨跌停家数",
+        "market_overview": {
+          "上涨": 3013,
+          "下跌": 2390,
+          "平盘": 148,
+          "涨停": 76,
+          "跌停": 0
+        },
+        "changedist": {
+          "upCount": 3013,
+          "downCount": 2390,
+          "flatCount": 148,
+          "upLimitCount": 83,
+          "downLimitCount": 3,
+          "suspensionCount": 4,
+          "upRatio": 54,
+          "upRatioComment": "当前市场上涨家数占比全市场54%，市场情绪正常。",
+          "detail": [
+            {
+              "section": "涨停",
+              "count": 83,
+              "flag": 1
+            },
+            {
+              "section": ">7%",
+              "count": 49,
+              "flag": 1
+            },
+            {
+              "section": "7~5%",
+              "count": 77,
+              "flag": 1
+            },
+            {
+              "section": "5~2%",
+              "count": 716,
+              "flag": 1
+            },
+            {
+              "section": "2~0%",
+              "count": 2088,
+              "flag": 1
+            },
+            {
+              "section": "平",
+              "count": 148,
+              "flag": 0
+            },
+            {
+              "section": "0~2%",
+              "count": 1582,
+              "flag": -1
+            },
+            {
+              "section": "2~5%",
+              "count": 670,
+              "flag": -1
+            },
+            {
+              "section": "5~7%",
+              "count": 93,
+              "flag": -1
+            },
+            {
+              "section": "7%<",
+              "count": 42,
+              "flag": -1
+            },
+            {
+              "section": "跌停",
+              "count": 3,
+              "flag": -1
+            }
+          ],
+          "totalAmount": 2101715024358.6982,
+          "amountChange": -24211774012.4917
+        },
+        "handling": "分别保留，不静默合并；主证据采用带目标日期的market-overview，changedist作为盘后实时口径复核"
+      },
+      {
+        "topic": "涨停数量",
+        "market_overview": 76,
+        "hithink_limit_up_pool": 81,
+        "handling": "保留供应商口径差异；hithink池用于热点样本，不替代全市场统计"
+      }
+    ],
+    "no_fabrication": true
+  },
+  "research_verification": {
+    "agentic_search_used": true,
+    "purpose": "核验2026-08-28盘后市场主线与重要行业催化。",
+    "handling": "外部检索仅作定性复核；评分数字采用本地带日期结构化字段。"
+  }
+}

@@ -1,0 +1,9 @@
+format=desktop
+visible_units=1580
+estimated_minutes=4.9
+all_text_units=1696
+almanac_mentions=2
+emoji_count=0
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細娣卞ⅷ缁块〉澶?
+FAIL: 缂哄皯浜ゆ槗鑰侀粍鍘嗚瑙夌壒寰侊細鍘嗗瓧鍗扮珷
+FAIL: 妫€娴嬪埌max-width鍝嶅簲寮忛噸鎺掞紱鏈琒kill瑕佹眰鍥哄畾甯冨眬锛堟闈㈡垨绉诲姩绔鏋讹級

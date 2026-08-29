@@ -1,0 +1,7 @@
+format=desktop
+visible_units=1231
+estimated_minutes=3.8
+all_text_units=1348
+almanac_mentions=2
+emoji_count=0
+PASS: A股范围、桌面布局、静态安全与阅读预算检查通过

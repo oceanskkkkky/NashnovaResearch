@@ -1,13 +1,17 @@
-// 小红书发布助手：打开创作中心，扫码登录后上传 8 张卡片图 + 填标题/正文，暂停在发布前由用户确认
+// 小红书内容填充助手：打开创作中心，上传图片并填好标题/正文，停在发布前交由用户手动确认。
+// 安全边界：永远不点击“发布”或任何二次确认控件，不判断发布成功。
 // 用法: node xhs-publish.js <imagesDir> <note.md> [profileDir]
 const path = require('path');
 const fs = require('fs');
 const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@playwright/cli/node_modules/playwright'));
 
 (async () => {
-  const [,, imagesDir, noteMd, profileDirArg] = process.argv;
+  const [,, imagesDir, noteMd, profileDirArg, ...extraArgs] = process.argv;
   if (!imagesDir || !noteMd) { console.error('usage: node xhs-publish.js <imagesDir> <note.md> [profileDir]'); process.exit(1); }
   const profileDir = profileDirArg || path.join(__dirname, '..', '.workbuddy', 'xhs-profile');
+  if (extraArgs.includes('--publish')) {
+    console.warn('警告：--publish 已永久停用。脚本只填充待发布内容，最终发布必须由用户手动完成。');
+  }
   fs.mkdirSync(profileDir, { recursive: true });
 
   // 解析 note.md
@@ -19,15 +23,22 @@ const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@p
     if (/^#\s+/.test(ln) && !inBody) { title = ln.replace(/^#\s+/, '').trim(); continue; }
     if (!inBody && title && ln.trim() !== '') { inBody = true; }
     if (inBody) {
-      if (/^#\S+/.test(ln) && !/^#\s/.test(ln)) { tagsLine += (tagsLine ? ' ' : '') + ln.trim(); }
-      else if (ln.trim()) { content += ln + '\n'; }
+      if (/^#\S+/.test(ln) && !/^#\s/.test(ln)) {
+        tagsLine += (tagsLine ? ' ' : '') + ln.trim();
+      } else if (ln.trim()) {
+        // 小红书编辑器不渲染 Markdown：将粗体分节标题和列表符号转为纯文本样式。
+        const plainLine = ln
+          .replace(/^\*\*(.+)\*\*$/, '【$1】')
+          .replace(/^-\s+/, '• ');
+        content += plainLine + '\n';
+      }
     }
   }
   content = content.trim();
   // 标签合并到正文末尾（XHS 在内容里识别 #）
   const fullBody = content + (tagsLine ? '\n\n' + tagsLine : '');
 
-  const images = fs.readdirSync(imagesDir).filter(f => /\.(png|jpe?g)$/i.test(f)).map(f => path.join(imagesDir, f));
+  const images = fs.readdirSync(imagesDir).filter(f => /\.(png|jpe?g)$/i.test(f)).sort().map(f => path.join(imagesDir, f));
   console.log('标题:', title);
   console.log('正文长度:', fullBody.length, '图片:', images.length);
 
@@ -66,11 +77,33 @@ const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@p
   // 关键：默认停在「上传视频」tab，必须先切到「上传图文」tab
   await page.waitForTimeout(2000);
   try {
-    await page.getByText('上传图文', { exact: true }).first().click({ timeout: 5000 });
+    const tabPoint = await page.evaluate(() => {
+      const nodes = [...document.querySelectorAll('.creator-tab, .title, div, span')];
+      const candidates = nodes.filter(el => (el.textContent || '').trim() === '上传图文');
+      for (const el of candidates) {
+        const r = el.getBoundingClientRect();
+        const style = getComputedStyle(el);
+        if (r.width > 0 && r.height > 0 && r.x >= 0 && r.y >= 0 && style.visibility !== 'hidden' && style.display !== 'none') {
+          return { x: r.x + r.width / 2, y: r.y + r.height / 2, tag: el.tagName, cls: String(el.className || '') };
+        }
+      }
+      return null;
+    });
+    if (!tabPoint) throw new Error('没有找到位于可视区域的上传图文标签');
+    await page.mouse.click(tabPoint.x, tabPoint.y);
+    console.log('已按页面坐标点击「上传图文」：', JSON.stringify(tabPoint));
+    await page.waitForTimeout(2500);
+    const imageInput = page.locator('input[type=file][accept*="image"], input[type=file][multiple]').first();
+    const imageUploadText = page.getByText('上传图片', { exact: true }).first();
+    if (!(await imageInput.count()) && !(await imageUploadText.count())) {
+      throw new Error('切换后未检测到图片上传入口');
+    }
     console.log('已切到「上传图文」tab');
-    await page.waitForTimeout(2000);
   } catch (e) {
-    console.warn('点击「上传图文」tab 失败：', e.message.split('\n')[0]);
+    console.error('点击「上传图文」tab失败：', e.message.split('\n')[0]);
+    await page.screenshot({ path: path.join(imagesDir, '..', 'xhs-tab-switch-failed.png'), fullPage: true });
+    await ctx.close();
+    process.exit(1);
   }
 
   // 首选方案：点击「上传图片」按钮，拦截系统文件选择框（filechooser）注入全部图片
@@ -97,8 +130,9 @@ const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@p
     for (const f of page.frames()) {
       const inputs = await f.$$('input[type=file]');
       for (const inp of inputs) {
-        const isMultiple = await inp.evaluate(el => el.multiple);
-        if (isMultiple) { fileInput = inp; console.log('选中多文件 input in frame:', f.url()?.slice(0,80)); break; }
+        const meta = await inp.evaluate(el => ({ multiple: el.multiple, accept: el.accept || '' }));
+        const acceptsImages = /image|\.jpe?g|\.png/i.test(meta.accept);
+        if (meta.multiple && acceptsImages) { fileInput = inp; console.log('选中图片多文件 input in frame:', f.url()?.slice(0,80)); break; }
       }
       if (fileInput) break;
     }
@@ -106,7 +140,11 @@ const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@p
       // 备选：单文件 input 用循环一张张设
       for (const f of page.frames()) {
         const inputs = await f.$$('input[type=file]');
-        if (inputs.length) { fileInput = { __single: inputs[0], __allInputs: inputs }; break; }
+        for (const inp of inputs) {
+          const accept = await inp.evaluate(el => el.accept || '');
+          if (/image|\.jpe?g|\.png/i.test(accept)) { fileInput = { __single: inp, __allInputs: inputs }; break; }
+        }
+        if (fileInput) break;
       }
     }
     if (!fileInput) { console.error('找不到文件上传 input'); await page.screenshot({ path: path.join(imagesDir, '..', 'xhs-debug.png'), fullPage: true }); process.exit(1); }
@@ -176,10 +214,20 @@ const { chromium } = require(path.join(process.env.APPDATA, 'npm/node_modules/@p
   }
   if (!bodyFilled) console.warn('未找到正文编辑器（所有候选选择器，重试4次）');
 
-  // 给用户看最终态，不自动点发布
-  await page.screenshot({ path: path.join(imagesDir, '..', 'xhs-final.png'), fullPage: true });
-  console.log('已截图最终态到 xhs-final.png。请在浏览器中检查并点击「发布」。');
-  // 保持浏览器打开 10 分钟供用户检查与发布
-  await page.waitForTimeout(600000);
-  await ctx.close();
+  // 保存发布前最终态，便于复核标题、正文和图片顺序
+  const finalShot = path.join(imagesDir, '..', 'xhs-final.png');
+  await page.screenshot({ path: finalShot, fullPage: true });
+  console.log('已截图发布前最终态到', finalShot);
+
+  if (!titleFilled || !bodyFilled || images.length === 0) {
+    console.error('标题、正文或图片未完整填入，无法交付人工发布。');
+    await ctx.close();
+    process.exit(1);
+  }
+
+  console.log('内容已填充完毕，浏览器停留在发布前页面。');
+  console.log('请人工复核图片顺序、标题、正文和声明，然后由用户本人点击「发布」。');
+  console.log('脚本不会定位、点击或触发任何发布/确认控件；关闭浏览器窗口后脚本结束。');
+
+  await new Promise(resolve => ctx.once('close', resolve));
 })();

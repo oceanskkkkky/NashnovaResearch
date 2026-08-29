@@ -162,10 +162,15 @@ def orthogonalize(p_scores: list[float | None], f_scores: list[float | None]) ->
     for local_idx, row_idx in enumerate(valid_indices):
         mapped[row_idx] = residual_pct[local_idx]
 
+    ss_res = sum(value * value for value in residuals)
+    ss_tot = sum((value - mean_zf) ** 2 for value in zf)
+    r_squared = max(0.0, 1.0 - ss_res / ss_tot) if ss_tot > EPS else None
+
     result.update({
         "enabled": True,
         "alpha": alpha,
         "beta": beta,
+        "r_squared": r_squared,
         "residual_percentiles": mapped,
     })
     return result
@@ -201,7 +206,8 @@ def crowding(row: dict[str, Any]) -> dict[str, Any]:
 
     previous = row.get("crowding_5d_ago")
     delta = c_score - float(previous) if is_number(previous) and len(valid) >= 2 else None
-    level_penalty = 16 * c_score / 100
+    # V3: 低拥挤不加分、中性拥挤(C=50)不奖不罚，只对中高拥挤线性扣分。
+    level_penalty = 0.0 if c_score <= 50.0 else 20.0 * (c_score - 50.0) / 50.0
     if delta is None or delta < 5:
         acceleration_penalty = 0.0
     elif delta < 10:
@@ -265,14 +271,37 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
             trend_score = min(p_score, 50.0)
             degraded_reasons.append("资金数据缺失，趋势确认上限50")
         elif regression["enabled"] and residual_score is not None:
-            trend_score = 0.70 * p_score + 0.30 * residual_score
-            if p_score >= 70 and residual_score <= 20:
+            effective_residual = residual_score
+            flow_5d = row.get("flow_5d")
+            flow_20d = row.get("flow_20d")
+            if (
+                is_number(flow_5d)
+                and is_number(flow_20d)
+                and float(flow_5d) <= 0
+                and float(flow_20d) <= 0
+                and effective_residual > 50.0
+            ):
+                effective_residual = 50.0
+                warnings.append("资金绝对流向为负，正交残差上限50")
+            trend_score = 0.70 * p_score + 0.30 * effective_residual
+            if p_score >= 70 and effective_residual <= 20:
                 warnings.append("量价背离：上涨缺少增量资金确认")
-            if p_score <= 50 and residual_score >= 80:
+            if p_score <= 50 and effective_residual >= 80:
                 warnings.append("资金先行潜伏，等待价格确认")
             residual_5d_ago = row.get("residual_pct_5d_ago")
-            if p_score >= 70 and is_number(residual_5d_ago) and float(residual_5d_ago) - residual_score >= 20:
+            if p_score >= 70 and is_number(residual_5d_ago) and float(residual_5d_ago) - effective_residual >= 20:
                 warnings.append("趋势仍强但资金边际退潮")
+            return_5d = row.get("return_5d")
+            return_20d = row.get("return_20d")
+            if (
+                is_number(return_5d)
+                and is_number(return_20d)
+                and float(return_5d) <= 0
+                and float(return_20d) <= 0
+                and trend_score > 55.0
+            ):
+                trend_score = 55.0
+                warnings.append("5日与20日绝对收益均为负，趋势确认上限55")
         else:
             trend_score = 0.65 * p_score + 0.35 * min(p_score, f_score)
             degraded_reasons.append(f"正交化降级：{regression['reason']}")
@@ -300,7 +329,30 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
                 + 0.10 * catalyst
                 + 0.10 * fundamental
             )
-            sector_heat = clamp(core_heat + 20 - crowd["penalty"])
+            # V3: CoreHeat(满分80)归一化回0—100作为机会分；拥挤度只扣分、不加分。
+            opportunity = core_heat / 0.8
+            sector_heat = clamp(opportunity - crowd["penalty"])
+            if p_score is not None and residual_score is not None:
+                if p_score <= 50 and residual_score >= 80 and sector_heat > 60.0:
+                    sector_heat = 60.0
+                    warnings.append("资金潜伏未获价格确认，总分上限60")
+                if p_score >= 70 and residual_score <= 20 and sector_heat > 60.0:
+                    sector_heat = 60.0
+                    warnings.append("量价背离，总分上限60")
+
+        confidence = 0.0
+        if trend_score is not None:
+            confidence += 35.0
+        if not breadth_missing:
+            confidence += 15.0
+        if not attention_missing:
+            confidence += 10.0
+        if not catalyst_missing:
+            confidence += 10.0
+        if not fundamental_missing:
+            confidence += 10.0
+        if not crowd["degraded"]:
+            confidence += 20.0
 
         severe_crowding = crowd["crowding_score"] >= 90 or crowd["penalty"] >= 18
         severe_allowed = bool(
@@ -320,6 +372,7 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
             "crowding": crowd,
             "core_heat": core_heat,
             "sector_heat": sector_heat,
+            "confidence": confidence,
             "warnings": list(dict.fromkeys(warnings)),
             "degraded_reasons": list(dict.fromkeys(degraded_reasons)),
             "severe_crowding_can_remain": severe_allowed,
@@ -327,7 +380,7 @@ def calculate(payload: dict[str, Any]) -> dict[str, Any]:
 
     scored_rows.sort(key=lambda row: row["sector_heat"] if row["sector_heat"] is not None else -1, reverse=True)
     return {
-        "method": "cross_sectional_price_flow_orthogonalization_v2",
+        "method": "cross_sectional_price_flow_orthogonalization_v3",
         "regression": {key: value for key, value in regression.items() if key != "residual_percentiles"},
         "sectors": scored_rows,
     }

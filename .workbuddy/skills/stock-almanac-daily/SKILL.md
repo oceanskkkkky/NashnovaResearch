@@ -21,7 +21,12 @@ agent_created: true
 ## 开始前
 
 1. 加载 `hithink-finance` 与 `westock-data`，遵守两者的字段、证据和错误规则。
-2. hithink-finance 统一凭据读取顺序：环境变量 `HITHINK_FINANCE_API_KEY` → 用户级 `credentials.env`（Windows 为 `%APPDATA%\hithink-finance\credentials.env`）；密钥不写入命令参数、日志或项目文件。CLI 完整路径 `C:\Users\tizytian\.workbuddy\binaries\node\versions\22.22.2-1\hithink-finance`，所有取数加 `--format json`。
+2. hithink-finance 统一凭据读取顺序：环境变量 `HITHINK_FINANCE_API_KEY` → 用户级 `credentials.env`（Windows 为 `%APPDATA%\hithink-finance\credentials.env`）；密钥不写入命令参数、日志或项目文件。所有取数加 `--format json`。
+   **CLI 调用方式（路径会随 Node 版本升级失效，必须先探测再使用）**：本机 Node 受管版本目录可能变化（历史上为 `22.22.2-1`，当前为 `22.22.2-2`），禁止硬编码旧版本号。探测顺序：
+   - `hithink-finance --version`（PATH 命中时优先）；
+   - 否则用 `NODE=<受管node.exe> node <workspace>/node_modules/@hithink-tech/hithink-finance-cli/dist/cli/main.js`，其中 workspace 默认 `C:\Users\tizytian\.workbuddy\binaries\node\workspace`；
+   - 缺失时用 `npm install @hithink-tech/hithink-finance-cli` 安装到 workspace（`npm install -g` 会污染用户环境，禁止使用），随后 `auth status --format json` 确认已登录。
+   WeStock 同理优先使用 workspace 内 `node_modules/westock-data-skillhub/index.js`，避免每次 `npx -y` 重新下载。
 3. 读取：
    - `references/data-routing.md`：数据职责、代码和时间窗口；
    - `references/scoring.md`：市场、板块、个股和交易建议规则；
@@ -193,8 +198,10 @@ python <skill-dir>/scripts/calculate_sector_score.py <sector-input.json> --outpu
 - 证据台账（`[E01]`编号、来源、口径、降级）在分析过程中完整维护，并存为同目录旁车文件 `YYYY-MM-DD-evidence.md`；但最终产物HTML不出现证据区和证据编号，正文用"数据显示/公告称/龙虎榜显示"等自然语言归因，关键数据缺口并入风险提示或方法折叠区。
 - `format` 含 mobile 时，额外按 `references/mobile-spec.md` 输出小红书笔记文案 `.md`（标题+正文+话题标签），文案与HTML使用同一次取数。
 - 移动端HTML与小红书文案在生成时执行 `references/xhs-preflight.md` 的小红书合规微调与自检（个股不写精确买卖价位、免责声明置于可见位置、绝对化措辞软化）；桌面端保持完整点位。
-- 用户要求发布到小红书时，只允许打开创作中心、上传配图、填写标题和正文、保存发布前截图，并把浏览器停在待发布页面交给用户复核；**禁止自动点击“发布”或二次确认控件，禁止通过坐标、DOM、自定义组件或任何RPA方式绕过平台的自动化防护。最终发布必须由用户本人手动完成。**
-- 完成后运行验证脚本（移动端加 `--format mobile`），再展示产物给用户。
+- 用户要求“发布到小红书”“发送小红书”或类似操作时，**只准备本地材料并说明手动发布步骤，不得操作小红书平台**。允许执行的范围仅包括：生成并校验移动端HTML、生成小红书笔记文案 `.md`、在本地渲染并校验按编号排序的轮播图片、列出标题/文案/图片绝对路径与图片顺序。
+- **禁止一切小红书网页自动化**：不得打开或访问小红书创作中心，不得读取或复用登录态，不得扫码/登录，不得切换发布页签，不得上传图片，不得填写或粘贴标题/正文/话题，不得保存平台草稿或发布前截图，不得定位、点击或触发“发布”“确认发布”“确定”等控件，也不得使用浏览器自动化、坐标、DOM、自定义组件、CDP、RPA或系统级GUI自动化绕过此边界。即使用户明确要求“帮我发布”或“帮我填充”，也只能交付材料与手动步骤。
+- 交付时必须明确给用户以下手动步骤：①自行打开小红书创作服务平台并登录；②选择“发布笔记/上传图文”；③按文件名编号顺序上传配图；④从 `.md` 文案复制标题、正文与话题标签；⑤人工复核封面、图片顺序、标题、正文、话题和免责声明；⑥由用户本人点击发布。
+- 完成后运行验证脚本（移动端加 `--format mobile`），再展示本地材料给用户。
 
 ## 证据与真实性
 

@@ -5,7 +5,7 @@
 本工作区默认用 hithink-finance（同花顺）取金融数据；NashNova 已弃用（本机未安装，原路径属另一台机器 tizyt）。
 
 - Skill 位于 `C:\Users\tizytian\.workbuddy\skills\hithink-finance\`（SkillHub 安装，已扁平化为标准结构）
-- CLI 完整路径：`C:\Users\tizytian\.workbuddy\binaries\node\versions\22.22.2-1\hithink-finance`
+- CLI 路径不可硬编码 Node 版本号；当前通过受管 Node `22.22.2-2` 调用 workspace 内 `node_modules/@hithink-tech/hithink-finance-cli/dist/cli/main.js`（若版本变化需重新探测）
 - 统一凭据：环境变量 `HITHINK_FINANCE_API_KEY` → `%APPDATA%\hithink-finance\credentials.env`；Key 申请 https://fuyao.aicubes.cn/admin；密钥不拼命令参数/不落项目文件
 - 常用命令（均加 `--format json`）：`symbol search`、`market snapshot/history/calendar`、`index catalog/constituents/snapshot/history`、`financials income/balance-sheet/cash-flow/indicators`、`valuation snapshot`、`special limit-up-pool/limit-up-ladder/dragon-tiger/anomaly-stock/hot-stock`
 - 代码格式：股票 `600519.SH`/`000001.SZ`，上证指数 `000001.SH`
@@ -30,4 +30,4 @@
 - 2026-08-24 skill 新增 `references/xhs-preflight.md`：移动端HTML与小红书笔记文案生成时强制做合规微调——个股不写精确买卖价位（用均线/形态条件表达），免责声明必须出现在可见正文（行情摘要或页脚），绝对化措辞改为带数据口径陈述，禁止导流/诱导互动/收益承诺/指令性买卖话术，话题标签用中性研究词（#A股 #股票复盘 等）；桌面端研报不受此规则约束保留完整点位。
 - 2026-08-24 移动端个股卡片顺序改为：逻辑 → 关键事实 → 当前建议 → 观察确认（形态描述）→ 止盈/减仓触发（形态描述）→ 失效条件（均线/支撑位描述）→ 催化/风险；不再出现「买入观察区间」/「止盈/减仓」/「失效位」精确价格小节。
 - 2026-08-24 数据降级：本机 `user = tizytian` 没有安装 NashNova CLI（按原 memory 路径在另一台机器 `user = tizyt`）；同时 westock-premarket fetch 需 `SNP_MCP_TOKEN` 未配置。降级路径：用 WeStock 结构化数据 + WebSearch 公开报道核实定性事件（仅核实事件、不补造数据），台账显式记录降级披露。
-- 2026-08-27 小红书发布硬边界：`outputs/xhs-publish.js` 只负责打开创作中心、上传图片、填写标题/正文并保存 `xhs-final.png`，随后保持浏览器打开交给用户；禁止自动点击“发布”或二次确认，不得用坐标、DOM、自定义组件或其他RPA绕过平台自动化防护。即使用户要求“直接发布”，也只填充内容，最终发布必须由用户本人手动完成。持久化 profile 位于 `E:\WS\NashnovaResearch\.workbuddy\xhs-profile`。
+- 2026-09-02 起小红书平台操作改为完全手动：Skill 只生成本地移动HTML、合规文案和按编号排序的轮播图片，并告知用户手动发布步骤；不得打开/访问小红书创作中心，不得读取登录态、上传、填写、保存草稿或发布前截图，也不得使用浏览器自动化、坐标、DOM、CDP、RPA或系统级GUI自动化。`outputs/xhs-publish.js`、`xhs-probe.js` 及历史 `xhs_publish*.py` 已改为安全停用入口。

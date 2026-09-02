@@ -27,61 +27,110 @@ function escapeHtml(value) {
   await sourcePage.waitForTimeout(500);
 
   const sourceCss = (await sourcePage.locator('style').allTextContents()).join('\n');
+  const zeroRecommendation = await sourcePage.locator('#picks').evaluate(el =>
+    /零推荐|不建立个股推荐榜|不建立推荐榜/.test(el.textContent || '')
+  );
+
   const shots = [
-    ['01-cover', '#cover'],
-    ['02-summary', '#executive-summary'],
-    ['03-macro', '#macro'],
-    ['04-market', '#market'],
-    ['05-sectors', '#sectors'],
-    ['06-pick', '#picks'],
-    ['07-risks', '#risks'],
+    { name: '01-cover', selectors: ['#cover'], variant: 'cover' },
+    {
+      name: '02-market-overview',
+      selectors: ['#executive-summary', '#macro', '#market'],
+      variant: 'market-overview',
+    },
+    { name: '03-sectors', selectors: ['#sectors'], variant: 'sectors' },
   ];
 
-  for (const [name, selector] of shots) {
-    const source = sourcePage.locator(selector).first();
-    if (await source.count() === 0) {
-      console.error('FAIL', name, 'selector not found:', selector);
+  if (zeroRecommendation) {
+    const decisionSelectors = ['#picks', '#risks'];
+    if (await sourcePage.locator('#caveats').count()) {
+      decisionSelectors.push('#caveats');
+    }
+    shots.push({
+      name: '04-decision-risks',
+      selectors: decisionSelectors,
+      variant: 'decision-risks',
+    });
+  } else {
+    shots.push(
+      { name: '04-picks', selectors: ['#picks'], variant: 'picks' },
+      { name: '05-risks', selectors: ['#risks'], variant: 'risks' },
+    );
+  }
+
+  const staleImagePattern = /^\d{2}-(cover|summary|macro|market|market-overview|sectors|pick|picks|risks|decision-risks)\.png$/;
+  for (const file of fs.readdirSync(outDir)) {
+    if (staleImagePattern.test(file)) {
+      fs.unlinkSync(path.join(outDir, file));
+    }
+  }
+
+  for (const { name, selectors, variant } of shots) {
+    const fragments = [];
+    for (const selector of selectors) {
+      const source = sourcePage.locator(selector).first();
+      if (await source.count() === 0) {
+        console.error('FAIL', name, 'selector not found:', selector);
+        continue;
+      }
+      fragments.push(await source.evaluate(el => el.outerHTML));
+    }
+    if (fragments.length !== selectors.length) {
       continue;
     }
 
-    let outerHtml = await source.evaluate(el => el.outerHTML);
-    let cardSpecificCss = '';
+    const isComposite = fragments.length > 1;
+    let outerHtml = isComposite
+      ? `<article class="xhs-composite xhs-${variant}">${fragments.join('')}</article>`
+      : fragments[0];
+    let cardSpecificCss = variant === 'cover' ? '' : `
+      .xhs-stage{align-items:flex-start!important}
+      .xhs-root{align-items:flex-start!important}
+      .xhs-root>.sec{margin:0!important;padding:20px 22px!important;border-top:4px solid #b98532!important;box-shadow:0 8px 24px rgba(24,51,45,.06)}
+      .xhs-root>.sec h2{margin:4px 0 12px!important;font-size:29px!important;line-height:1.2!important}
+      .xhs-root>.sec .line,.xhs-root>.sec .kv{font-size:16px!important;line-height:1.5!important}
+      .xhs-composite{width:456px;display:flex;flex-direction:column;gap:10px}
+      .xhs-composite>.sec{width:456px!important;margin:0!important;padding:16px 20px!important;border:1px solid #e1d9ca!important;background:#fffdf7!important}
+      .xhs-composite>.sec h2{margin:2px 0 9px!important;font-size:25px!important;line-height:1.18!important}
+      .xhs-composite>.sec .kicker{font-size:10px!important}
+    `;
 
-    const compactCards = new Set([
-      '02-summary',
-      '03-macro',
-      '04-market',
-      '06-pick',
-      '07-risks',
-    ]);
-    if (compactCards.has(name)) {
-      cardSpecificCss = `
-        .xhs-stage{align-items:flex-start!important;padding-top:12px}
-        .xhs-root{align-items:stretch!important}
-        .xhs-root>.sec{height:592px!important;min-height:592px!important;padding:30px 28px!important;border-top:5px solid #b98532!important;box-shadow:0 10px 28px rgba(24,51,45,.07);overflow:hidden}
-        .xhs-root>.sec .kicker{font-size:12px!important;letter-spacing:.14em!important}
-        .xhs-root>.sec h2{margin:5px 0 20px!important;font-size:34px!important;line-height:1.18!important}
-        .xhs-root>.sec .line,.xhs-root>.sec .kv{font-size:18px!important;line-height:1.55!important}
-        .xhs-root>.sec .k{font-size:16px!important;min-width:82px!important}
-        #executive-summary,#macro,#market,#picks,#risks{display:flex!important;flex-direction:column!important}
-        #executive-summary .line{flex:1;min-height:70px;align-items:center;padding:13px 4px!important}
-        #executive-summary>p{margin:18px -4px 0!important;padding:17px 18px;background:#18332d;color:#fff8e8;border-left:5px solid #b98532;font-size:17px;line-height:1.55}
-        #macro .kv{flex:1;min-height:150px;margin-top:14px;padding:24px 20px!important;align-items:flex-start!important;background:#faf5e9;border:1px solid #e1d9ca!important;border-left:5px solid #b98532!important}
-        #macro .kv .k{font:700 22px/1.3 STSong,"Songti SC",SimSun,serif;color:#18332d}
-        #macro .kv span:last-child{max-width:290px;font-size:19px;line-height:1.75}
-        #market .line{flex:1;min-height:72px;align-items:center;padding:14px 4px!important}
-        #market>p{margin:20px 0 0!important;padding:20px 20px;background:#f4efe2;border-left:5px solid #b98532;font-size:18px;line-height:1.75}
-        #picks .stock{flex:1;display:flex;flex-direction:column;margin-top:0!important;padding-top:18px!important}
-        #picks .stock h3{margin:0 0 16px!important;padding:18px 20px;background:#18332d;color:#fff8e8;font-size:28px!important;line-height:1.35}
-        #picks .stock p{margin:7px 0!important;padding:17px 18px;background:#faf5e9;border-left:5px solid #b98532;font-size:18px;line-height:1.65}
-        #risks ul{flex:1;display:flex;flex-direction:column;justify-content:space-between;margin:0!important;padding:0!important;list-style:none}
-        #risks li{margin:0 0 10px!important;padding:15px 18px 15px 46px;background:#faf5e9;border-left:5px solid #b98532;font-size:18px;line-height:1.55;position:relative}
-        #risks li::before{content:"!";position:absolute;left:18px;top:15px;color:#a83e32;font-weight:800}
-        #risks>p{margin:10px 0 0!important;padding:16px 18px;background:#18332d;color:#fff8e8;font-size:17px;line-height:1.5}`;
+    if (variant === 'market-overview') {
+      cardSpecificCss += `
+        .xhs-market-overview{gap:8px}
+        .xhs-market-overview #executive-summary{border-top:4px solid #b98532!important}
+        .xhs-market-overview #executive-summary .line{padding:5px 0!important}
+        .xhs-market-overview #executive-summary>p{margin:10px 0 0!important;padding:9px 12px;background:#18332d;color:#fff8e8;font-size:13px;line-height:1.45}
+        .xhs-market-overview #macro{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}
+        .xhs-market-overview #macro .kicker,.xhs-market-overview #macro h2{grid-column:1/-1}
+        .xhs-market-overview #macro .kv{display:block;margin:0;padding:9px 10px!important;background:#faf5e9;border:1px solid #e1d9ca!important}
+        .xhs-market-overview #macro .kv .k{display:block;margin-bottom:4px;color:#18332d;font-weight:700}
+        .xhs-market-overview #market .line{padding:5px 0!important}
+        .xhs-market-overview #market>p{margin:9px 0 0!important;padding:10px 12px;background:#f4efe2;border-left:4px solid #b98532;font-size:14px;line-height:1.55}`;
+    }
+
+    if (variant === 'decision-risks') {
+      cardSpecificCss += `
+        .xhs-decision-risks{gap:10px}
+        .xhs-decision-risks #picks{border-top:4px solid #b98532!important}
+        .xhs-decision-risks #picks .stock{margin-top:0!important;padding-top:8px!important}
+        .xhs-decision-risks #picks .stock h3{margin:0 0 8px!important;padding:10px 12px;background:#18332d;color:#fff8e8;font-size:22px!important;line-height:1.3}
+        .xhs-decision-risks #picks .stock p{margin:6px 0!important;font-size:15px;line-height:1.55}
+        .xhs-decision-risks #risks{border-left:4px solid #a83e32!important}
+        .xhs-decision-risks #risks ul{margin:0!important;padding-left:20px!important}
+        .xhs-decision-risks #risks li{margin:0 0 5px!important;font-size:14px;line-height:1.48}
+        .xhs-decision-risks #risks>p{margin:9px 0 0!important;padding:9px 11px;background:#f4efe2;font-size:12px;line-height:1.45}
+        .xhs-decision-risks #caveats .kicker,.xhs-decision-risks #caveats h2{color:var(--m-ink)}
+        .xhs-decision-risks #caveats .kv{margin:0!important;padding:8px 10px!important;background:#faf5e9;border:1px solid #e1d9ca;display:block}
+        .xhs-decision-risks #caveats .kv .k{display:block;margin-bottom:3px;color:#18332d;font-weight:700;font-size:13px}
+        .xhs-decision-risks #caveats .kv{font-size:13px;line-height:1.5;margin-bottom:6px!important}
+        .xhs-decision-risks #caveats>p{margin:6px 0 0!important;font-size:11px;line-height:1.45}
+        .xhs-decision-risks #caveats>h2{font-size:24px!important;margin:2px 0 8px!important}`;
     }
 
     if (name === '01-cover') {
-      const cover = await source.evaluate(el => {
+      const coverSource = sourcePage.locator(selectors[0]).first();
+      const cover = await coverSource.evaluate(el => {
         const textOf = selector => el.querySelector(selector)?.textContent?.trim() || '';
         const date = textOf('.date, .m-date, .eyebrow');
         const headline = textOf('h1').replace(/^今日\s*/, '').trim();
@@ -166,7 +215,7 @@ function escapeHtml(value) {
         html,body{margin:0!important;width:480px;height:640px;overflow:hidden;background:#f3efe5!important}
         body{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important}
         .xhs-stage{width:456px;height:616px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-        .xhs-root{display:flex;align-items:center;justify-content:center;transform-origin:center center}
+        .xhs-root{display:flex;align-items:center;justify-content:center;transform-origin:top center}
         .xhs-root>.sec,.xhs-root>.cover,.xhs-root>.xhs-almanac-cover{box-sizing:border-box!important;width:456px!important;margin:0!important}
         ${cardSpecificCss}
       </style>

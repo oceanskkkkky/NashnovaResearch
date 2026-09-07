@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.1",
+  "as_of_date": "2026-09-01",
+  "scope": {
+    "eligible_sectors": [],
+    "candidate_pool_count": 0,
+    "deep_verification_count_planned": 0
+  },
+  "methodology": {
+    "sector_gate": "SectorHeat>=65，严重拥挤板块还需SectorHeat>=70且R>=50",
+    "stock_gate": "中性市场FinalScore>=68且置信度>=75%"
+  },
+  "gate_detail": [
+    {
+      "sector": "种植业",
+      "sector_heat": 58.97,
+      "orthogonal_flow_r": 89.29,
+      "price_momentum_p": 100.0,
+      "trend_confirmation_t": 96.79,
+      "crowding_score": 98.83,
+      "crowding_delta_5d": 2.58,
+      "severe_crowding_can_remain": false,
+      "verdict": "未过65分门槛；且拥挤度98.83属严重拥挤，按规则需SectorHeat>=70且R>=50，均不满足，排除"
+    },
+    {
+      "sector": "汽车零部件",
+      "sector_heat": 58.32,
+      "orthogonal_flow_r": 92.86,
+      "price_momentum_p": 48.93,
+      "trend_confirmation_t": 62.11,
+      "crowding_score": 36.58,
+      "crowding_delta_5d": 12.81,
+      "severe_crowding_can_remain": false,
+      "verdict": "未过65分门槛；价格P=48.94偏弱、趋势T=62.13不足，仅作资金潜伏观察"
+    },
+    {
+      "sector": "消费电子",
+      "sector_heat": 57.36,
+      "orthogonal_flow_r": 75.0,
+      "price_momentum_p": 54.82,
+      "trend_confirmation_t": 60.87,
+      "crowding_score": 34.06,
+      "crowding_delta_5d": 8.88,
+      "severe_crowding_can_remain": false,
+      "verdict": "未过65分门槛；当日板块下跌，趋势T=60.94不足"
+    },
+    {
+      "sector": "工业金属",
+      "sector_heat": 53.38,
+      "orthogonal_flow_r": 60.71,
+      "price_momentum_p": 66.61,
+      "trend_confirmation_t": 64.84,
+      "crowding_score": 65.01,
+      "crowding_delta_5d": 12.69,
+      "severe_crowding_can_remain": false,
+      "verdict": "未过65分门槛；拥挤度65.03且5日加速+12.70，需跟踪"
+    },
+    {
+      "sector": "保险Ⅱ",
+      "sector_heat": 51.43,
+      "orthogonal_flow_r": 78.57,
+      "price_momentum_p": 76.07,
+      "trend_confirmation_t": 76.82,
+      "crowding_score": 88.47,
+      "crowding_delta_5d": 18.51,
+      "severe_crowding_can_remain": false,
+      "verdict": "未过65分门槛；趋势T=76.79较强，但拥挤88.48且5日加速+18.53，扣分17.86后不足"
+    }
+  ],
+  "candidate_pool": [],
+  "deep_verified": [],
+  "selected": [],
+  "zero_recommendation_reason": "29行业完整横截面中最高得分为种植业58.97，未达到65分门槛；榜首板块同时处于严重拥挤区（拥挤度98.83，RSI/换手率/成交占比三项均达近一年极端分位），按V3规则不可保留。因此本期不建立个股候选池，不强行凑股。"
+}

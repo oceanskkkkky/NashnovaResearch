@@ -1,0 +1,5435 @@
+{
+  "as_of_date": "2026-09-01",
+  "query_context": {
+    "timezone": "Asia/Shanghai",
+    "requested_at": "2026-09-02T13:27:35+08:00",
+    "generated_at": "2026-09-02T13:27:35+08:00",
+    "market_state": "盘后",
+    "completeness_basis": "目标日为交易日，且市场总览和板块K线均覆盖2026-09-01收盘"
+  },
+  "trade_date_confirmation": {
+    "listCode": "calendar_hsj",
+    "listName": "A股交易日历",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-01",
+    "days": [
+      {
+        "date": "2026-09-01",
+        "isTrading": true,
+        "isLastTradeDayInWeek": false,
+        "isLastTradeDayInMonth": false,
+        "isLastTradeDayInQuarter": false,
+        "isLastTradeDayInYear": false
+      }
+    ],
+    "total": 1,
+    "offset": 0,
+    "limit": 50
+  },
+  "indices": {
+    "上证指数": {
+      "close": 3979.89,
+      "change_pct": -0.16
+    },
+    "深证成指": {
+      "close": 13872.38,
+      "change_pct": -1.02
+    },
+    "创业板指": {
+      "close": 3393.43,
+      "change_pct": -1.32
+    },
+    "source": "WeStock market-overview trade",
+    "date": "2026-09-01"
+  },
+  "turnover": {
+    "amount_100m_cny": 20334.03,
+    "five_day_average_100m_cny": 20401.595999999998,
+    "twenty_day_average_100m_cny": 22420.554000000004,
+    "vs_twenty_day_average_pct": 90.69,
+    "source": "WeStock market-overview trade"
+  },
+  "market_breadth": {
+    "dated_market_overview": {
+      "CNT_GREEN": 2040,
+      "CNT_HIGH10": 1964,
+      "CNT_HIGH120": 103,
+      "CNT_HIGH20": 1243,
+      "CNT_HIGH250": 60,
+      "CNT_HIGH5": 2632,
+      "CNT_HIGH60": 503,
+      "CNT_LOW10": 225,
+      "CNT_LOW120": 21,
+      "CNT_LOW20": 130,
+      "CNT_LOW250": 16,
+      "CNT_LOW5": 494,
+      "CNT_LOW60": 22,
+      "CNT_REACH_DNLIMIT": 0,
+      "CNT_REACH_UPLIMIT": 80,
+      "CNT_RED": 3386,
+      "CNT_TOTAL": 5553,
+      "CNT_ZERO": 127,
+      "RATIO_DOWN": 36.74,
+      "RATIO_DOWNLIMIT": 0,
+      "RATIO_UP": 60.98,
+      "RATIO_UPDOWN": 1.66,
+      "RATIO_UPLIMIT": 1.44
+    },
+    "realtime_changedist": {
+      "upCount": 1627,
+      "downCount": 3812,
+      "flatCount": 115,
+      "upLimitCount": 47,
+      "downLimitCount": 3,
+      "suspensionCount": 7,
+      "upRatio": 29,
+      "upRatioComment": "当前市场上涨家数占比全市场29%，市场情绪偏低。",
+      "detail": [
+        {
+          "section": "涨停",
+          "count": 47,
+          "flag": 1
+        },
+        {
+          "section": ">7%",
+          "count": 53,
+          "flag": 1
+        },
+        {
+          "section": "7~5%",
+          "count": 84,
+          "flag": 1
+        },
+        {
+          "section": "5~2%",
+          "count": 503,
+          "flag": 1
+        },
+        {
+          "section": "2~0%",
+          "count": 940,
+          "flag": 1
+        },
+        {
+          "section": "平",
+          "count": 115,
+          "flag": 0
+        },
+        {
+          "section": "0~2%",
+          "count": 2697,
+          "flag": -1
+        },
+        {
+          "section": "2~5%",
+          "count": 1010,
+          "flag": -1
+        },
+        {
+          "section": "5~7%",
+          "count": 62,
+          "flag": -1
+        },
+        {
+          "section": "7%<",
+          "count": 40,
+          "flag": -1
+        },
+        {
+          "section": "跌停",
+          "count": 3,
+          "flag": -1
+        }
+      ],
+      "totalAmount": 1328626387281.7212,
+      "amountChange": -195450819435.84863
+    }
+  },
+  "limit_status": {
+    "market_overview": {
+      "limit_up": 80,
+      "limit_down": 0
+    },
+    "changedist": {
+      "upCount": 1627,
+      "downCount": 3812,
+      "flatCount": 115,
+      "upLimitCount": 47,
+      "downLimitCount": 3,
+      "suspensionCount": 7,
+      "upRatio": 29,
+      "upRatioComment": "当前市场上涨家数占比全市场29%，市场情绪偏低。",
+      "detail": [
+        {
+          "section": "涨停",
+          "count": 47,
+          "flag": 1
+        },
+        {
+          "section": ">7%",
+          "count": 53,
+          "flag": 1
+        },
+        {
+          "section": "7~5%",
+          "count": 84,
+          "flag": 1
+        },
+        {
+          "section": "5~2%",
+          "count": 503,
+          "flag": 1
+        },
+        {
+          "section": "2~0%",
+          "count": 940,
+          "flag": 1
+        },
+        {
+          "section": "平",
+          "count": 115,
+          "flag": 0
+        },
+        {
+          "section": "0~2%",
+          "count": 2697,
+          "flag": -1
+        },
+        {
+          "section": "2~5%",
+          "count": 1010,
+          "flag": -1
+        },
+        {
+          "section": "5~7%",
+          "count": 62,
+          "flag": -1
+        },
+        {
+          "section": "7%<",
+          "count": 40,
+          "flag": -1
+        },
+        {
+          "section": "跌停",
+          "count": 3,
+          "flag": -1
+        }
+      ],
+      "totalAmount": 1328626387281.7212,
+      "amountChange": -195450819435.84863
+    },
+    "hithink_limit_up_pool": {
+      "pagination": {
+        "total": 80,
+        "pages": 1,
+        "size": 200,
+        "page": 1
+      },
+      "items": [
+        {
+          "thscode": "000596.SZ",
+          "ticker": "000596",
+          "name": "古井贡酒",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 100.88,
+          "price_change_ratio_pct": 9.9989,
+          "limit_up_time": "10:21",
+          "limit_up_reason": "白酒+渠道去库+国资背景",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 90518615,
+          "max_seal_money": 1043906240
+        },
+        {
+          "thscode": "603293.SH",
+          "ticker": "603293",
+          "name": "埃泰克",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 39.45,
+          "price_change_ratio_pct": 10.0112,
+          "limit_up_time": "10:07",
+          "limit_up_reason": "智能驾驶+车身控制+海外配套+次新股",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 58808549,
+          "max_seal_money": 147861045.9
+        },
+        {
+          "thscode": "002955.SZ",
+          "ticker": "002955",
+          "name": "鸿合科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 39.12,
+          "price_change_ratio_pct": 10.0112,
+          "limit_up_time": "13:10",
+          "limit_up_reason": "AI教育+智能交互显示产品+商用显示+海外业务",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 76098571,
+          "max_seal_money": 373028760
+        },
+        {
+          "thscode": "300927.SZ",
+          "ticker": "300927",
+          "name": "江天化学",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 34.92,
+          "price_change_ratio_pct": 20,
+          "limit_up_time": "10:39",
+          "limit_up_reason": "甲醇下游+SAP业务+新厂投产+半年报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 94693158,
+          "max_seal_money": 598931567.28
+        },
+        {
+          "thscode": "605179.SH",
+          "ticker": "605179",
+          "name": "一鸣食品",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 34.67,
+          "price_change_ratio_pct": 9.9937,
+          "limit_up_time": "14:28",
+          "limit_up_reason": "大消费+净利润增长+低温乳品",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 2277819,
+          "max_seal_money": 41035412
+        },
+        {
+          "thscode": "603221.SH",
+          "ticker": "603221",
+          "name": "爱丽家居",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 30.55,
+          "price_change_ratio_pct": 10.0108,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "跨界收购+存储测试+PVC地板",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 56031602,
+          "max_seal_money": 109023693.35
+        },
+        {
+          "thscode": "603376.SH",
+          "ticker": "603376",
+          "name": "大明电子",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 28.48,
+          "price_change_ratio_pct": 10.0039,
+          "limit_up_time": "10:01",
+          "limit_up_reason": "汽车电子+新能源汽车+无人驾驶+整车客户",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 41110709,
+          "max_seal_money": 145635328
+        },
+        {
+          "thscode": "603207.SH",
+          "ticker": "603207",
+          "name": "小方制药",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 25.4,
+          "price_change_ratio_pct": 10.0043,
+          "limit_up_time": "10:24",
+          "limit_up_reason": "创新药+外用药+开塞露",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 37015420,
+          "max_seal_money": 190809092.6
+        },
+        {
+          "thscode": "603533.SH",
+          "ticker": "603533",
+          "name": "掌阅科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 24.85,
+          "price_change_ratio_pct": 10.0044,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "AI短剧+短剧出海+数字阅读",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 41487075,
+          "max_seal_money": 216515565
+        },
+        {
+          "thscode": "002882.SZ",
+          "ticker": "002882",
+          "name": "金龙羽",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 23.77,
+          "price_change_ratio_pct": 9.9954,
+          "limit_up_time": "09:46",
+          "limit_up_reason": "固态电池+机器人电池+电线电缆",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 35479102,
+          "max_seal_money": 472699728
+        },
+        {
+          "thscode": "603721.SH",
+          "ticker": "603721",
+          "name": "中广天择",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 21.01,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "AI语料+传媒内容+控股变更",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 81384336,
+          "max_seal_money": 241522556
+        },
+        {
+          "thscode": "300413.SZ",
+          "ticker": "300413",
+          "name": "芒果超媒",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 20.38,
+          "price_change_ratio_pct": 20.0236,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "AIGC长剧+AI应用+微短剧",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 170791020,
+          "max_seal_money": 901117535.26
+        },
+        {
+          "thscode": "605068.SH",
+          "ticker": "605068",
+          "name": "明新旭腾",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 20.38,
+          "price_change_ratio_pct": 9.9838,
+          "limit_up_time": "10:04",
+          "limit_up_reason": "人形机器人+电子皮肤+汽车内饰",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 65460560,
+          "max_seal_money": 176335912
+        },
+        {
+          "thscode": "300642.SZ",
+          "ticker": "300642",
+          "name": "透景生命",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 20.35,
+          "price_change_ratio_pct": 19.9882,
+          "limit_up_time": "13:35",
+          "limit_up_reason": "体外诊断+FISH产品+业绩增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 86307606,
+          "max_seal_money": 391660780.5
+        },
+        {
+          "thscode": "600272.SH",
+          "ticker": "600272",
+          "name": "开开实业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 20.09,
+          "price_change_ratio_pct": 10.0219,
+          "limit_up_time": "14:56",
+          "limit_up_reason": "医药商业+SPD供应链+股权收购",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 53565967,
+          "max_seal_money": 71102528
+        },
+        {
+          "thscode": "003040.SZ",
+          "ticker": "003040",
+          "name": "楚天龙",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 19.58,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "10:05",
+          "limit_up_reason": "数字人民币+AI政务+数字安全",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 239463770,
+          "max_seal_money": 588145097.32
+        },
+        {
+          "thscode": "002703.SZ",
+          "ticker": "002703",
+          "name": "浙江世宝",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 18.24,
+          "price_change_ratio_pct": 10.0121,
+          "limit_up_time": "09:58",
+          "limit_up_reason": "无人驾驶+线控转向+车企配套+半年报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 82981932,
+          "max_seal_money": 800026482.24
+        },
+        {
+          "thscode": "003005.SZ",
+          "ticker": "003005",
+          "name": "竞业达",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 18.18,
+          "price_change_ratio_pct": 9.9819,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "AI教育+智能体+智慧招考+智慧轨道",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 211773180,
+          "max_seal_money": 416520162
+        },
+        {
+          "thscode": "002855.SZ",
+          "ticker": "002855",
+          "name": "捷荣技术",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 17.71,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "折叠屏+精密结构件+亏损收窄",
+          "continue_day_text": "6连板",
+          "continue_day_cnt": 6,
+          "seal_money": 79563946,
+          "max_seal_money": 95968719
+        },
+        {
+          "thscode": "002015.SZ",
+          "ticker": "002015",
+          "name": "协鑫能科",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 17.42,
+          "price_change_ratio_pct": 9.9747,
+          "limit_up_time": "10:10",
+          "limit_up_reason": "算电协同+虚拟电厂+能源服务",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 123720028,
+          "max_seal_money": 1990005177.94
+        },
+        {
+          "thscode": "002945.SZ",
+          "ticker": "002945",
+          "name": "华林证券",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 16.04,
+          "price_change_ratio_pct": 10.0137,
+          "limit_up_time": "09:45",
+          "limit_up_reason": "AI券商+期货收购+财富管理+西藏券商",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 56651676,
+          "max_seal_money": 570438395.64
+        },
+        {
+          "thscode": "605365.SH",
+          "ticker": "605365",
+          "name": "立达信",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 15.66,
+          "price_change_ratio_pct": 9.9719,
+          "limit_up_time": "09:36",
+          "limit_up_reason": "半年报增长+物联网+泰国基地",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 48270384,
+          "max_seal_money": 186490242
+        },
+        {
+          "thscode": "600410.SH",
+          "ticker": "600410",
+          "name": "华胜天成",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 15.22,
+          "price_change_ratio_pct": 9.9711,
+          "limit_up_time": "13:11",
+          "limit_up_reason": "AI算力+大模型合作+AI应用",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 143028430,
+          "max_seal_money": 1969868422.98
+        },
+        {
+          "thscode": "605188.SH",
+          "ticker": "605188",
+          "name": "国光连锁",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 14.98,
+          "price_change_ratio_pct": 9.9853,
+          "limit_up_time": "09:38",
+          "limit_up_reason": "零售+中报增长+商业综合体",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 35006762,
+          "max_seal_money": 181436037.3
+        },
+        {
+          "thscode": "600371.SH",
+          "ticker": "600371",
+          "name": "万向德农",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.96,
+          "price_change_ratio_pct": 10.0079,
+          "limit_up_time": "09:32",
+          "limit_up_reason": "转基因玉米+玉米种业+新品研发",
+          "continue_day_text": "6连板",
+          "continue_day_cnt": 6,
+          "seal_money": 118696087,
+          "max_seal_money": 168673933.6
+        },
+        {
+          "thscode": "000158.SZ",
+          "ticker": "000158",
+          "name": "常山北明",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.88,
+          "price_change_ratio_pct": 9.9842,
+          "limit_up_time": "13:30",
+          "limit_up_reason": "AI应用+智算中心+华为合作",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 158304180,
+          "max_seal_money": 1373746045.04
+        },
+        {
+          "thscode": "002395.SZ",
+          "ticker": "002395",
+          "name": "双象股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.68,
+          "price_change_ratio_pct": 9.9678,
+          "limit_up_time": "13:53",
+          "limit_up_reason": "光学级PMMA+足球革+超纤革",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 112218107,
+          "max_seal_money": 249354388.8
+        },
+        {
+          "thscode": "600479.SH",
+          "ticker": "600479",
+          "name": "千金药业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.37,
+          "price_change_ratio_pct": 10.0412,
+          "limit_up_time": "13:21",
+          "limit_up_reason": "女性健康+创新药+药材种植+中报增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 70553049,
+          "max_seal_money": 261264587.22
+        },
+        {
+          "thscode": "600127.SH",
+          "ticker": "600127",
+          "name": "金健米业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.24,
+          "price_change_ratio_pct": 9.9668,
+          "limit_up_time": "09:38",
+          "limit_up_reason": "粮油加工+粮食概念+大健康食品",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 208363180,
+          "max_seal_money": 518940118.52
+        },
+        {
+          "thscode": "002679.SZ",
+          "ticker": "002679",
+          "name": "福建金森",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.91,
+          "price_change_ratio_pct": 9.9659,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "林业主业+海峡两岸+国有控股+中报亏损收窄",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 352819580,
+          "max_seal_money": 364420510.7
+        },
+        {
+          "thscode": "600785.SH",
+          "ticker": "600785",
+          "name": "新华百货",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.66,
+          "price_change_ratio_pct": 9.9913,
+          "limit_up_time": "09:41",
+          "limit_up_reason": "股份回购+区域零售+硬折扣",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 69429706,
+          "max_seal_money": 259329161.76
+        },
+        {
+          "thscode": "002104.SZ",
+          "ticker": "002104",
+          "name": "恒宝股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.28,
+          "price_change_ratio_pct": 10.0358,
+          "limit_up_time": "09:35",
+          "limit_up_reason": "数字人民币+eSIM+数据安全",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 92840926,
+          "max_seal_money": 419481582.64
+        },
+        {
+          "thscode": "600967.SH",
+          "ticker": "600967",
+          "name": "内蒙一机",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.19,
+          "price_change_ratio_pct": 10.0181,
+          "limit_up_time": "10:51",
+          "limit_up_reason": "军工装备+军贸+铁路货车+兵装重组",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 70518211,
+          "max_seal_money": 675216375.33
+        },
+        {
+          "thscode": "002041.SZ",
+          "ticker": "002041",
+          "name": "登海种业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 11.88,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:53",
+          "limit_up_reason": "粮食概念+转基因玉米+玉米种业",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 195417190,
+          "max_seal_money": 728264196
+        },
+        {
+          "thscode": "605577.SH",
+          "ticker": "605577",
+          "name": "龙版传媒",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 11.68,
+          "price_change_ratio_pct": 9.9812,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "AI漫剧+出版发行+黑龙江国资",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 37828016,
+          "max_seal_money": 89634656
+        },
+        {
+          "thscode": "605300.SH",
+          "ticker": "605300",
+          "name": "佳禾食品",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.73,
+          "price_change_ratio_pct": 10.0513,
+          "limit_up_time": "09:50",
+          "limit_up_reason": "植物基+咖啡+业绩改善",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 31803591,
+          "max_seal_money": 137289813.5
+        },
+        {
+          "thscode": "002295.SZ",
+          "ticker": "002295",
+          "name": "精艺股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.62,
+          "price_change_ratio_pct": 10.0518,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "铜板采购+铜加工+国资控股",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 56370960,
+          "max_seal_money": 147804912
+        },
+        {
+          "thscode": "603123.SH",
+          "ticker": "603123",
+          "name": "翠微股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.44,
+          "price_change_ratio_pct": 10.0105,
+          "limit_up_time": "09:57",
+          "limit_up_reason": "数字人民币+跨境支付+AI应用+北京国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 92839788,
+          "max_seal_money": 605175480
+        },
+        {
+          "thscode": "600693.SH",
+          "ticker": "600693",
+          "name": "东百集团",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.24,
+          "price_change_ratio_pct": 9.9893,
+          "limit_up_time": "09:35",
+          "limit_up_reason": "零售+首店经济+仓储物流+资产盘活",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 90818765,
+          "max_seal_money": 463309824
+        },
+        {
+          "thscode": "601086.SH",
+          "ticker": "601086",
+          "name": "国芳集团",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.09,
+          "price_change_ratio_pct": 10.0327,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "连锁零售+新零售+半年报增长",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 195748020,
+          "max_seal_money": 312261092.29
+        },
+        {
+          "thscode": "000998.SZ",
+          "ticker": "000998",
+          "name": "隆平高科",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.97,
+          "price_change_ratio_pct": 10.0442,
+          "limit_up_time": "10:05",
+          "limit_up_reason": "种业+转基因+水稻出海",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 117767445,
+          "max_seal_money": 562641995
+        },
+        {
+          "thscode": "002181.SZ",
+          "ticker": "002181",
+          "name": "粤传媒",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.58,
+          "price_change_ratio_pct": 9.9885,
+          "limit_up_time": "09:33",
+          "limit_up_reason": "AI视频+短剧+体育传媒",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 192442080,
+          "max_seal_money": 868402092
+        },
+        {
+          "thscode": "601566.SH",
+          "ticker": "601566",
+          "name": "九牧王",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.42,
+          "price_change_ratio_pct": 10.0467,
+          "limit_up_time": "10:19",
+          "limit_up_reason": "男裤龙头+零售消费+太空裤",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 29884950,
+          "max_seal_money": 119288625.12
+        },
+        {
+          "thscode": "600830.SH",
+          "ticker": "600830",
+          "name": "香溢融通",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.23,
+          "price_change_ratio_pct": 10.0119,
+          "limit_up_time": "09:40",
+          "limit_up_reason": "特殊资产+融资租赁+烟草背景",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 75046149,
+          "max_seal_money": 179161684
+        },
+        {
+          "thscode": "600354.SH",
+          "ticker": "600354",
+          "name": "敦煌种业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.12,
+          "price_change_ratio_pct": 10.0121,
+          "limit_up_time": "09:48",
+          "limit_up_reason": "中报增长+种业+育种研发",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 85447624,
+          "max_seal_money": 231574967.04
+        },
+        {
+          "thscode": "600551.SH",
+          "ticker": "600551",
+          "name": "时代出版",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.08,
+          "price_change_ratio_pct": 10.0606,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "中报扣非增长+AI出版+教育服务+出版主业",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 43444713,
+          "max_seal_money": 145824091.76
+        },
+        {
+          "thscode": "002349.SZ",
+          "ticker": "002349",
+          "name": "精华制药",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 8.36,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "11:22",
+          "limit_up_reason": "中药+创新药+原料药",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 58473460,
+          "max_seal_money": 543405141.4
+        },
+        {
+          "thscode": "000019.SZ",
+          "ticker": "000019",
+          "name": "深粮控股",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.92,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:33",
+          "limit_up_reason": "粮食储备+食用油项目+深圳国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 126509581,
+          "max_seal_money": 274454698.32
+        },
+        {
+          "thscode": "603980.SH",
+          "ticker": "603980",
+          "name": "吉华集团",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.92,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "染料涨价+业绩增长+控制权变更",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 39829680,
+          "max_seal_money": 317567606.4
+        },
+        {
+          "thscode": "600313.SH",
+          "ticker": "600313",
+          "name": "农发种业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.9,
+          "price_change_ratio_pct": 10.0279,
+          "limit_up_time": "09:36",
+          "limit_up_reason": "种业+生物育种+新品种审定",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 138624210,
+          "max_seal_money": 828675556
+        },
+        {
+          "thscode": "002769.SZ",
+          "ticker": "002769",
+          "name": "普路通",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.85,
+          "price_change_ratio_pct": 9.944,
+          "limit_up_time": "13:27",
+          "limit_up_reason": "拟购AI电商+新能源+国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 37970450,
+          "max_seal_money": 167803955
+        },
+        {
+          "thscode": "000505.SZ",
+          "ticker": "000505",
+          "name": "京粮控股",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.74,
+          "price_change_ratio_pct": 9.9432,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "粮食概念+油脂加工+食品加工",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 108657704,
+          "max_seal_money": 498341022.3
+        },
+        {
+          "thscode": "000721.SZ",
+          "ticker": "000721",
+          "name": "西安饮食",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.59,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:55",
+          "limit_up_reason": "旅游餐饮+中华老字号+降本增效",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 45356292,
+          "max_seal_money": 274464267
+        },
+        {
+          "thscode": "300189.SZ",
+          "ticker": "300189",
+          "name": "神农种业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.55,
+          "price_change_ratio_pct": 20.0318,
+          "limit_up_time": "09:49",
+          "limit_up_reason": "农作物种业+水产种业+生物育种",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 179512300,
+          "max_seal_money": 1368723947
+        },
+        {
+          "thscode": "600318.SH",
+          "ticker": "600318",
+          "name": "新力金融",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.49,
+          "price_change_ratio_pct": 9.9853,
+          "limit_up_time": "11:07",
+          "limit_up_reason": "多元金融+供销社+业绩增长",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 17622667,
+          "max_seal_money": 226702938.35
+        },
+        {
+          "thscode": "002107.SZ",
+          "ticker": "002107",
+          "name": "沃华医药",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.37,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "13:03",
+          "limit_up_reason": "双基药+阿尔茨海默+中药独家",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 10590837.4,
+          "max_seal_money": 214136087
+        },
+        {
+          "thscode": "002696.SZ",
+          "ticker": "002696",
+          "name": "百洋股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.28,
+          "price_change_ratio_pct": 9.9698,
+          "limit_up_time": "09:32",
+          "limit_up_reason": "鱼粉涨价+水产饲料+青岛国资",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 76366210,
+          "max_seal_money": 228969904.8
+        },
+        {
+          "thscode": "000635.SZ",
+          "ticker": "000635",
+          "name": "英力特",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.22,
+          "price_change_ratio_pct": 10.061,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "控制权变更+复牌+氯碱化工",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 100684257,
+          "max_seal_money": 400857288
+        },
+        {
+          "thscode": "000713.SZ",
+          "ticker": "000713",
+          "name": "国投丰乐",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.14,
+          "price_change_ratio_pct": 10.0154,
+          "limit_up_time": "14:53",
+          "limit_up_reason": "转基因+制种基地+央企种业",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 95613504,
+          "max_seal_money": 186328224.6
+        },
+        {
+          "thscode": "002084.SZ",
+          "ticker": "002084",
+          "name": "海鸥住工",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.02,
+          "price_change_ratio_pct": 10.0313,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "控制权拟变更+装配式厨卫+越南制造",
+          "continue_day_text": "7连板",
+          "continue_day_cnt": 7,
+          "seal_money": 171719950,
+          "max_seal_money": 438346244.7
+        },
+        {
+          "thscode": "002909.SZ",
+          "ticker": "002909",
+          "name": "集泰股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.62,
+          "price_change_ratio_pct": 9.9668,
+          "limit_up_time": "13:08",
+          "limit_up_reason": "液冷硅油+新能源胶+密封胶",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 70362259,
+          "max_seal_money": 319819005.36
+        },
+        {
+          "thscode": "000711.SZ",
+          "ticker": "000711",
+          "name": "京蓝科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.48,
+          "price_change_ratio_pct": 10.017,
+          "limit_up_time": "09:39",
+          "limit_up_reason": "摘帽+铟资源循环+中报扭亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 164098880,
+          "max_seal_money": 466234574.4
+        },
+        {
+          "thscode": "001330.SZ",
+          "ticker": "001330",
+          "name": "博纳影业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.17,
+          "price_change_ratio_pct": 9.9822,
+          "limit_up_time": "10:49",
+          "limit_up_reason": "AI影视+重点影片+电影院线",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 79738612,
+          "max_seal_money": 247357768
+        },
+        {
+          "thscode": "600540.SH",
+          "ticker": "600540",
+          "name": "新赛股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.12,
+          "price_change_ratio_pct": 10.0719,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "棉花全产业链+业绩增长+棉蛋白",
+          "continue_day_text": "4连板",
+          "continue_day_cnt": 4,
+          "seal_money": 201047670,
+          "max_seal_money": 260413270.56
+        },
+        {
+          "thscode": "002291.SZ",
+          "ticker": "002291",
+          "name": "遥望科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.01,
+          "price_change_ratio_pct": 10.0733,
+          "limit_up_time": "10:56",
+          "limit_up_reason": "AI应用+直播电商+业绩扭亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 24703504,
+          "max_seal_money": 534714904.66
+        },
+        {
+          "thscode": "600121.SH",
+          "ticker": "600121",
+          "name": "郑州煤电",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 5.4,
+          "price_change_ratio_pct": 9.9796,
+          "limit_up_time": "09:53",
+          "limit_up_reason": "煤炭+智算中心+郑州国资",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 9524304,
+          "max_seal_money": 243526851
+        },
+        {
+          "thscode": "600130.SH",
+          "ticker": "600130",
+          "name": "波导股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.93,
+          "price_change_ratio_pct": 10.0446,
+          "limit_up_time": "14:01",
+          "limit_up_reason": "参股华大北斗+车载模组+智能设备+电子通信",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 49345810,
+          "max_seal_money": 139597387
+        },
+        {
+          "thscode": "600892.SH",
+          "ticker": "600892",
+          "name": "大晟文化",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.86,
+          "price_change_ratio_pct": 9.9548,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "短剧+网络游戏+资产剥离",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 77793534,
+          "max_seal_money": 133265574
+        },
+        {
+          "thscode": "002172.SZ",
+          "ticker": "002172",
+          "name": "澳洋健康",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.74,
+          "price_change_ratio_pct": 9.9768,
+          "limit_up_time": "09:37",
+          "limit_up_reason": "脑机接口+医疗服务+国企改革",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 66859122,
+          "max_seal_money": 322235154
+        },
+        {
+          "thscode": "000892.SZ",
+          "ticker": "000892",
+          "name": "欢瑞世纪",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.73,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "AIGC影视+互动影游+影视制作",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 327185460,
+          "max_seal_money": 1062778970
+        },
+        {
+          "thscode": "600792.SH",
+          "ticker": "600792",
+          "name": "云煤能源",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.42,
+          "price_change_ratio_pct": 9.9502,
+          "limit_up_time": "10:20",
+          "limit_up_reason": "焦炭生产+钢企供货+产能释放",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 65206934,
+          "max_seal_money": 238967742
+        },
+        {
+          "thscode": "600828.SH",
+          "ticker": "600828",
+          "name": "茂业商业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.37,
+          "price_change_ratio_pct": 10.0756,
+          "limit_up_time": "09:37",
+          "limit_up_reason": "百货零售+商业REITs+商管转型",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 69159183,
+          "max_seal_money": 182016618
+        },
+        {
+          "thscode": "600103.SH",
+          "ticker": "600103",
+          "name": "青山纸业",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.19,
+          "price_change_ratio_pct": 9.9738,
+          "limit_up_time": "13:08",
+          "limit_up_reason": "光模块+竹浆纸+林浆纸",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 55545741,
+          "max_seal_money": 588270888.2
+        },
+        {
+          "thscode": "000536.SZ",
+          "ticker": "000536",
+          "name": "华映科技",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.96,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "13:06",
+          "limit_up_reason": "显示面板+车载显示+资产出售",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 134116646,
+          "max_seal_money": 685488474
+        },
+        {
+          "thscode": "002425.SZ",
+          "ticker": "002425",
+          "name": "凯撒文化",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.6,
+          "price_change_ratio_pct": 10.0917,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "游戏IP+新游上线+AI应用",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 101789690,
+          "max_seal_money": 246281900.4
+        },
+        {
+          "thscode": "002589.SZ",
+          "ticker": "002589",
+          "name": "瑞康医药",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.5,
+          "price_change_ratio_pct": 10.0629,
+          "limit_up_time": "13:37",
+          "limit_up_reason": "创新药+AI应用+医药流通",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 61250350,
+          "max_seal_money": 436605207.5
+        },
+        {
+          "thscode": "000560.SZ",
+          "ticker": "000560",
+          "name": "我爱我家",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.19,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:33",
+          "limit_up_reason": "房产经纪+净利增长+AI应用",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 46942716,
+          "max_seal_money": 316825303.63
+        },
+        {
+          "thscode": "002721.SZ",
+          "ticker": "002721",
+          "name": "金一文化",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.18,
+          "price_change_ratio_pct": 10.0346,
+          "limit_up_time": "10:02",
+          "limit_up_reason": "AI金融+黄金珠宝+半年报扭亏",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 47554038,
+          "max_seal_money": 381524634
+        },
+        {
+          "thscode": "002470.SZ",
+          "ticker": "002470",
+          "name": "金正大",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 2.32,
+          "price_change_ratio_pct": 9.9526,
+          "limit_up_time": "09:44",
+          "limit_up_reason": "复合肥+磷化工+缓控释肥",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 158826740,
+          "max_seal_money": 632292336
+        },
+        {
+          "thscode": "000564.SZ",
+          "ticker": "000564",
+          "name": "供销大集",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 1.66,
+          "price_change_ratio_pct": 9.9338,
+          "limit_up_time": "09:40",
+          "limit_up_reason": "粮食贸易+零售+海南自贸港+供销社",
+          "continue_day_text": "首板",
+          "continue_day_cnt": 1,
+          "seal_money": 221017050,
+          "max_seal_money": 955798850.4
+        }
+      ]
+    }
+  },
+  "style": {
+    "info": {
+      "type": "rotation",
+      "code": "market_statis_rotation",
+      "desc": "风格指数轮动（沪深300/中证1000/全指成长/全指价值 多周期）",
+      "group": "风格"
+    },
+    "listName": "市场指数风格切换",
+    "date": "2026-09-01",
+    "schema": {
+      "CHG_10D_HS300": "10日涨跌幅(沪深300)",
+      "CHG_10D_QZCZ": "10日涨跌幅(全指成长)",
+      "CHG_10D_QZJZ": "10日涨跌幅(全指价值)",
+      "CHG_10D_ZZ1000": "10日涨跌幅(中证1000)",
+      "CHG_120D_HS300": "120日涨跌幅(沪深300)",
+      "CHG_120D_QZCZ": "120日涨跌幅(全指成长)",
+      "CHG_120D_QZJZ": "120日涨跌幅(全指价值)",
+      "CHG_120D_ZZ1000": "120日涨跌幅(中证1000)",
+      "CHG_20D_HS300": "20日涨跌幅(沪深300)",
+      "CHG_20D_QZCZ": "20日涨跌幅(全指成长)",
+      "CHG_20D_QZJZ": "20日涨跌幅(全指价值)",
+      "CHG_20D_ZZ1000": "20日涨跌幅(中证1000)",
+      "CHG_250D_HS300": "250日涨跌幅(沪深300)",
+      "CHG_250D_QZCZ": "250日涨跌幅(全指成长)",
+      "CHG_250D_QZJZ": "250日涨跌幅(全指价值)",
+      "CHG_250D_ZZ1000": "250日涨跌幅(中证1000)",
+      "CHG_5D_HS300": "5日涨跌幅(沪深300)",
+      "CHG_5D_QZCZ": "5日涨跌幅(全指成长)",
+      "CHG_5D_QZJZ": "5日涨跌幅(全指价值)",
+      "CHG_5D_ZZ1000": "5日涨跌幅(中证1000)",
+      "CHG_60D_HS300": "60日涨跌幅(沪深300)",
+      "CHG_60D_QZCZ": "60日涨跌幅(全指成长)",
+      "CHG_60D_QZJZ": "60日涨跌幅(全指价值)",
+      "CHG_60D_ZZ1000": "60日涨跌幅(中证1000)"
+    },
+    "row": {
+      "CHG_10D_HS300": -2.42,
+      "CHG_10D_QZCZ": -3.17,
+      "CHG_10D_QZJZ": 4.17,
+      "CHG_10D_ZZ1000": -3.2,
+      "CHG_120D_HS300": -1.35,
+      "CHG_120D_QZCZ": -2.23,
+      "CHG_120D_QZJZ": -3.85,
+      "CHG_120D_ZZ1000": -7.89,
+      "CHG_20D_HS300": 0.23,
+      "CHG_20D_QZCZ": 3.81,
+      "CHG_20D_QZJZ": 2.92,
+      "CHG_20D_ZZ1000": 5.66,
+      "CHG_250D_HS300": 7.96,
+      "CHG_250D_QZCZ": 10.42,
+      "CHG_250D_QZJZ": -2.56,
+      "CHG_250D_ZZ1000": 5.28,
+      "CHG_5D_HS300": 1.31,
+      "CHG_5D_QZCZ": 1.68,
+      "CHG_5D_QZJZ": 2.52,
+      "CHG_5D_ZZ1000": 2.18,
+      "CHG_60D_HS300": -2.17,
+      "CHG_60D_QZCZ": 3.37,
+      "CHG_60D_QZJZ": 3.45,
+      "CHG_60D_ZZ1000": -4.82
+    }
+  },
+  "macro": {
+    "query_date": "2026-09-01",
+    "latest_actual_data_date": 20260831,
+    "latest_monthly_period_end": null,
+    "latest_quarterly_period_end": null,
+    "effective_period_note": "口径日期由macro indicator原始返回动态提取；FORECAST_END_DATE与尚未到期的MLF_END_DATE不计入最新实际数据日。",
+    "latest_effective_periods": [
+      {
+        "CONSUMP_END_DATE": 20260731,
+        "CONSUMP_INFO_DATE": 20260817
+      },
+      {
+        "CPI_END_DATE": 20260731,
+        "CPI_INFO_DATE": 20260809
+      },
+      {
+        "CURP_END_DATE": 20260831,
+        "CURP_INFO_DATE": 20260831,
+        "CURV_END_DATE": 20260731,
+        "CURV_INFO_DATE": 20260814
+      },
+      {
+        "EXP_END_DATE": 20260731,
+        "EXP_INFO_DATE": 20260807
+      },
+      {
+        "FINANCING_END_DATE": 20260731,
+        "FINANCING_INFO_DATE": 20260814
+      },
+      {
+        "GDP_END_DATE": 20260630,
+        "GDP_INFO_DATE": 20260715
+      },
+      {
+        "INV_END_DATE": 20260731,
+        "INV_INFO_DATE": 20260817
+      },
+      {
+        "PMI_END_DATE": 20260831,
+        "PMI_INFO_DATE": 20260831
+      },
+      {
+        "PROFIT_END_DATE": 20260731,
+        "PROFIT_INFO_DATE": 20260827
+      },
+      {
+        "VAD_END_DATE": 20260731,
+        "VAD_INFO_DATE": 20260817
+      },
+      {
+        "CAPU_END_DATE": 20260630,
+        "CAPU_INFO_DATE": 20260715
+      },
+      {
+        "EDV_END_DATE": 20260731,
+        "EDV_INFO_DATE": 20260819
+      },
+      {
+        "EMPLOY_END_DATE": 20260830,
+        "EMPLOY_INFO_DATE": 20260831
+      },
+      {
+        "ENT_END_DATE": 20260630
+      },
+      {
+        "FISCAL_END_DATE": 20260731,
+        "FISCAL_INFO_DATE": 20260821
+      },
+      {
+        "FORECAST_END_DATE": 20271231,
+        "FORECAST_INFO_DATE": 20260112
+      },
+      {
+        "MLF_END_DATE": 20260831,
+        "MLF_INFO_DATE": 20260824
+      },
+      {
+        "PERCAP_END_DATE": 20260630,
+        "PERCAP_INFO_DATE": 20260715
+      },
+      {
+        "POWERUSE_END_DATE": 20260731,
+        "POWERUSE_INFO_DATE": 20260817
+      },
+      {
+        "PROD_END_DATE": 20260731,
+        "PROD_INFO_DATE": 20260817
+      },
+      {
+        "YTM_END_DATE": 20260831,
+        "YTM_INFO_DATE": 20260831
+      }
+    ],
+    "raw": {
+      "sections": [
+        [
+          {
+            "CONSUMP_CAR_CUM_YOY": -13.2,
+            "CONSUMP_CONSUMP_CAR_CUM": 22602,
+            "CONSUMP_CONSUMP_CUM_YOY": 1.2,
+            "CONSUMP_CONSUMP_CUR": 39022,
+            "CONSUMP_CONSUMP_CUR_MOM": -8.594317,
+            "CONSUMP_CONSUMP_CUR_YOY": 0.6,
+            "CONSUMP_CONSUMP_MEDISN_CUM": 4179,
+            "CONSUMP_CONSUMP_OFFICE_CUM": 2834,
+            "CONSUMP_CONSUMP_OIL_CUM": 12326,
+            "CONSUMP_CONSUMP_PHONE_CUM": 6310,
+            "CONSUMP_CONSUM_CUM": 287744,
+            "CONSUMP_COSMETIC_CUM": 2723,
+            "CONSUMP_COSMETIC_CUM_YOY": 6.3,
+            "CONSUMP_DECORATE_CUM": 690,
+            "CONSUMP_DECORATE_CUM_YOY": -9.5,
+            "CONSUMP_END_DATE": 20260731,
+            "CONSUMP_ENTERTAIN_CUM": 996,
+            "CONSUMP_ENTERTAIN_CUM_YOY": -3.5,
+            "CONSUMP_FURNITURE_CUM": 1004,
+            "CONSUMP_FURNITURE_CUM_YOY": -4.5,
+            "CONSUMP_INFO_DATE": 20260817,
+            "CONSUMP_JEWELRY_CUM": 2123,
+            "CONSUMP_JEWELRY_CUM_YOY": 0.7,
+            "CONSUMP_MAGZINE_CUM": 861.3,
+            "CONSUMP_MAGZINE_CUM_YOY": -4.2,
+            "CONSUMP_MEDISN_CUM_YOY": 3.8,
+            "CONSUMP_OFFICE_CUM_YOY": 6,
+            "CONSUMP_OIL_CUM_YOY": -5.9,
+            "CONSUMP_PHONE_CUM_YOY": 15.1,
+            "CONSUMP_TELEVISION_CUM": 6372,
+            "CONSUMP_TELEVISION_CUM_YOY": -6.6
+          }
+        ],
+        [
+          {
+            "CPI_CPI_YOY": 0.5,
+            "CPI_CPI_YOY_CORE": 0.9,
+            "CPI_CPI_YOY_FOOD": -1.5,
+            "CPI_CPI_YOY_JTTX": 0.4,
+            "CPI_CPI_YOY_JYWY": 1.3,
+            "CPI_CPI_YOY_JZ": -0.3,
+            "CPI_CPI_YOY_NON_FOOD": 0.9,
+            "CPI_CPI_YOY_OTHER": 5.8,
+            "CPI_CPI_YOY_SHYP": 0.8,
+            "CPI_CPI_YOY_SPYJ": -0.8,
+            "CPI_CPI_YOY_YLBJ": 2.9,
+            "CPI_CPI_YOY_YZ": 1.4,
+            "CPI_END_DATE": 20260731,
+            "CPI_INFO_DATE": 20260809,
+            "CPI_PRICE_SCISSORS_CPI_PPI": -3,
+            "CPI_PRICE_SCSR_CPI_PPI_FOO": 0.6
+          }
+        ],
+        [
+          {
+            "CURP_FDR001": 1.42,
+            "CURP_FDR007": 1.41,
+            "CURP_FDR014": 1.41,
+            "CURP_FR001": 1.44,
+            "CURP_FR007": 1.425,
+            "CURP_FR014": 1.43,
+            "CURP_GC001": 1.387,
+            "CURP_GC007": 1.418,
+            "CURP_GC014": 1.418,
+            "CURP_R001": 1.345,
+            "CURP_R002": 1.38,
+            "CURP_R003": 1.405,
+            "CURP_R004": 1.405,
+            "CURP_R007": 1.41,
+            "CURP_R014": 1.405,
+            "CURP_R028": 1.41,
+            "CURP_R091": 1.395,
+            "CURP_R182": 1.385,
+            "CURP_SHIBOR_1M": 1.4168,
+            "CURP_SHIBOR_1W": 1.414,
+            "CURP_SHIBOR_1Y": 1.48,
+            "CURP_SHIBOR_2W": 1.423,
+            "CURP_SHIBOR_3M": 1.43,
+            "CURP_SHIBOR_6M": 1.45,
+            "CURP_SHIBOR_9M": 1.47,
+            "CURP_SHIBOR_OVERNIGHT": 1.413
+          }
+        ],
+        [
+          {
+            "CURP_END_DATE": 20260831,
+            "CURP_INFO_DATE": 20260831,
+            "CURV_END_DATE": 20260731,
+            "CURV_INFO_DATE": 20260814,
+            "CURV_M0": 148202.86,
+            "CURV_M0_YOY": 11.6,
+            "CURV_M1": 1154623,
+            "CURV_M1_YOY": 4,
+            "CURV_M2": 3555077.24,
+            "CURV_M2_YOY": 7.7,
+            "CURV_SCISSORS_M1_M2": -3.7,
+            "CURV_SCISSORS_M1_M2_MOM": 7.5
+          }
+        ],
+        [
+          {
+            "EXP_BALANCE_GOODS_SUM_CUM": 43773.847871,
+            "EXP_BAL_GOODS_SVC_SUM_CUM": 5056.995702,
+            "EXP_BAL_SVC_SUM_CUM": -9002.462201,
+            "EXP_BAL_SVC_SUM_CUM_BUILD": 381.184891,
+            "EXP_BAL_SVC_SUM_CUM_FIN": 4.357414,
+            "EXP_BAL_SVC_SUM_CUM_GOV": -54.807485,
+            "EXP_BAL_SVC_SUM_CUM_IP": -1363.109533,
+            "EXP_BAL_SVC_SUM_CUM_OTHER": 66.266431,
+            "EXP_BAL_SVC_SUM_CUM_PROC": 382.734414,
+            "EXP_BAL_SVC_SUM_CUM_TRANS": -2250.074797,
+            "EXP_BAL_SVC_SUM_CUM_TRAVEL": -7021.753085,
+            "EXP_END_DATE": 20260731,
+            "EXP_EX_RESERVES_MONTHLY": 3418776000000,
+            "EXP_GOLD_RESERVES_MONTHLY": 76080000,
+            "EXP_INFO_DATE": 20260807
+          }
+        ],
+        [
+          {
+            "FINANCING_END_DATE": 20260731,
+            "FINANCING_INFO_DATE": 20260814,
+            "FINANCING_SR_INC": 222500,
+            "FINANCING_SR_INC_ABS": -493,
+            "FINANCING_SR_INC_BOND": 2520000000000,
+            "FINANCING_SR_INC_ENTST_LOA": -81000000000,
+            "FINANCING_SR_INC_FRGN_LOAN": 169400000000,
+            "FINANCING_SR_INC_GOV_BOND": 77572,
+            "FINANCING_SR_INC_LOAN": 101700,
+            "FINANCING_SR_INC_LOAN_WOFF": 8854,
+            "FINANCING_SR_INC_STOCK": 406100000000,
+            "FINANCING_SR_INC_TRUST": -672,
+            "FINANCING_SR_INC_UNDSC_BA": -178600000000,
+            "FINANCING_SR_INC_YOY": -7.251089,
+            "FINANCING_SR_INC_YOY_ABS": 54.770642,
+            "FINANCING_SR_INC_YOY_BOND": 76.112936,
+            "FINANCING_SR_INC_YOY_ENTST": -809,
+            "FINANCING_SR_INC_YOY_FRGN_": 333.333333,
+            "FINANCING_SR_INC_YOY_GOV_B": -12.881562,
+            "FINANCING_SR_INC_YOY_LOAN": -17.362087,
+            "FINANCING_SR_INC_YOY_LOAN_": 19.761937,
+            "FINANCING_SR_INC_YOY_STOCK": 83.589512,
+            "FINANCING_SR_INC_YOY_TRUST": -142.211055,
+            "FINANCING_SR_INC_YOY_UNDSC": 18.707328,
+            "FINANCING_SR_SIZE": 4632700,
+            "FINANCING_SR_SIZE_ABS": 6500,
+            "FINANCING_SR_SIZE_BOND": 364700,
+            "FINANCING_SR_SIZE_ENTST_LO": 112400,
+            "FINANCING_SR_SIZE_FRGN_LOA": 11900,
+            "FINANCING_SR_SIZE_GOV_BOND": 1026800,
+            "FINANCING_SR_SIZE_LOAN": 2785700,
+            "FINANCING_SR_SIZE_LOAN_WOF": 122900,
+            "FINANCING_SR_SIZE_STOCK": 126000,
+            "FINANCING_SR_SIZE_TRUST": 46000,
+            "FINANCING_SR_SIZE_UNDSC_BA": 19700,
+            "FINANCING_SR_SIZE_YOY": 7.4,
+            "FINANCING_SR_SIZE_YOY_ABS": -5.5,
+            "FINANCING_SR_SIZE_YOY_BOND": 9.2,
+            "FINANCING_SR_SIZE_YOY_ENTS": 0.7,
+            "FINANCING_SR_SIZE_YOY_FRGN": -1.7,
+            "FINANCING_SR_SIZE_YOY_GOV_": 14.1,
+            "FINANCING_SR_SIZE_YOY_LOAN": 15.2,
+            "FINANCING_SR_SIZE_YOY_STOC": 5.5,
+            "FINANCING_SR_SIZE_YOY_TRUS": 3.2,
+            "FINANCING_SR_SIZE_YOY_UNDS": 2.7
+          }
+        ],
+        [
+          {
+            "GDP_CONTRI_AGRI_CUM": 4.37,
+            "GDP_CONTRI_BUILD_CUM": -4.95,
+            "GDP_CONTRI_CAPITAL_CUM": 36.1,
+            "GDP_CONTRI_CAPITAL_CUR": 34,
+            "GDP_CONTRI_CONSUME_CUM": 46,
+            "GDP_CONTRI_CONSUME_CUR": 45.2,
+            "GDP_CONTRI_FINANCE_CUM": 11.08,
+            "GDP_CONTRI_FIRST_CUM": 3.7,
+            "GDP_CONTRI_FIRST_CUR": 4.9,
+            "GDP_CONTRI_IMPORT_CUM": 17.9,
+            "GDP_CONTRI_IMPORT_CUR": 20.8,
+            "GDP_CONTRI_IT_CUM": 13.13,
+            "GDP_CONTRI_MANUFACTURE_CUM": 35.77,
+            "GDP_CONTRI_OTHER_CUM": 15.19,
+            "GDP_CONTRI_REALESTATE_CUM": -0.28,
+            "GDP_CONTRI_RENT_CUM": 10.92,
+            "GDP_CONTRI_RESTERAUNT_CUM": 1.89,
+            "GDP_CONTRI_RETAIL_CUM": 8.35,
+            "GDP_CONTRI_SECOND_CUM": 30.2,
+            "GDP_CONTRI_SECOND_CUR": 25.7,
+            "GDP_CONTRI_THIRD_CUM": 66.1,
+            "GDP_CONTRI_THIRD_CUR": 69.4,
+            "GDP_CONTRI_TRANSPORT_CUM": 4.53,
+            "GDP_END_DATE": 20260630,
+            "GDP_INFO_DATE": 20260715,
+            "GDP_NOMINAL_GDP_CUM": 695704,
+            "GDP_NOMINAL_GDP_CUM_YOY": 5.324161,
+            "GDP_NOMINAL_GDP_CUR": 361511.1,
+            "GDP_NOMINAL_GDP_CUR_YOY": 5.773631,
+            "GDP_PULL_ALGRICULTURE_CUM": 0.21,
+            "GDP_PULL_BUILD_CUM": -0.23,
+            "GDP_PULL_CAPITAL_CUM": 1.7,
+            "GDP_PULL_CAPITAL_CUR": 1.462,
+            "GDP_PULL_CONSUME_CUM": 2.162,
+            "GDP_PULL_CONSUME_CUR": 1.9436,
+            "GDP_PULL_FINANCE_CUM": 0.52,
+            "GDP_PULL_FIRST_CUM": 0.17,
+            "GDP_PULL_FIRST_CUR": 0.2107,
+            "GDP_PULL_IMPORT_CUM": 0.8413,
+            "GDP_PULL_IMPORT_CUR": 0.8944,
+            "GDP_PULL_IT_CUM": 0.62,
+            "GDP_PULL_MANUFACTURE_CUM": 1.68,
+            "GDP_PULL_OTHER_CUM": 0.71,
+            "GDP_PULL_REALESTATE_CUM": -0.01,
+            "GDP_PULL_RENT_CUM": 0.51,
+            "GDP_PULL_RESTERAUNT_CUM": 0.09,
+            "GDP_PULL_RETAIL_CUM": 0.39,
+            "GDP_PULL_SECOND_CUM": 1.42,
+            "GDP_PULL_SECOND_CUR": 1.1051,
+            "GDP_PULL_THIRD_CUM": 3.11,
+            "GDP_PULL_THIRD_CUR": 2.9842,
+            "GDP_PULL_TRANSPORT_CUM": 0.21,
+            "GDP_REAL_GDP_CUM": 686971.4,
+            "GDP_REAL_GDP_CUM_YOY": 4.7,
+            "GDP_REAL_GDP_CUR": 351222.7,
+            "GDP_REAL_GDP_CUR_YOY": 4.3
+          }
+        ],
+        [
+          {
+            "INV_END_DATE": 20260731,
+            "INV_INFO_DATE": 20260817,
+            "INV_INFRA_COM_MACH_CUM_YOY": 1.4,
+            "INV_INFRA_ROAD_TRANS_CUM_Y": -7.5,
+            "INV_INFRA_SMELT_CUM_YOY": -6.3,
+            "INV_INV_MANU_CAR_CUM_YOY": -8.3,
+            "INV_INV_MANU_CUM_YOY": -3.5,
+            "INV_INV_MANU_RAIL_CUM_YOY": 15.2,
+            "INV_INV_MANU_TMT_CUM_YOY": 6.2,
+            "INV_INV_REALESTATE_AMT_CUR": 4935,
+            "INV_INV_REALESTATE_FORSALE": 75911,
+            "INV_INV_REALESTATE_NEW_CUM": 267000000,
+            "INV_MANU_DEDIC_MACH_CUM_YO": -6.2,
+            "INV_MANU_ELEC_CUM_YOY": -1.6,
+            "INV_REALESTATE_AMT_CUR_MOM": -36.058564,
+            "INV_REALESTATE_AMT_CUR_YOY": -28.707739,
+            "INV_REALESTATE_FORSALE_YOY": -0.751772,
+            "INV_REALESTATE_NEW_CUM_YOY": -24,
+            "INV_REALESTATE_REVENUE_CUM": 4271800000000,
+            "INV_REALESTATE_SALED_CUM": 450210000,
+            "INV_REALESTATE_SALED_CUR": 4881,
+            "INV_RE_AMT_COMP_CUM": 43009,
+            "INV_RE_AMT_COMP_CUM_YOY": -19.2,
+            "INV_RE_AMT_TOTAL_CUM": 43009,
+            "INV_RE_AMT_TOTAL_CUM_YOY": -19.2,
+            "INV_RE_CAP_DEPO_CUM": 1437600000000,
+            "INV_RE_CAP_DEPO_CUM_YOY": -14.4,
+            "INV_RE_CAP_FRGN_CUM": 400000000,
+            "INV_RE_CAP_FRGN_CUM_YOY": -77.3,
+            "INV_RE_CAP_LOAN_CUM": 630000000000,
+            "INV_RE_CAP_LOAN_CUM_YOY": -32.1,
+            "INV_RE_CAP_OTHER_CUM": 2041600000000,
+            "INV_RE_CAP_OTHER_CUM_YOY": -26.646747,
+            "INV_RE_CAP_SELF_CUM": 1654400000000,
+            "INV_RE_CAP_SELF_CUM_YOY": -18.5,
+            "INV_RE_COMP_CUM": 191950000,
+            "INV_RE_COMP_CUM_YOY": -23.2,
+            "INV_RE_CONSTR_CUM": 5575720000,
+            "INV_RE_CONSTR_CUM_YOY": -12.7,
+            "INV_RE_REV_CUM_YOY": -13.1,
+            "INV_RE_SALED_CUM_YOY": -11.8,
+            "INV_RE_SALED_CUR_YOY": -14.503416
+          }
+        ],
+        [
+          {
+            "PMI_COMPREHENSIVE_CCZS_MOM": 0.40568,
+            "PMI_END_DATE": 20260831,
+            "PMI_INFO_DATE": 20260831,
+            "PMI_MANU_PRODUCT_INVENTORY": 48.4,
+            "PMI_MANU_RAW_INVTRY": 48.1,
+            "PMI_MANU_RAW_PURCH": 56.6,
+            "PMI_NON_MANU_BIZ_ACT": 49,
+            "PMI_NON_MANU_MAT_PRC": 51.1,
+            "PMI_NON_MANU_ORDER_EXPORT": 47,
+            "PMI_PMI_COMPREHENSIVE_CCZS": 49.5,
+            "PMI_PMI_MANU": 49.8,
+            "PMI_PMI_MANU_CUR_YOY": 1.219512,
+            "PMI_PMI_MANU_IMPORT": 48.6,
+            "PMI_PMI_MANU_MOM": 0.809717,
+            "PMI_PMI_MANU_ORDER_EXPORT": 50.1,
+            "PMI_PMI_MANU_ORDER_INHAND": 46.7,
+            "PMI_PMI_MANU_ORDER_NEW": 50.6,
+            "PMI_PMI_MANU_PRODUCE": 50.4,
+            "PMI_PMI_MANU_PURCHASE": 50.5,
+            "PMI_PMI_NON_MANU_ORDER_NEW": 44.1
+          }
+        ],
+        [
+          {
+            "PROFIT_END_DATE": 20260731,
+            "PROFIT_INFO_DATE": 20260827,
+            "PROFIT_PROFIT_CUM": 4582060000000,
+            "PROFIT_PROFIT_CUM_YOY": 17.6,
+            "PROFIT_PROFIT_CUM_YOY_CHEM": 56.6,
+            "PROFIT_PROFIT_CUM_YOY_COAL": 50.4,
+            "PROFIT_PROFIT_CUM_YOY_COM_": 1.4,
+            "PROFIT_PROFIT_CUM_YOY_DEDI": 0.8,
+            "PROFIT_PROFIT_CUM_YOY_ELC_": -7.6,
+            "PROFIT_PROFIT_CUM_YOY_ELEC": -8,
+            "PROFIT_PROFIT_CUM_YOY_FOOD": 3.3,
+            "PROFIT_PROFIT_CUM_YOY_FURN": -58.2,
+            "PROFIT_PROFIT_CUM_YOY_INST": -1.9,
+            "PROFIT_PROFIT_CUM_YOY_MEDI": 3.8,
+            "PROFIT_PROFIT_CUM_YOY_META": 91.8,
+            "PROFIT_PROFIT_CUM_YOY_OIL": 15.4,
+            "PROFIT_PROFIT_CUM_YOY_PLAS": -3.6
+          }
+        ],
+        [
+          {
+            "VAD_END_DATE": 20260731,
+            "VAD_IAV_CUM_YOY": 5.3,
+            "VAD_IAV_CUM_YOY_AGRI": 4.7,
+            "VAD_IAV_CUM_YOY_CAR": 7.2,
+            "VAD_IAV_CUM_YOY_CHEMICAL": 4.1,
+            "VAD_IAV_CUM_YOY_COAL": 1.6,
+            "VAD_IAV_CUM_YOY_COM_EQ": 7.9,
+            "VAD_IAV_CUM_YOY_DEDIC_EQUI": 8.8,
+            "VAD_IAV_CUM_YOY_ELC_EQ": 6.5,
+            "VAD_IAV_CUM_YOY_ELECTRIC": 5.4,
+            "VAD_IAV_CUM_YOY_FERR": 1.8,
+            "VAD_IAV_CUM_YOY_FOOD": 8.4,
+            "VAD_IAV_CUM_YOY_HIGH_TEC": 13.8,
+            "VAD_IAV_CUM_YOY_MEDICINE": 5.3,
+            "VAD_IAV_CUM_YOY_METAL_PROD": 5.2,
+            "VAD_IAV_CUM_YOY_MINING": 2.5,
+            "VAD_IAV_CUM_YOY_NFERR": -0.7,
+            "VAD_IAV_CUM_YOY_NON_MENTAL": -2.9,
+            "VAD_IAV_CUM_YOY_OIL": 5,
+            "VAD_IAV_CUM_YOY_PLASTIC": 6.4,
+            "VAD_IAV_CUM_YOY_RAILWAY": 12.7,
+            "VAD_IAV_CUM_YOY_TEXTILE": 3.1,
+            "VAD_IAV_CUM_YOY_TMT": 15.4,
+            "VAD_IAV_CUM_YOY_WINE": 2.4,
+            "VAD_INFO_DATE": 20260817
+          }
+        ],
+        [
+          {
+            "CAPU_CAPU": 73,
+            "CAPU_CAPU_AUTO": 70.8,
+            "CAPU_CAPU_AUTO_CHG": -0.5,
+            "CAPU_CAPU_CHEM": 69.4,
+            "CAPU_CAPU_CHEM_CHG": -2.5,
+            "CAPU_CAPU_CHG": -1,
+            "CAPU_CAPU_COAL": 61.2,
+            "CAPU_CAPU_COAL_CHG": -8.1,
+            "CAPU_CAPU_ELEC": 70.3,
+            "CAPU_CAPU_ELEC_CHG": -3.2,
+            "CAPU_CAPU_FERR": 77.6,
+            "CAPU_CAPU_FERR_CHG": -3.2,
+            "CAPU_CAPU_FIBER": 84.2,
+            "CAPU_CAPU_FOOD": 70.2,
+            "CAPU_CAPU_GNEQ": 80.1,
+            "CAPU_CAPU_ICT": 78.7,
+            "CAPU_CAPU_ICT_CHG": 1.4,
+            "CAPU_CAPU_MFG": 73.5,
+            "CAPU_CAPU_MINING": 69.1,
+            "CAPU_CAPU_NFERR": 76.2,
+            "CAPU_CAPU_NFERR_CHG": -1.5,
+            "CAPU_CAPU_NMET": 59.6,
+            "CAPU_CAPU_NMET_CHG": -2.7,
+            "CAPU_CAPU_PETRO": 91.7,
+            "CAPU_CAPU_PHARM": 71.1,
+            "CAPU_CAPU_SPEQ": 76.7,
+            "CAPU_CAPU_TEXTL": 74.9,
+            "CAPU_CAPU_UTIL": 70.4,
+            "CAPU_END_DATE": 20260630,
+            "CAPU_INFO_DATE": 20260715
+          }
+        ],
+        [
+          {
+            "EDV_EDV_APRL_YTD_YOY": -2.2,
+            "EDV_EDV_AUTO_YTD_YOY": 32.5,
+            "EDV_EDV_CHEM_YTD_YOY": 18.3,
+            "EDV_EDV_CULT_YTD_YOY": 0.2,
+            "EDV_EDV_ELEC_YTD_YOY": 7.8,
+            "EDV_EDV_FERR_YTD_YOY": 0.6,
+            "EDV_EDV_FURN_YTD_YOY": -4.9,
+            "EDV_EDV_GNEQ_YTD_YOY": 5.2,
+            "EDV_EDV_ICT_YTD_YOY": 8,
+            "EDV_EDV_METAL_YTD_YOY": 0.7,
+            "EDV_EDV_NFERR_YTD_YOY": 53.4,
+            "EDV_EDV_PHARM_YTD_YOY": 7.2,
+            "EDV_EDV_RUBPL_YTD_YOY": 0.9,
+            "EDV_EDV_SPEQ_YTD_YOY": 15.6,
+            "EDV_EDV_TEXTL_YTD_YOY": -1.6,
+            "EDV_EDV_TRANSEQ_YTD_YOY": 25.3,
+            "EDV_END_DATE": 20260731,
+            "EDV_INFO_DATE": 20260819
+          }
+        ],
+        [
+          {
+            "EMPLOY_BDI_JOBSEEK": 1020,
+            "EMPLOY_BDI_RECRUIT": 1606,
+            "EMPLOY_BDI_UNEMP": 168,
+            "EMPLOY_BDI_UNEMP2": 168,
+            "EMPLOY_END_DATE": 20260830,
+            "EMPLOY_INFO_DATE": 20260831
+          }
+        ],
+        [
+          {
+            "ENT_BOOM_IDX_CONSTR_Q": 98,
+            "ENT_BOOM_IDX_HOTEL_Q": 104.3,
+            "ENT_BOOM_IDX_IT_CS_SOFT_Q": 118.5,
+            "ENT_BOOM_IDX_REALESTATE_Q": 98.8,
+            "ENT_BOOM_IDX_TRANS_POST_Q": 108.3,
+            "ENT_BOOM_IDX_WS_RTL_Q": 109.2,
+            "ENT_CUR_BOOM_IDX_CONSTR_Q": 96.1,
+            "ENT_CUR_BOOM_IDX_CULT_Q": 108.3,
+            "ENT_CUR_BOOM_IDX_EDU_Q": 108.4,
+            "ENT_CUR_BOOM_IDX_HLTH_Q": 106.9,
+            "ENT_CUR_BOOM_IDX_HOTEL_Q": 101.3,
+            "ENT_CUR_BOOM_IDX_IT_SVC_Q": 116.9,
+            "ENT_CUR_BOOM_IDX_LEASE_Q": 109.1,
+            "ENT_CUR_BOOM_IDX_MINING_Q": 106.6,
+            "ENT_CUR_BOOM_IDX_RE_Q": 98.4,
+            "ENT_CUR_BOOM_IDX_RSVC_Q": 107.1,
+            "ENT_CUR_BOOM_IDX_SCITECH_Q": 108.5,
+            "ENT_CUR_BOOM_IDX_TRANS_POS": 107.8,
+            "ENT_CUR_BOOM_IDX_UTILITY_Q": 118.7,
+            "ENT_CUR_BOOM_IDX_WATER_Q": 117.6,
+            "ENT_CUR_BOOM_IDX_WS_RETAIL": 108.8,
+            "ENT_ECON_CUR_BOOM_IDX_Q": 87.8,
+            "ENT_ECON_EXP_BOOM_IDX_Q": 104.9,
+            "ENT_END_DATE": 20260630,
+            "ENT_ENT_BOOM_IDX_MFG_Q": 116.5,
+            "ENT_ENT_BOOM_IDX_MINING_Q": 107,
+            "ENT_ENT_BOOM_IDX_Q": 109.5,
+            "ENT_ENT_CUR_BOOM_IDX_MFG_Q": 117.3,
+            "ENT_ENT_CUR_BOOM_IDX_Q": 109,
+            "ENT_ENT_EXP_BOOM_IDX_MFG_Q": 116,
+            "ENT_ENT_EXP_BOOM_IDX_Q": 109.8,
+            "ENT_EXP_BOOM_IDX_CONSTR_Q": 99.2,
+            "ENT_EXP_BOOM_IDX_CULT_Q": 112.5,
+            "ENT_EXP_BOOM_IDX_EDU_Q": 110.2,
+            "ENT_EXP_BOOM_IDX_HLTH_Q": 109.7,
+            "ENT_EXP_BOOM_IDX_HOTEL_Q": 106.3,
+            "ENT_EXP_BOOM_IDX_IT_SVC_Q": 119.6,
+            "ENT_EXP_BOOM_IDX_LEASE_Q": 109.6,
+            "ENT_EXP_BOOM_IDX_MINING_Q": 107.2,
+            "ENT_EXP_BOOM_IDX_RE_Q": 99.1,
+            "ENT_EXP_BOOM_IDX_RSVC_Q": 106.3,
+            "ENT_EXP_BOOM_IDX_SCITECH_Q": 110.5,
+            "ENT_EXP_BOOM_IDX_TRANS_POS": 108.7,
+            "ENT_EXP_BOOM_IDX_UTILITY_Q": 120.8,
+            "ENT_EXP_BOOM_IDX_WATER_Q": 117.3,
+            "ENT_EXP_BOOM_IDX_WS_RETAIL": 109.5
+          }
+        ],
+        [
+          {
+            "FISCAL_BAL": 308900000000,
+            "FISCAL_BAL_YOY": 282.775713,
+            "FISCAL_BAL_YTD": -1919300000000,
+            "FISCAL_BAL_YTD_YOY": 22.913487,
+            "FISCAL_DEFICIT_PRG_YTD": 24.172544,
+            "FISCAL_DEFICIT_YTD": 19193,
+            "FISCAL_DEFICIT_YTD_YOY": -22.913487,
+            "FISCAL_END_DATE": 20260731,
+            "FISCAL_EXP_AGR_YTD": 11489,
+            "FISCAL_EXP_AGR_YTD_YOY": -6.8,
+            "FISCAL_EXP_DEBT_YTD": 7966,
+            "FISCAL_EXP_DEBT_YTD_YOY": 5.2,
+            "FISCAL_EXP_EDU_YTD": 24606,
+            "FISCAL_EXP_EDU_YTD_YOY": 0.7,
+            "FISCAL_EXP_MED_YTD": 13613,
+            "FISCAL_EXP_MED_YTD_YOY": 9.8,
+            "FISCAL_EXP_SS_YTD": 29548,
+            "FISCAL_EXP_SS_YTD_YOY": 7,
+            "FISCAL_EXP_TECH_YTD": 5408,
+            "FISCAL_EXP_TECH_YTD_YOY": 1.5,
+            "FISCAL_EXP_TRANS_YTD": 6182,
+            "FISCAL_EXP_TRANS_YTD_YOY": -2.5,
+            "FISCAL_EXP_URB_YTD": 10864,
+            "FISCAL_EXP_URB_YTD_YOY": -2.9,
+            "FISCAL_FUND_DEFICIT_YTD": 27191,
+            "FISCAL_FUND_EXP_YTD": 45410,
+            "FISCAL_FUND_EXP_YTD_YOY": -16.4,
+            "FISCAL_FUND_REV_YTD": 1821900000000,
+            "FISCAL_FUND_REV_YTD_YOY": -21.2,
+            "FISCAL_INFO_DATE": 20260821,
+            "FISCAL_PUB_EXP": 19560,
+            "FISCAL_PUB_EXP_YOY": 0.482893,
+            "FISCAL_PUB_EXP_YTD": 162889,
+            "FISCAL_PUB_EXP_YTD_YOY": 1.3,
+            "FISCAL_PUB_REV": 22649,
+            "FISCAL_PUB_REV_YOY": 11.720022,
+            "FISCAL_PUB_REV_YTD": 143696,
+            "FISCAL_PUB_REV_YTD_YOY": 5.8,
+            "FISCAL_REV_NTAX_YTD": 25315,
+            "FISCAL_REV_NTAX_YTD_YOY": 1.6,
+            "FISCAL_REV_TAX_CIT_YTD": 32769,
+            "FISCAL_REV_TAX_CIT_YTD_YOY": 7.2,
+            "FISCAL_REV_TAX_CT_YTD": 9984,
+            "FISCAL_REV_TAX_CT_YTD_YOY": -2.2,
+            "FISCAL_REV_TAX_CUST_YTD": 11569,
+            "FISCAL_REV_TAX_CUST_YTD_YO": 12.3,
+            "FISCAL_REV_TAX_DEED_YTD": 2303,
+            "FISCAL_REV_TAX_DEED_YTD_YO": -14.5,
+            "FISCAL_REV_TAX_LT_YTD": 2359,
+            "FISCAL_REV_TAX_LT_YTD_YOY": -15.3,
+            "FISCAL_REV_TAX_PIT_YTD": 10662,
+            "FISCAL_REV_TAX_PIT_YTD_YOY": 14.9,
+            "FISCAL_REV_TAX_PROP_YTD": 3415,
+            "FISCAL_REV_TAX_PROP_YTD_YO": 6.7,
+            "FISCAL_REV_TAX_RES_YTD": 1964,
+            "FISCAL_REV_TAX_RES_YTD_YOY": 12.4,
+            "FISCAL_REV_TAX_SEC_YTD": 1864,
+            "FISCAL_REV_TAX_SEC_YTD_YOY": 99.2,
+            "FISCAL_REV_TAX_TARIFF_YTD": 1356,
+            "FISCAL_REV_TAX_TARIFF_YTD_": 3.1,
+            "FISCAL_REV_TAX_VAT_YTD": 45149,
+            "FISCAL_REV_TAX_VAT_YTD_YOY": 6.1,
+            "FISCAL_REV_TAX_YTD": 118381,
+            "FISCAL_REV_TAX_YTD_YOY": 6.7
+          }
+        ],
+        [
+          {
+            "FORECAST_END_DATE": 20271231,
+            "FORECAST_FAI_FC_YTD_YOY": 3.8,
+            "FORECAST_GDP_FC_YOY": 3.8,
+            "FORECAST_INFO_DATE": 20260112,
+            "FORECAST_LOAN_FC_YOY": 7.3,
+            "FORECAST_M2_FC_YOY": 7.1,
+            "FORECAST_RRR_LG_FC": 8.5,
+            "FORECAST_RRR_LG_FC_YOY": 1.492537,
+            "FORECAST_USDCNY_FC": 6.9
+          }
+        ],
+        [
+          {
+            "MLF_END_DATE": 20260831,
+            "MLF_INFO_DATE": 20260824,
+            "MLF_MLF_OPERATION_3M": 0,
+            "MLF_MLF_OPERATION_6M": 0,
+            "MLF_MLF_OPERATION_TOTAL": 5000
+          }
+        ],
+        [
+          {
+            "PERCAP_CONS_EXP_CLTH_YTD_Y": 4.4,
+            "PERCAP_CONS_EXP_COMM_YTD_Y": 4.7,
+            "PERCAP_CONS_EXP_EDUC_YTD_Y": 4.9,
+            "PERCAP_CONS_EXP_FOOD_YTD_Y": 4.2,
+            "PERCAP_CONS_EXP_HH_YTD_YOY": 5.3,
+            "PERCAP_CONS_EXP_HLTH_YTD_Y": 1.2,
+            "PERCAP_CONS_EXP_HOUS_YTD_Y": 1.4,
+            "PERCAP_CONS_EXP_OTHR_YTD_Y": 9.3,
+            "PERCAP_CONS_EXP_REAL_YTD_Y": 2.7,
+            "PERCAP_CONS_EXP_YOY": 3.818247,
+            "PERCAP_CONS_EXP_YTD": 14836,
+            "PERCAP_CONS_EXP_YTD_YOY": 3.7,
+            "PERCAP_DISP_INC_BIZ_YTD_YO": 6.5,
+            "PERCAP_DISP_INC_MED_YTD": 19036,
+            "PERCAP_DISP_INC_MED_YTD_YO": 4.7,
+            "PERCAP_DISP_INC_PROP_YTD_Y": 1.1,
+            "PERCAP_DISP_INC_REAL_YTD_Y": 4.2,
+            "PERCAP_DISP_INC_TRSF_YTD_Y": 5.8,
+            "PERCAP_DISP_INC_WAGE_YTD_Y": 5.3,
+            "PERCAP_DISP_INC_YOY": 5.571661,
+            "PERCAP_DISP_INC_YTD": 22981,
+            "PERCAP_DISP_INC_YTD_YOY": 5.2,
+            "PERCAP_END_DATE": 20260630,
+            "PERCAP_INFO_DATE": 20260715
+          }
+        ],
+        [
+          {
+            "POWERUSE_CRUDE_OUT_YTD": 12769,
+            "POWERUSE_CRUDE_OUT_YTD_YOY": 0.9,
+            "POWERUSE_ELEC": 10400,
+            "POWERUSE_ELEC_RATE_HYDRO_Y": 0.5,
+            "POWERUSE_ELEC_RATE_THERM_Y": 5.8,
+            "POWERUSE_ELEC_RESID_YOY": -5.1,
+            "POWERUSE_ELEC_RESID_YTD_YO": 1.3,
+            "POWERUSE_ELEC_SEC_YOY": 3,
+            "POWERUSE_ELEC_SEC_YTD_YOY": 4.7,
+            "POWERUSE_ELEC_TERT_YOY": 4.8,
+            "POWERUSE_ELEC_TERT_YTD_YOY": 7.4,
+            "POWERUSE_ELEC_YOY": 1.7,
+            "POWERUSE_ELEC_YTD": 61399,
+            "POWERUSE_ELEC_YTD_YOY": 4.7,
+            "POWERUSE_END_DATE": 20260731,
+            "POWERUSE_INFO_DATE": 20260817,
+            "POWERUSE_PWR_SHR_HYDRO": 17.120458,
+            "POWERUSE_PWR_SHR_HYDRO_YTD": 13.168378,
+            "POWERUSE_PWR_SHR_SOLAR": 7.447823,
+            "POWERUSE_PWR_SHR_SOLAR_YTD": 7.224708,
+            "POWERUSE_PWR_SHR_THERM": 61.881555,
+            "POWERUSE_PWR_SHR_THERM_YTD": 63.397385,
+            "POWERUSE_PWR_SHR_WIND": 8.687361,
+            "POWERUSE_PWR_SHR_WIND_YTD": 11.288936,
+            "POWERUSE_UTIL_HR_YTD": 1671
+          }
+        ],
+        [
+          {
+            "PROD_END_DATE": 20260731,
+            "PROD_INFO_DATE": 20260817,
+            "PROD_OUT_AC_YOY": -10.1,
+            "PROD_OUT_AC_YTD_YOY": -1,
+            "PROD_OUT_ALUM_YOY": 3.8,
+            "PROD_OUT_ALUM_YTD_YOY": 3.8,
+            "PROD_OUT_AUTO_YOY": -0.1,
+            "PROD_OUT_AUTO_YTD_YOY": -3.4,
+            "PROD_OUT_BEER_YOY": -8.9,
+            "PROD_OUT_BEER_YTD_YOY": -1.6,
+            "PROD_OUT_BTS_YOY": -39.6,
+            "PROD_OUT_BTS_YTD_YOY": 2.5,
+            "PROD_OUT_CEMENT_YOY": -11.6,
+            "PROD_OUT_CEMENT_YTD_YOY": -8.6,
+            "PROD_OUT_CNC_YOY": 8.68,
+            "PROD_OUT_CNC_YTD_YOY": 20.71,
+            "PROD_OUT_COAL_YOY": -10.1,
+            "PROD_OUT_COAL_YTD_YOY": -2.9,
+            "PROD_OUT_COKE_YOY": -1.1,
+            "PROD_OUT_COKE_YTD_YOY": 1.2,
+            "PROD_OUT_COPPER_YOY": 1.3,
+            "PROD_OUT_COPPER_YTD_YOY": 4.6,
+            "PROD_OUT_CSTEEL_YOY": -3.6,
+            "PROD_OUT_CSTEEL_YTD_YOY": -3.1,
+            "PROD_OUT_DAIRY_YOY": 8.4,
+            "PROD_OUT_DAIRY_YTD_YOY": 5,
+            "PROD_OUT_DIESEL_YOY": -18.2,
+            "PROD_OUT_EMU_YOY": -100,
+            "PROD_OUT_EMU_YTD_YOY": 27,
+            "PROD_OUT_ETHYL_YOY": 0.1,
+            "PROD_OUT_ETHYL_YTD_YOY": 4.1,
+            "PROD_OUT_EXCAV_YOY": 36.2,
+            "PROD_OUT_EXCAV_YTD_YOY": 26.5,
+            "PROD_OUT_FERT_YOY": -2.9,
+            "PROD_OUT_FERT_YTD_YOY": -0.1,
+            "PROD_OUT_FRIDGE_YOY": 10.6,
+            "PROD_OUT_FRIDGE_YTD_YOY": 12.1,
+            "PROD_OUT_GASOL_YOY": -15,
+            "PROD_OUT_GLASS_YOY": -3.6,
+            "PROD_OUT_GLASS_YTD_YOY": -6.2,
+            "PROD_OUT_IC_YOY": 20.7,
+            "PROD_OUT_IC_YTD_YOY": 23.1,
+            "PROD_OUT_LIQUOR_YOY": -8.8,
+            "PROD_OUT_LIQUOR_YTD_YOY": -4.4,
+            "PROD_OUT_NAOH_YOY": -5.1,
+            "PROD_OUT_NAOH_YTD_YOY": 2.6,
+            "PROD_OUT_NEV_YOY": 29.9,
+            "PROD_OUT_NEV_YTD_YOY": 9.5,
+            "PROD_OUT_NFM10_YOY": 2.5,
+            "PROD_OUT_NFM10_YTD_YOY": 3.2,
+            "PROD_OUT_NGAS_YOY": -0.9,
+            "PROD_OUT_NGAS_YTD_YOY": 1.2,
+            "PROD_OUT_PEST_YOY": -1.8,
+            "PROD_OUT_PEST_YTD_YOY": 6.2,
+            "PROD_OUT_PGEN_YOY": -13.9,
+            "PROD_OUT_PGEN_YTD_YOY": 2.8,
+            "PROD_OUT_PHONE_YOY": -16.7,
+            "PROD_OUT_PHONE_YTD_YOY": -3.4,
+            "PROD_OUT_PIGIRON_YOY": -4.5,
+            "PROD_OUT_PIGIRON_YTD_YOY": -3,
+            "PROD_OUT_PV_YOY": -9.4,
+            "PROD_OUT_PV_YTD_YOY": -13.6,
+            "PROD_OUT_REBAR_YOY": -13.6,
+            "PROD_OUT_REBAR_YTD_YOY": -11.2,
+            "PROD_OUT_REFINE_YOY": -15.8,
+            "PROD_OUT_REFINE_YTD_YOY": -6.5,
+            "PROD_OUT_ROBOT_YOY": 30.2,
+            "PROD_OUT_ROBOT_YTD_YOY": 28.5,
+            "PROD_OUT_SMTPH_YOY": -22.9,
+            "PROD_OUT_STEEL_YOY": -4.1,
+            "PROD_OUT_STEEL_YTD_YOY": -1.2,
+            "PROD_OUT_TGLASS_YOY": -14.3,
+            "PROD_OUT_TGLASS_YTD_YOY": -8.8,
+            "PROD_OUT_WIND_YOY": 4.5,
+            "PROD_OUT_WIND_YTD_YOY": -0.8
+          }
+        ],
+        [
+          {
+            "YTM_END_DATE": 20260831,
+            "YTM_INFO_DATE": 20260831,
+            "YTM_YIELD_10Y": 1.6884,
+            "YTM_YIELD_15Y": 1.9723,
+            "YTM_YIELD_1Y": 1.212,
+            "YTM_YIELD_20Y": 2.1375,
+            "YTM_YIELD_2Y": 1.2533,
+            "YTM_YIELD_30Y": 2.15,
+            "YTM_YIELD_3Y": 1.2653,
+            "YTM_YIELD_4Y": 1.329,
+            "YTM_YIELD_5Y": 1.4118,
+            "YTM_YIELD_6M": 1.275,
+            "YTM_YIELD_6Y": 1.4761,
+            "YTM_YIELD_7Y": 1.5348,
+            "YTM_YIELD_8Y": 1.5872
+          }
+        ]
+      ]
+    }
+  },
+  "dragon_tiger_and_hotspots": {
+    "westock_lhb": {
+      "institution": {
+        "count": 34,
+        "top_rows": [
+          {
+            "排名": 3,
+            "代码": "sz002886",
+            "名称": "沃特股份",
+            "上榜天数": 1,
+            "机构买入席位": 4,
+            "机构买入额": "1.78亿",
+            "买入占比": "-3.44%",
+            "总买入额": "2.41亿",
+            "净买入额": "6307.59万",
+            "净占比": "36.68%"
+          },
+          {
+            "排名": 2,
+            "代码": "sz300364",
+            "名称": "中文在线",
+            "上榜天数": 1,
+            "机构买入席位": 3,
+            "机构买入额": "1.75亿",
+            "买入占比": "3.78%",
+            "总买入额": "2.94亿",
+            "净买入额": "1.19亿",
+            "净占比": "33.26%"
+          },
+          {
+            "排名": 2,
+            "代码": "sz300911",
+            "名称": "亿田智能",
+            "上榜天数": 3,
+            "机构买入席位": 4,
+            "机构买入额": "1.24亿",
+            "买入占比": "8.82%",
+            "总买入额": "2.33亿",
+            "净买入额": "1.09亿",
+            "净占比": "19.41%"
+          },
+          {
+            "排名": 1,
+            "代码": "sz301697",
+            "名称": "贝特利",
+            "上榜天数": 1,
+            "机构买入席位": 3,
+            "机构买入额": "6904.63万",
+            "买入占比": "196.69%",
+            "总买入额": "6950.17万",
+            "净买入额": "45.55万",
+            "净占比": "77.8%"
+          },
+          {
+            "排名": 1,
+            "代码": "sz300927",
+            "名称": "江天化学",
+            "上榜天数": 1,
+            "机构买入席位": 3,
+            "机构买入额": "5157.07万",
+            "买入占比": "20%",
+            "总买入额": "6439.17万",
+            "净买入额": "1282.10万",
+            "净占比": "19.45%"
+          },
+          {
+            "排名": 2,
+            "代码": "sz002165",
+            "名称": "红宝丽",
+            "上榜天数": 3,
+            "机构买入席位": 2,
+            "机构买入额": "5008.88万",
+            "买入占比": "6.05%",
+            "总买入额": "1.29亿",
+            "净买入额": "7938.99万",
+            "净占比": "31.81%"
+          },
+          {
+            "排名": 3,
+            "代码": "sz000712",
+            "名称": "锦龙股份",
+            "上榜天数": 1,
+            "机构买入席位": 3,
+            "机构买入额": "4998.92万",
+            "买入占比": "4.01%",
+            "总买入额": "1.46亿",
+            "净买入额": "9585.26万",
+            "净占比": "25.45%"
+          },
+          {
+            "排名": 1,
+            "代码": "sz300642",
+            "名称": "透景生命",
+            "上榜天数": 1,
+            "机构买入席位": 3,
+            "机构买入额": "3620.42万",
+            "买入占比": "19.99%",
+            "总买入额": "6227.98万",
+            "净买入额": "2607.57万",
+            "净占比": "31.34%"
+          },
+          {
+            "排名": 1,
+            "代码": "sh601208",
+            "名称": "东材科技",
+            "上榜天数": 1,
+            "机构买入席位": 1,
+            "机构买入额": "2553.80万",
+            "买入占比": "-7.49%",
+            "总买入额": "2553.80万",
+            "净买入额": "0.00",
+            "净占比": "6.88%"
+          },
+          {
+            "排名": 2,
+            "代码": "sz002354",
+            "名称": "天娱数科",
+            "上榜天数": 1,
+            "机构买入席位": 2,
+            "机构买入额": "2318.64万",
+            "买入占比": "4.11%",
+            "总买入额": "1.11亿",
+            "净买入额": "8753.15万",
+            "净占比": "34.85%"
+          }
+        ]
+      },
+      "active_seat": {
+        "count": 104,
+        "top_rows": [
+          {
+            "席位ID": "T000029774",
+            "席位名称": "开源证券西安西大街",
+            "股票代码": "sh600103;sz002015;sz300189",
+            "股票名称": "青山纸业;协鑫能科;神农种业",
+            "买入金额": "3.47亿"
+          },
+          {
+            "席位ID": "T000678020",
+            "席位名称": "国泰海通证券上海自贸试验区第二分公司",
+            "股票代码": "sz300413;sz300189;sh600479",
+            "股票名称": "芒果超媒;神农种业;千金药业",
+            "买入金额": "3.00亿"
+          },
+          {
+            "席位ID": "00217876",
+            "席位名称": "国泰海通证券南京太平南路",
+            "股票代码": "sz000560;sz300642",
+            "股票名称": "我爱我家;透景生命",
+            "买入金额": "1.03亿"
+          },
+          {
+            "席位ID": "T000259244",
+            "席位名称": "国盛证券宁波桑田路",
+            "股票代码": "sz300189;sz002354",
+            "股票名称": "神农种业;天娱数科",
+            "买入金额": "9222.20万"
+          },
+          {
+            "席位ID": "T000031493",
+            "席位名称": "国泰海通证券无锡湖滨路",
+            "股票代码": "sz002484",
+            "股票名称": "江海股份",
+            "买入金额": "9128.53万"
+          },
+          {
+            "席位ID": "T000030443",
+            "席位名称": "中信证券深圳分公司",
+            "股票代码": "sh603228",
+            "股票名称": "景旺电子",
+            "买入金额": "7014.64万"
+          },
+          {
+            "席位ID": "T000841697",
+            "席位名称": "中信证券深圳宝安",
+            "股票代码": "sh603228",
+            "股票名称": "景旺电子",
+            "买入金额": "7009.32万"
+          },
+          {
+            "席位ID": "00217910",
+            "席位名称": "国泰海通证券深圳红荔西路",
+            "股票代码": "sh600367",
+            "股票名称": "红星发展",
+            "买入金额": "6989.13万"
+          },
+          {
+            "席位ID": "Q11D276405",
+            "席位名称": "摩根大通证券（中国）有限公司上海银城中路",
+            "股票代码": "sh600227;sh600353",
+            "股票名称": "赤天化;旭光电子",
+            "买入金额": "6643.04万"
+          },
+          {
+            "席位ID": "T000031488",
+            "席位名称": "国泰海通证券深圳人民南路",
+            "股票代码": "sz002015",
+            "股票名称": "协鑫能科",
+            "买入金额": "6144.43万"
+          }
+        ]
+      },
+      "high_win_buy": {
+        "count": 28,
+        "top_rows": [
+          {
+            "代码": "sz300413",
+            "名称": "芒果超媒",
+            "上榜天数": "1",
+            "净买入额": "4.06亿",
+            "上涨概率": "20.02%",
+            "买入额": "4.06亿",
+            "卖出额": "31.35万",
+            "超额收益": "13.45%",
+            "胜率次数": 2
+          },
+          {
+            "代码": "sz300413",
+            "名称": "芒果超媒",
+            "上榜天数": "3",
+            "净买入额": "2.96亿",
+            "上涨概率": "20.02%",
+            "买入额": "2.96亿",
+            "卖出额": "0.00",
+            "超额收益": "13.45%",
+            "胜率次数": 2
+          },
+          {
+            "代码": "sz300189",
+            "名称": "神农种业",
+            "上榜天数": "1",
+            "净买入额": "1.50亿",
+            "上涨概率": "20.03%",
+            "买入额": "1.50亿",
+            "卖出额": "0.00",
+            "超额收益": "37.26%",
+            "胜率次数": 4
+          },
+          {
+            "代码": "sz003040",
+            "名称": "楚天龙",
+            "上榜天数": "1",
+            "净买入额": "1.31亿",
+            "上涨概率": "10%",
+            "买入额": "1.31亿",
+            "卖出额": "1.94万",
+            "超额收益": "20.56%",
+            "胜率次数": 1
+          },
+          {
+            "代码": "sz300927",
+            "名称": "江天化学",
+            "上榜天数": "1",
+            "净买入额": "1.27亿",
+            "上涨概率": "20%",
+            "买入额": "1.27亿",
+            "卖出额": "9948.00",
+            "超额收益": "19.45%",
+            "胜率次数": 1
+          },
+          {
+            "代码": "sz000560",
+            "名称": "我爱我家",
+            "上榜天数": "1",
+            "净买入额": "1.23亿",
+            "上涨概率": "10%",
+            "买入额": "1.30亿",
+            "卖出额": "667.51万",
+            "超额收益": "37.08%",
+            "胜率次数": 2
+          },
+          {
+            "代码": "sz002015",
+            "名称": "协鑫能科",
+            "上榜天数": "1",
+            "净买入额": "1.19亿",
+            "上涨概率": "9.97%",
+            "买入额": "1.22亿",
+            "卖出额": "269.84万",
+            "超额收益": "8.65%",
+            "胜率次数": 1
+          },
+          {
+            "代码": "sh600121",
+            "名称": "郑州煤电",
+            "上榜天数": "3",
+            "净买入额": "9134.87万",
+            "上涨概率": "9.98%",
+            "买入额": "9134.87万",
+            "卖出额": "0.00",
+            "超额收益": "19.98%",
+            "胜率次数": 2
+          },
+          {
+            "代码": "sh600127",
+            "名称": "金健米业",
+            "上榜天数": "3",
+            "净买入额": "8075.70万",
+            "上涨概率": "9.97%",
+            "买入额": "8075.70万",
+            "卖出额": "0.00",
+            "超额收益": "21.63%",
+            "胜率次数": 12
+          },
+          {
+            "代码": "sh600367",
+            "名称": "红星发展",
+            "上榜天数": "1",
+            "净买入额": "6989.13万",
+            "上涨概率": "-7.57%",
+            "买入额": "6989.13万",
+            "卖出额": "0.00",
+            "超额收益": "14.46%",
+            "胜率次数": 1
+          }
+        ]
+      },
+      "high_win_seat": {
+        "count": 26,
+        "top_rows": [
+          {
+            "席位ID": "T000030763",
+            "席位名称": "东莞证券股份有限公司河源分公司",
+            "净买入额": "2082.35万",
+            "胜率": "66.67%",
+            "操作股票": "浙江世宝(sz002703)"
+          },
+          {
+            "席位ID": "T000259582",
+            "席位名称": "国泰海通证券股份有限公司湛江万豪世家证券营业部",
+            "净买入额": "6027.82万",
+            "胜率": "55.34%",
+            "操作股票": "芒果超媒(sz300413)"
+          },
+          {
+            "席位ID": "00220219",
+            "席位名称": "中信建投证券股份有限公司杭州庆春路证券营业部",
+            "净买入额": "5015.72万",
+            "胜率": "54.29%",
+            "操作股票": "芒果超媒(sz300413)"
+          },
+          {
+            "席位ID": "T001631165",
+            "席位名称": "国信证券股份有限公司杭州分公司",
+            "净买入额": "37.32万",
+            "胜率": "50.00%",
+            "操作股票": "绿控传动(sz301655)"
+          },
+          {
+            "席位ID": "T000031017",
+            "席位名称": "国泰海通证券股份有限公司济南舜华路证券营业部",
+            "净买入额": "2513.69万",
+            "胜率": "55.56%",
+            "操作股票": "大晟文化(sh600892)"
+          },
+          {
+            "席位ID": "T004841714",
+            "席位名称": "申港证券股份有限公司安徽分公司",
+            "净买入额": "739.55万",
+            "胜率": "100.00%",
+            "操作股票": "中广天择(sh603721)"
+          },
+          {
+            "席位ID": "T000030212",
+            "席位名称": "华泰证券股份有限公司太仓太平南路证券营业部",
+            "净买入额": "1703.99万",
+            "胜率": "50.00%",
+            "操作股票": "博纳影业(sz001330)"
+          },
+          {
+            "席位ID": "00217838",
+            "席位名称": "国泰海通证券股份有限公司成都北一环路证券营业部",
+            "净买入额": "4087.91万",
+            "胜率": "51.49%",
+            "操作股票": "新赛股份(sh600540)"
+          },
+          {
+            "席位ID": "00218057",
+            "席位名称": "国泰海通证券股份有限公司福州五一北路证券营业部",
+            "净买入额": "1269.05万",
+            "胜率": "50.00%",
+            "操作股票": "时代出版(sh600551)"
+          },
+          {
+            "席位ID": "00218146",
+            "席位名称": "国泰海通证券股份有限公司重庆民生路证券营业部",
+            "净买入额": "1398.52万",
+            "胜率": "50.00%",
+            "操作股票": "海鸥住工(sz002084)"
+          }
+        ]
+      }
+    },
+    "hithink_dragon_tiger": {
+      "ok": true,
+      "command": "special.dragon-tiger",
+      "data": {
+        "timestamp": 1788192000000,
+        "board_type": "all",
+        "trade_date": "2026-09-01",
+        "count": 68,
+        "stock_count": 64,
+        "stock_items": [
+          {
+            "thscode": "600127.SH",
+            "ticker": "600127",
+            "name": "金健米业",
+            "concept_list": [
+              {
+                "name": "乳业"
+              },
+              {
+                "name": "玉米"
+              },
+              {
+                "name": "粮食概念"
+              }
+            ],
+            "change": 0.099668,
+            "net_value": -93264748.11,
+            "net_rate": -0.01093315,
+            "hot_rank": 1,
+            "buy_value": 626185698.35,
+            "sell_value": 719450446.46,
+            "limit_reason": "粮油加工+粮食概念+大健康食品",
+            "range_days": 3,
+            "hot_money_net_value": -84751999.91
+          },
+          {
+            "thscode": "000560.SZ",
+            "ticker": "000560",
+            "name": "我爱我家",
+            "concept_list": [
+              {
+                "name": "租售同权"
+              },
+              {
+                "name": "物业管理"
+              },
+              {
+                "name": "京津冀一体化"
+              }
+            ],
+            "change": 0.1,
+            "net_value": -137245894.65,
+            "net_rate": -0.05043022,
+            "hot_rank": 5,
+            "buy_value": 300034118.38,
+            "sell_value": 437280013.03,
+            "limit_reason": "房产经纪+净利增长+AI应用",
+            "range_days": 1,
+            "org_net_value": -22031799.46,
+            "hot_money_net_value": -109551578
+          },
+          {
+            "thscode": "003040.SZ",
+            "ticker": "003040",
+            "name": "楚天龙",
+            "concept_list": [
+              {
+                "name": "数字货币"
+              },
+              {
+                "name": "移动支付"
+              },
+              {
+                "name": "跨境支付(CIPS)"
+              }
+            ],
+            "change": 0.1,
+            "net_value": 64233495.25,
+            "net_rate": 0.03667755,
+            "hot_rank": 6,
+            "buy_value": 255974892.59,
+            "sell_value": 191741397.34,
+            "limit_reason": "数字人民币+AI政务+数字安全",
+            "range_days": 1,
+            "org_net_value": -21663848.06,
+            "hot_money_net_value": 25099856
+          },
+          {
+            "thscode": "600613.SH",
+            "ticker": "600613",
+            "name": "神奇制药",
+            "concept_list": [
+              {
+                "name": "流感"
+              },
+              {
+                "name": "医药电商"
+              }
+            ],
+            "change": 0,
+            "net_value": -45740505.33,
+            "net_rate": -0.02277963,
+            "hot_rank": 8,
+            "buy_value": 150988022.7,
+            "sell_value": 196728528.03,
+            "range_days": 1,
+            "hot_money_net_value": 31064049.3
+          },
+          {
+            "thscode": "600103.SH",
+            "ticker": "600103",
+            "name": "青山纸业",
+            "concept_list": [
+              {
+                "name": "海峡两岸"
+              },
+              {
+                "name": "数据中心(AIDC)"
+              },
+              {
+                "name": "碳中和"
+              }
+            ],
+            "change": 0.099738,
+            "net_value": 56614299.64,
+            "net_rate": 0.01862664,
+            "hot_rank": 10,
+            "buy_value": 320846312.7,
+            "sell_value": 264232013.06,
+            "limit_reason": "光模块+竹浆纸+林浆纸",
+            "range_days": 1,
+            "hot_money_net_value": 113680716
+          },
+          {
+            "thscode": "300413.SZ",
+            "ticker": "300413",
+            "name": "芒果超媒",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "IP经济(谷子经济)"
+              }
+            ],
+            "change": 0.200236,
+            "net_value": 188265081.26,
+            "net_rate": 0.06738689,
+            "hot_rank": 12,
+            "buy_value": 518539034.36,
+            "sell_value": 330273953.1,
+            "limit_reason": "AIGC长剧+AI应用+微短剧",
+            "range_days": 1,
+            "org_net_value": -108342118,
+            "hot_money_net_value": 50157218
+          },
+          {
+            "thscode": "300413.SZ",
+            "ticker": "300413",
+            "name": "芒果超媒",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "IP经济(谷子经济)"
+              }
+            ],
+            "change": 0.200236,
+            "net_value": 158146429.42,
+            "net_rate": 0.04075383,
+            "hot_rank": 12,
+            "buy_value": 674243127.1,
+            "sell_value": 516096697.68,
+            "limit_reason": "AIGC长剧+AI应用+微短剧",
+            "range_days": 3,
+            "org_net_value": -108342118
+          },
+          {
+            "thscode": "002354.SZ",
+            "ticker": "002354",
+            "name": "天娱数科",
+            "concept_list": [
+              {
+                "name": "快手概念"
+              },
+              {
+                "name": "AI视频"
+              },
+              {
+                "name": "小红书概念"
+              }
+            ],
+            "change": 0.041096,
+            "net_value": 101643878.86,
+            "net_rate": 0.02168352,
+            "hot_rank": 13,
+            "buy_value": 514599888.79,
+            "sell_value": 412956009.93,
+            "range_days": 1,
+            "org_net_value": 23186429.98,
+            "hot_money_net_value": 52298144.8
+          },
+          {
+            "thscode": "300189.SZ",
+            "ticker": "300189",
+            "name": "神农种业",
+            "concept_list": [
+              {
+                "name": "玉米"
+              },
+              {
+                "name": "转基因"
+              },
+              {
+                "name": "粮食概念"
+              }
+            ],
+            "change": 0.200318,
+            "net_value": 354971076.77,
+            "net_rate": 0.15160478,
+            "hot_rank": 14,
+            "buy_value": 459723089.62,
+            "sell_value": 104752012.85,
+            "limit_reason": "农作物种业+水产种业+生物育种",
+            "range_days": 1,
+            "hot_money_net_value": 140312813.62
+          },
+          {
+            "thscode": "600227.SH",
+            "ticker": "600227",
+            "name": "赤天化",
+            "concept_list": [
+              {
+                "name": "煤化工概念"
+              },
+              {
+                "name": "化肥"
+              },
+              {
+                "name": "煤炭概念"
+              }
+            ],
+            "change": 0.025794,
+            "net_value": -66773135.85,
+            "net_rate": -0.02683498,
+            "hot_rank": 15,
+            "buy_value": 268963149.13,
+            "sell_value": 335736284.98,
+            "range_days": 1,
+            "hot_money_net_value": 1655425.65
+          },
+          {
+            "thscode": "300364.SZ",
+            "ticker": "300364",
+            "name": "中文在线",
+            "concept_list": [
+              {
+                "name": "快手概念"
+              },
+              {
+                "name": "AI语料"
+              },
+              {
+                "name": "AI视频"
+              }
+            ],
+            "change": 0.037757,
+            "net_value": -162263305.52,
+            "net_rate": -0.0256233,
+            "hot_rank": 17,
+            "buy_value": 778088150.55,
+            "sell_value": 940351456.07,
+            "range_days": 1,
+            "org_net_value": 174731603.3,
+            "hot_money_net_value": -266314316.24
+          },
+          {
+            "thscode": "600721.SH",
+            "ticker": "600721",
+            "name": "百花医药",
+            "concept_list": [
+              {
+                "name": "青蒿素"
+              },
+              {
+                "name": "CRO概念"
+              },
+              {
+                "name": "减肥药"
+              }
+            ],
+            "change": -0.051079,
+            "net_value": 36856717.58,
+            "net_rate": 0.01941121,
+            "hot_rank": 18,
+            "buy_value": 152993257.38,
+            "sell_value": 116136539.8,
+            "range_days": 1,
+            "hot_money_net_value": 52135635
+          },
+          {
+            "thscode": "600721.SH",
+            "ticker": "600721",
+            "name": "百花医药",
+            "concept_list": [
+              {
+                "name": "青蒿素"
+              },
+              {
+                "name": "CRO概念"
+              },
+              {
+                "name": "减肥药"
+              }
+            ],
+            "change": -0.051079,
+            "net_value": 67682309.39,
+            "net_rate": 0.01240261,
+            "hot_rank": 18,
+            "buy_value": 367767659.93,
+            "sell_value": 300085350.54,
+            "range_days": 3,
+            "hot_money_net_value": 104878277.57
+          },
+          {
+            "thscode": "002418.SZ",
+            "ticker": "002418",
+            "name": "康盛股份",
+            "concept_list": [
+              {
+                "name": "空气能热泵"
+              },
+              {
+                "name": "数据中心(AIDC)"
+              },
+              {
+                "name": "算力租赁"
+              }
+            ],
+            "change": 0.053803,
+            "net_value": -272943070.52,
+            "net_rate": -0.10482213,
+            "hot_rank": 20,
+            "buy_value": 256644820,
+            "sell_value": 529587890.52,
+            "range_days": 1,
+            "org_net_value": 17485196.48,
+            "hot_money_net_value": 3798303
+          },
+          {
+            "thscode": "002015.SZ",
+            "ticker": "002015",
+            "name": "协鑫能科",
+            "concept_list": [
+              {
+                "name": "抽水蓄能"
+              },
+              {
+                "name": "虚拟电厂"
+              },
+              {
+                "name": "华为数字能源"
+              }
+            ],
+            "change": 0.099747,
+            "net_value": 428024182.02,
+            "net_rate": 0.18062605,
+            "hot_rank": 25,
+            "buy_value": 601261300.04,
+            "sell_value": 173237118.02,
+            "limit_reason": "算电协同+虚拟电厂+能源服务",
+            "range_days": 1,
+            "org_net_value": -13437163.5,
+            "hot_money_net_value": 89610256.45
+          },
+          {
+            "thscode": "002703.SZ",
+            "ticker": "002703",
+            "name": "浙江世宝",
+            "concept_list": [
+              {
+                "name": "富时罗素概念股"
+              },
+              {
+                "name": "长安汽车概念"
+              },
+              {
+                "name": "小米汽车"
+              },
+              {
+                "name": "共同富裕示范区"
+              }
+            ],
+            "change": 0.100121,
+            "net_value": 95321379.69,
+            "net_rate": 0.0704697,
+            "hot_rank": 32,
+            "buy_value": 239356765.99,
+            "sell_value": 144035386.3,
+            "limit_reason": "无人驾驶+线控转向+车企配套+半年报增长",
+            "range_days": 1,
+            "org_net_value": -12031303.95,
+            "hot_money_net_value": 49149883
+          },
+          {
+            "thscode": "601123.SH",
+            "ticker": "601123",
+            "name": "马矿股份",
+            "concept_list": [],
+            "change": 2.909774,
+            "net_value": 100456887.2,
+            "net_rate": 0.05076677,
+            "hot_rank": 35,
+            "buy_value": 228273531.5,
+            "sell_value": 127816644.3,
+            "range_days": 1,
+            "org_net_value": -127816644.3,
+            "hot_money_net_value": 118510418.63
+          },
+          {
+            "thscode": "600354.SH",
+            "ticker": "600354",
+            "name": "敦煌种业",
+            "concept_list": [
+              {
+                "name": "玉米"
+              },
+              {
+                "name": "粮食概念"
+              },
+              {
+                "name": "转基因"
+              }
+            ],
+            "change": 0.100121,
+            "net_value": -36748058.47,
+            "net_rate": -0.01000889,
+            "hot_rank": 39,
+            "buy_value": 459678113.85,
+            "sell_value": 496426172.32,
+            "limit_reason": "中报增长+种业+育种研发",
+            "range_days": 3,
+            "org_net_value": -126566760.73,
+            "hot_money_net_value": 26011977.22
+          },
+          {
+            "thscode": "600378.SH",
+            "ticker": "600378",
+            "name": "昊华科技",
+            "concept_list": [
+              {
+                "name": "中芯国际概念"
+              },
+              {
+                "name": "氟化工概念"
+              },
+              {
+                "name": "PVDF概念"
+              }
+            ],
+            "change": -0.078287,
+            "net_value": -338282322.12,
+            "net_rate": -0.06820037,
+            "hot_rank": 41,
+            "buy_value": 504158391.06,
+            "sell_value": 842440713.18,
+            "range_days": 1,
+            "hot_money_net_value": -219103831.06
+          },
+          {
+            "thscode": "600121.SH",
+            "ticker": "600121",
+            "name": "郑州煤电",
+            "concept_list": [
+              {
+                "name": "煤炭概念"
+              },
+              {
+                "name": "国企改革"
+              },
+              {
+                "name": "数据要素"
+              }
+            ],
+            "change": 0.099796,
+            "net_value": -7993844,
+            "net_rate": -0.00427349,
+            "hot_rank": 43,
+            "buy_value": 237687756.69,
+            "sell_value": 245681600.69,
+            "limit_reason": "煤炭+智算中心+郑州国资",
+            "range_days": 3,
+            "hot_money_net_value": 29694703.25
+          },
+          {
+            "thscode": "000712.SZ",
+            "ticker": "000712",
+            "name": "锦龙股份",
+            "concept_list": [
+              {
+                "name": "期货概念"
+              },
+              {
+                "name": "算力租赁"
+              },
+              {
+                "name": "粤港澳大湾区"
+              }
+            ],
+            "change": 0.040062,
+            "net_value": -58309142.18,
+            "net_rate": -0.02043883,
+            "hot_rank": 52,
+            "buy_value": 344670024.34,
+            "sell_value": 402979166.52,
+            "range_days": 1,
+            "org_net_value": 49989204.19
+          },
+          {
+            "thscode": "603533.SH",
+            "ticker": "603533",
+            "name": "掌阅科技",
+            "concept_list": [
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "AI语料"
+              },
+              {
+                "name": "AI视频"
+              }
+            ],
+            "change": 0.100044,
+            "net_value": 71255407.88,
+            "net_rate": 0.03400178,
+            "hot_rank": 54,
+            "buy_value": 285029404.31,
+            "sell_value": 213773996.43,
+            "limit_reason": "AI短剧+短剧出海+数字阅读",
+            "range_days": 3,
+            "hot_money_net_value": 16968904.73
+          },
+          {
+            "thscode": "002165.SZ",
+            "ticker": "002165",
+            "name": "红宝丽",
+            "concept_list": [
+              {
+                "name": "环氧丙烷"
+              },
+              {
+                "name": "建筑节能"
+              },
+              {
+                "name": "水泥概念"
+              }
+            ],
+            "change": 0.060536,
+            "net_value": 33377785.42,
+            "net_rate": 0.00664795,
+            "hot_rank": 57,
+            "buy_value": 657101141.63,
+            "sell_value": 623723356.21,
+            "range_days": 3,
+            "org_net_value": 50088816.57,
+            "hot_money_net_value": -3083314.08
+          },
+          {
+            "thscode": "001330.SZ",
+            "ticker": "001330",
+            "name": "博纳影业",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "AI视频"
+              }
+            ],
+            "change": 0.099822,
+            "net_value": 29731723,
+            "net_rate": 0.0208513,
+            "hot_rank": 79,
+            "buy_value": 245470095,
+            "sell_value": 215738372,
+            "limit_reason": "AI影视+重点影片+电影院线",
+            "range_days": 1,
+            "org_net_value": 15199161,
+            "hot_money_net_value": -19193008
+          },
+          {
+            "thscode": "001330.SZ",
+            "ticker": "001330",
+            "name": "博纳影业",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "AI视频"
+              }
+            ],
+            "change": 0.099822,
+            "net_value": 89869257.41,
+            "net_rate": 0.04221755,
+            "hot_rank": 79,
+            "buy_value": 385251307,
+            "sell_value": 295382049.59,
+            "limit_reason": "AI影视+重点影片+电影院线",
+            "range_days": 3,
+            "org_net_value": 13390294.55,
+            "hot_money_net_value": 5529767
+          },
+          {
+            "thscode": "600367.SH",
+            "ticker": "600367",
+            "name": "红星发展",
+            "concept_list": [
+              {
+                "name": "小金属概念"
+              },
+              {
+                "name": "固态电池"
+              },
+              {
+                "name": "玻璃基板"
+              }
+            ],
+            "change": -0.075724,
+            "net_value": 27452535.93,
+            "net_rate": 0.01512445,
+            "hot_rank": 82,
+            "buy_value": 137428693.35,
+            "sell_value": 109976157.42,
+            "range_days": 1,
+            "hot_money_net_value": -23957391.58
+          },
+          {
+            "thscode": "600551.SH",
+            "ticker": "600551",
+            "name": "时代出版",
+            "concept_list": [
+              {
+                "name": "参股券商"
+              },
+              {
+                "name": "国企改革"
+              },
+              {
+                "name": "高股息精选"
+              }
+            ],
+            "change": 0.100606,
+            "net_value": -67145077.73,
+            "net_rate": -0.06877059,
+            "hot_rank": 87,
+            "buy_value": 78918737.96,
+            "sell_value": 146063815.69,
+            "limit_reason": "中报扣非增长+AI出版+教育服务+出版主业",
+            "range_days": 1,
+            "org_net_value": -25876449.24,
+            "hot_money_net_value": -75645534.6
+          },
+          {
+            "thscode": "002084.SZ",
+            "ticker": "002084",
+            "name": "海鸥住工",
+            "concept_list": [
+              {
+                "name": "空气能热泵"
+              },
+              {
+                "name": "一带一路"
+              },
+              {
+                "name": "智能物流"
+              }
+            ],
+            "change": 0.100313,
+            "net_value": 51201034,
+            "net_rate": 0.07702936,
+            "hot_rank": 88,
+            "buy_value": 121759054,
+            "sell_value": 70558020,
+            "limit_reason": "控制权拟变更+装配式厨卫+越南制造",
+            "range_days": 3
+          },
+          {
+            "thscode": "002886.SZ",
+            "ticker": "002886",
+            "name": "沃特股份",
+            "concept_list": [
+              {
+                "name": "PEEK材料"
+              },
+              {
+                "name": "富士康概念"
+              },
+              {
+                "name": "PCB概念"
+              }
+            ],
+            "change": -0.034435,
+            "net_value": 68720256.23,
+            "net_rate": 0.03258912,
+            "hot_rank": 93,
+            "buy_value": 344252867.39,
+            "sell_value": 275532611.16,
+            "range_days": 1,
+            "org_net_value": 178278595.63,
+            "hot_money_net_value": -34573494
+          },
+          {
+            "thscode": "000892.SZ",
+            "ticker": "000892",
+            "name": "欢瑞世纪",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "IP经济(谷子经济)"
+              }
+            ],
+            "change": 0.1,
+            "net_value": 37288799.9,
+            "net_rate": 0.12952502,
+            "hot_rank": 107,
+            "buy_value": 68847694,
+            "sell_value": 31558894.1,
+            "limit_reason": "AIGC影视+互动影游+影视制作",
+            "range_days": 3,
+            "org_net_value": 3426417,
+            "hot_money_net_value": -9115644
+          },
+          {
+            "thscode": "605188.SH",
+            "ticker": "605188",
+            "name": "国光连锁",
+            "concept_list": [
+              {
+                "name": "预制菜"
+              },
+              {
+                "name": "智能物流"
+              },
+              {
+                "name": "冷链物流"
+              }
+            ],
+            "change": 0.099853,
+            "net_value": -10296361.78,
+            "net_rate": -0.00976525,
+            "hot_rank": 110,
+            "buy_value": 130804267.74,
+            "sell_value": 141100629.52,
+            "limit_reason": "零售+中报增长+商业综合体",
+            "range_days": 3,
+            "hot_money_net_value": -483220.64
+          },
+          {
+            "thscode": "603395.SH",
+            "ticker": "603395",
+            "name": "红四方",
+            "concept_list": [
+              {
+                "name": "化肥"
+              },
+              {
+                "name": "参股银行"
+              },
+              {
+                "name": "煤化工概念"
+              }
+            ],
+            "change": 0.061856,
+            "net_value": 21734228.1,
+            "net_rate": 0.02974456,
+            "hot_rank": 114,
+            "buy_value": 68108241.44,
+            "sell_value": 46374013.34,
+            "range_days": 1,
+            "hot_money_net_value": 30814137.15
+          },
+          {
+            "thscode": "600540.SH",
+            "ticker": "600540",
+            "name": "新赛股份",
+            "concept_list": [
+              {
+                "name": "农业种植"
+              },
+              {
+                "name": "粮食概念"
+              },
+              {
+                "name": "土地流转"
+              }
+            ],
+            "change": 0.100719,
+            "net_value": 32063432.36,
+            "net_rate": 0.07252699,
+            "hot_rank": 116,
+            "buy_value": 121583717,
+            "sell_value": 89520284.64,
+            "limit_reason": "棉花全产业链+业绩增长+棉蛋白",
+            "range_days": 3,
+            "hot_money_net_value": 39935155.36
+          },
+          {
+            "thscode": "600540.SH",
+            "ticker": "600540",
+            "name": "新赛股份",
+            "concept_list": [
+              {
+                "name": "农业种植"
+              },
+              {
+                "name": "粮食概念"
+              },
+              {
+                "name": "土地流转"
+              }
+            ],
+            "change": 0.100719,
+            "net_value": 29197028.36,
+            "net_rate": 0.07253508,
+            "hot_rank": 116,
+            "buy_value": 118714533,
+            "sell_value": 89517504.64,
+            "limit_reason": "棉花全产业链+业绩增长+棉蛋白",
+            "range_days": 1,
+            "hot_money_net_value": 53628655.36
+          },
+          {
+            "thscode": "002742.SZ",
+            "ticker": "002742",
+            "name": "冀衡医药",
+            "concept_list": [
+              {
+                "name": "幽门螺杆菌概念"
+              },
+              {
+                "name": "水泥概念"
+              },
+              {
+                "name": "流感"
+              }
+            ],
+            "change": -0.005338,
+            "net_value": -91867358.35,
+            "net_rate": -0.09110943,
+            "hot_rank": 118,
+            "buy_value": 70825953.91,
+            "sell_value": 162693312.26,
+            "range_days": 1,
+            "hot_money_net_value": 9189331.57
+          },
+          {
+            "thscode": "600479.SH",
+            "ticker": "600479",
+            "name": "千金药业",
+            "concept_list": [
+              {
+                "name": "医药电商"
+              },
+              {
+                "name": "流感"
+              },
+              {
+                "name": "农业种植"
+              }
+            ],
+            "change": 0.100412,
+            "net_value": -96220594.37,
+            "net_rate": -0.07149335,
+            "hot_rank": 123,
+            "buy_value": 138691654.43,
+            "sell_value": 234912248.8,
+            "limit_reason": "女性健康+创新药+药材种植+中报增长",
+            "range_days": 1,
+            "hot_money_net_value": -109809623.17
+          },
+          {
+            "thscode": "603228.SH",
+            "ticker": "603228",
+            "name": "景旺电子",
+            "concept_list": [
+              {
+                "name": "PCB概念"
+              },
+              {
+                "name": "共封装光学(CPO)"
+              },
+              {
+                "name": "华为手机"
+              }
+            ],
+            "change": -0.074515,
+            "net_value": -329403938.96,
+            "net_rate": -0.08966839,
+            "hot_rank": 128,
+            "buy_value": 454984362.2,
+            "sell_value": 784388301.16,
+            "range_days": 1,
+            "org_net_value": -221594245.2,
+            "hot_money_net_value": -186642633.68
+          },
+          {
+            "thscode": "920087.BJ",
+            "ticker": "920087",
+            "name": "秋乐种业",
+            "concept_list": [],
+            "change": 0.196319,
+            "net_value": 18345150.86,
+            "net_rate": 0.02745555,
+            "hot_rank": 137,
+            "buy_value": 72554822.12,
+            "sell_value": 54209671.26,
+            "range_days": 1,
+            "org_net_value": 160301.02,
+            "hot_money_net_value": 4269383.63
+          },
+          {
+            "thscode": "601208.SH",
+            "ticker": "601208",
+            "name": "东材科技",
+            "concept_list": [
+              {
+                "name": "OLED"
+              },
+              {
+                "name": "PET铜箔"
+              },
+              {
+                "name": "PCB概念"
+              }
+            ],
+            "change": -0.074919,
+            "net_value": -241122260.4,
+            "net_rate": -0.07060946,
+            "hot_rank": 143,
+            "buy_value": 330933102.78,
+            "sell_value": 572055363.18,
+            "range_days": 1,
+            "org_net_value": 25538031,
+            "hot_money_net_value": -202012786.97
+          },
+          {
+            "thscode": "301697.SZ",
+            "ticker": "301697",
+            "name": "贝特利",
+            "concept_list": [],
+            "change": 1.966942,
+            "net_value": 121040691.73,
+            "net_rate": 0.08999775,
+            "hot_rank": 152,
+            "buy_value": 147197752.43,
+            "sell_value": 26157060.7,
+            "range_days": 1,
+            "org_net_value": 69046287.84,
+            "hot_money_net_value": 51994403.89
+          },
+          {
+            "thscode": "300927.SZ",
+            "ticker": "300927",
+            "name": "江天化学",
+            "concept_list": [
+              {
+                "name": "周期"
+              },
+              {
+                "name": "国企改革"
+              },
+              {
+                "name": "草甘膦"
+              },
+              {
+                "name": "丙烯酸"
+              }
+            ],
+            "change": 0.2,
+            "net_value": 179512460.17,
+            "net_rate": 0.20321847,
+            "hot_rank": 160,
+            "buy_value": 227829700.41,
+            "sell_value": 48317240.24,
+            "limit_reason": "甲醇下游+SAP业务+新厂投产+半年报增长",
+            "range_days": 1,
+            "org_net_value": 51570709.01,
+            "hot_money_net_value": 28299753.16
+          },
+          {
+            "thscode": "600353.SH",
+            "ticker": "600353",
+            "name": "旭光电子",
+            "concept_list": [
+              {
+                "name": "光刻机"
+              },
+              {
+                "name": "先进封装"
+              },
+              {
+                "name": "第三代半导体"
+              }
+            ],
+            "change": -0.079781,
+            "net_value": -347756659.76,
+            "net_rate": -0.15499919,
+            "hot_rank": 171,
+            "buy_value": 200028321.44,
+            "sell_value": 547784981.2,
+            "range_days": 1,
+            "hot_money_net_value": -324212216.32
+          },
+          {
+            "thscode": "002484.SZ",
+            "ticker": "002484",
+            "name": "江海股份",
+            "concept_list": [
+              {
+                "name": "超级电容"
+              },
+              {
+                "name": "5G"
+              },
+              {
+                "name": "东数西算(算力)"
+              }
+            ],
+            "change": -0.062145,
+            "net_value": -349380096.46,
+            "net_rate": -0.08174732,
+            "hot_rank": 179,
+            "buy_value": 846158173.37,
+            "sell_value": 1195538269.83,
+            "range_days": 1,
+            "org_net_value": -71986420.17
+          },
+          {
+            "thscode": "605577.SH",
+            "ticker": "605577",
+            "name": "龙版传媒",
+            "concept_list": [
+              {
+                "name": "黑龙江自贸区"
+              },
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "IP经济(谷子经济)"
+              }
+            ],
+            "change": 0.099812,
+            "net_value": 25089635.68,
+            "net_rate": 0.0579792,
+            "hot_rank": 200,
+            "buy_value": 54784366.08,
+            "sell_value": 29694730.4,
+            "limit_reason": "AI漫剧+出版发行+黑龙江国资",
+            "range_days": 3,
+            "hot_money_net_value": 9933749.72
+          },
+          {
+            "thscode": "300642.SZ",
+            "ticker": "300642",
+            "name": "透景生命",
+            "concept_list": [
+              {
+                "name": "新冠检测"
+              },
+              {
+                "name": "辅助生殖"
+              },
+              {
+                "name": "流感"
+              },
+              {
+                "name": "肝炎概念"
+              }
+            ],
+            "change": 0.199882,
+            "net_value": 68782517.6,
+            "net_rate": 0.08524848,
+            "hot_rank": 222,
+            "buy_value": 120644638.7,
+            "sell_value": 51862121.1,
+            "limit_reason": "体外诊断+FISH产品+业绩增长",
+            "range_days": 1,
+            "org_net_value": 36204184.6,
+            "hot_money_net_value": 11069026
+          },
+          {
+            "thscode": "603721.SH",
+            "ticker": "603721",
+            "name": "中广天择",
+            "concept_list": [
+              {
+                "name": "快手概念"
+              },
+              {
+                "name": "AI视频"
+              },
+              {
+                "name": "小红书概念"
+              }
+            ],
+            "change": 0.1,
+            "net_value": 17283883,
+            "net_rate": 0.0854598,
+            "hot_rank": 269,
+            "buy_value": 71049237,
+            "sell_value": 53765354,
+            "limit_reason": "AI语料+传媒内容+控股变更",
+            "range_days": 3,
+            "hot_money_net_value": -33998
+          },
+          {
+            "thscode": "000011.SZ",
+            "ticker": "000011",
+            "name": "深物业A",
+            "concept_list": [
+              {
+                "name": "富时罗素概念股"
+              },
+              {
+                "name": "深圳国企改革"
+              },
+              {
+                "name": "物业管理"
+              },
+              {
+                "name": "化债概念(AMC概念)"
+              }
+            ],
+            "change": -0.090367,
+            "net_value": -46085510.86,
+            "net_rate": -0.09065593,
+            "hot_rank": 307,
+            "buy_value": 53578781.34,
+            "sell_value": 99664292.2,
+            "range_days": 1,
+            "org_net_value": -7193102.4,
+            "hot_money_net_value": 5140268
+          },
+          {
+            "thscode": "920403.BJ",
+            "ticker": "920403",
+            "name": "康农种业",
+            "concept_list": [],
+            "change": 0.213046,
+            "net_value": -3165353.52,
+            "net_rate": -0.00880473,
+            "hot_rank": 326,
+            "buy_value": 38236718.97,
+            "sell_value": 41402072.49,
+            "range_days": 1,
+            "org_net_value": 2418823.97
+          },
+          {
+            "thscode": "600691.SH",
+            "ticker": "600691",
+            "name": "潞化科技",
+            "concept_list": [
+              {
+                "name": "煤化工概念"
+              },
+              {
+                "name": "天然气"
+              },
+              {
+                "name": "化肥"
+              }
+            ],
+            "change": 0.040248,
+            "net_value": -21771504.91,
+            "net_rate": -0.02647941,
+            "hot_rank": 330,
+            "buy_value": 84450896.29,
+            "sell_value": 106222401.2,
+            "range_days": 1,
+            "hot_money_net_value": 45579532.16
+          },
+          {
+            "thscode": "301218.SZ",
+            "ticker": "301218",
+            "name": "华是科技",
+            "concept_list": [
+              {
+                "name": "数据安全"
+              },
+              {
+                "name": "智慧政务"
+              },
+              {
+                "name": "网络安全"
+              }
+            ],
+            "change": -0.043516,
+            "net_value": -95251320.43,
+            "net_rate": -0.04762454,
+            "hot_rank": 331,
+            "buy_value": 322340933.28,
+            "sell_value": 417592253.71,
+            "range_days": 1,
+            "org_net_value": 16830084.57,
+            "hot_money_net_value": 16570693.17
+          },
+          {
+            "thscode": "600828.SH",
+            "ticker": "600828",
+            "name": "茂业商业",
+            "concept_list": [
+              {
+                "name": "信托概念"
+              },
+              {
+                "name": "西部大开发"
+              },
+              {
+                "name": "物业管理"
+              }
+            ],
+            "change": 0.100756,
+            "net_value": 21788813,
+            "net_rate": 0.31212378,
+            "hot_rank": 344,
+            "buy_value": 40092600,
+            "sell_value": 18303787,
+            "limit_reason": "百货零售+商业REITs+商管转型",
+            "range_days": 1,
+            "org_net_value": -6872262,
+            "hot_money_net_value": 29411837
+          },
+          {
+            "thscode": "920895.BJ",
+            "ticker": "920895",
+            "name": "花溪科技",
+            "concept_list": [],
+            "change": 0.299753,
+            "net_value": 22497863.54,
+            "net_rate": 0.09116889,
+            "hot_rank": 357,
+            "buy_value": 47876053.97,
+            "sell_value": 25378190.43,
+            "range_days": 1,
+            "hot_money_net_value": 4071560.19
+          },
+          {
+            "thscode": "920021.BJ",
+            "ticker": "920021",
+            "name": "流金科技",
+            "concept_list": [],
+            "change": 0.056497,
+            "net_value": 7994300.92,
+            "net_rate": 0.00938696,
+            "hot_rank": 363,
+            "buy_value": 77574209.82,
+            "sell_value": 69579908.9,
+            "range_days": 1,
+            "org_net_value": 5374496.34,
+            "hot_money_net_value": 4739136.78
+          },
+          {
+            "thscode": "301591.SZ",
+            "ticker": "301591",
+            "name": "肯特股份",
+            "concept_list": [
+              {
+                "name": "PEEK材料"
+              },
+              {
+                "name": "比亚迪概念"
+              },
+              {
+                "name": "PCB概念"
+              }
+            ],
+            "change": -0.051978,
+            "net_value": -34496768.25,
+            "net_rate": -0.04081792,
+            "hot_rank": 370,
+            "buy_value": 78683128.87,
+            "sell_value": 113179897.12,
+            "range_days": 1,
+            "org_net_value": -40591086.96,
+            "hot_money_net_value": 6094318.71
+          },
+          {
+            "thscode": "600892.SH",
+            "ticker": "600892",
+            "name": "大晟文化",
+            "concept_list": [
+              {
+                "name": "文化传媒概念"
+              },
+              {
+                "name": "短剧游戏"
+              },
+              {
+                "name": "抖音概念(字节概念)"
+              }
+            ],
+            "change": 0.099548,
+            "net_value": 36119817,
+            "net_rate": 0.1259563,
+            "hot_rank": 378,
+            "buy_value": 80949822,
+            "sell_value": 44830005,
+            "limit_reason": "短剧+网络游戏+资产剥离",
+            "range_days": 3,
+            "hot_money_net_value": 20347276
+          },
+          {
+            "thscode": "300911.SZ",
+            "ticker": "300911",
+            "name": "亿田智能",
+            "concept_list": [
+              {
+                "name": "算力租赁"
+              },
+              {
+                "name": "腾讯概念"
+              },
+              {
+                "name": "AIGC概念"
+              }
+            ],
+            "change": 0.088246,
+            "net_value": 150654162.87,
+            "net_rate": 0.0907652,
+            "hot_rank": 446,
+            "buy_value": 415022957.19,
+            "sell_value": 264368794.32,
+            "range_days": 3,
+            "org_net_value": 123825137.17,
+            "hot_money_net_value": -2184041.88
+          },
+          {
+            "thscode": "601566.SH",
+            "ticker": "601566",
+            "name": "九牧王",
+            "concept_list": [
+              {
+                "name": "IP经济(谷子经济)"
+              },
+              {
+                "name": "网红经济"
+              },
+              {
+                "name": "高股息精选"
+              }
+            ],
+            "change": 0.100467,
+            "net_value": 22088671,
+            "net_rate": 0.15455116,
+            "hot_rank": 527,
+            "buy_value": 43598202,
+            "sell_value": 21509531,
+            "limit_reason": "男裤龙头+零售消费+太空裤",
+            "range_days": 1,
+            "hot_money_net_value": 12116485
+          },
+          {
+            "thscode": "920855.BJ",
+            "ticker": "920855",
+            "name": "浙江大农",
+            "concept_list": [],
+            "change": 0.299845,
+            "net_value": -3139009.42,
+            "net_rate": -0.02977775,
+            "hot_rank": 616,
+            "buy_value": 22241521.71,
+            "sell_value": 25380531.13,
+            "range_days": 1,
+            "org_net_value": -4736764.3
+          },
+          {
+            "thscode": "002909.SZ",
+            "ticker": "002909",
+            "name": "集泰股份",
+            "concept_list": [
+              {
+                "name": "装配式建筑"
+              },
+              {
+                "name": "雄安新区"
+              },
+              {
+                "name": "新型城镇化"
+              }
+            ],
+            "change": 0.099668,
+            "net_value": 26612832.4,
+            "net_rate": 0.05666751,
+            "hot_rank": 641,
+            "buy_value": 71593686.22,
+            "sell_value": 44980853.82,
+            "limit_reason": "液冷硅油+新能源胶+密封胶",
+            "range_days": 3,
+            "org_net_value": -8851535.82,
+            "hot_money_net_value": -5630720
+          },
+          {
+            "thscode": "301655.SZ",
+            "ticker": "301655",
+            "name": "绿控传动",
+            "concept_list": [
+              {
+                "name": "长三角一体化"
+              },
+              {
+                "name": "注册制次新股"
+              },
+              {
+                "name": "2026中报预增"
+              }
+            ],
+            "change": -0.067657,
+            "net_value": -34590101.18,
+            "net_rate": -0.06059416,
+            "hot_rank": 672,
+            "buy_value": 54706914.85,
+            "sell_value": 89297016.03,
+            "range_days": 1,
+            "org_net_value": -47204173.72
+          },
+          {
+            "thscode": "605300.SH",
+            "ticker": "605300",
+            "name": "佳禾食品",
+            "concept_list": [
+              {
+                "name": "代糖概念"
+              },
+              {
+                "name": "预制菜"
+              },
+              {
+                "name": "跨境电商"
+              }
+            ],
+            "change": 0.100513,
+            "net_value": 6784602.21,
+            "net_rate": 0.07926587,
+            "hot_rank": 813,
+            "buy_value": 19140079.21,
+            "sell_value": 12355477,
+            "limit_reason": "植物基+咖啡+业绩改善",
+            "range_days": 1,
+            "hot_money_net_value": 4398779.95
+          },
+          {
+            "thscode": "300550.SZ",
+            "ticker": "300550",
+            "name": "和仁科技",
+            "concept_list": [
+              {
+                "name": "家庭医生"
+              },
+              {
+                "name": "AI应用"
+              },
+              {
+                "name": "数据要素"
+              }
+            ],
+            "change": 0.096324,
+            "net_value": -1972726.78,
+            "net_rate": -0.00326655,
+            "hot_rank": 1034,
+            "buy_value": 124635712.52,
+            "sell_value": 126608439.3,
+            "range_days": 3,
+            "org_net_value": -1972726.78
+          },
+          {
+            "thscode": "002943.SZ",
+            "ticker": "002943",
+            "name": "宇晶股份",
+            "concept_list": [
+              {
+                "name": "第三代半导体"
+              },
+              {
+                "name": "AI眼镜"
+              },
+              {
+                "name": "芯片概念"
+              }
+            ],
+            "change": -0.080947,
+            "net_value": -86651880.26,
+            "net_rate": -0.16062814,
+            "hot_rank": 1315,
+            "buy_value": 71391059.43,
+            "sell_value": 158042939.69,
+            "range_days": 1,
+            "org_net_value": -56419954.33
+          },
+          {
+            "thscode": "920159.BJ",
+            "ticker": "920159",
+            "name": "农大科技",
+            "concept_list": [],
+            "change": 0.072576,
+            "net_value": -4065854.01,
+            "net_rate": -0.02332066,
+            "hot_rank": 1471,
+            "buy_value": 18162408.49,
+            "sell_value": 22228262.5,
+            "range_days": 1,
+            "org_net_value": 2779782.72,
+            "hot_money_net_value": -319561.71
+          },
+          {
+            "thscode": "920288.BJ",
+            "ticker": "920288",
+            "name": "华大海天",
+            "concept_list": [],
+            "change": -0.027431,
+            "net_value": -8868164.74,
+            "net_rate": -0.05910401,
+            "hot_rank": 1642,
+            "buy_value": 19883774.55,
+            "sell_value": 28751939.29,
+            "range_days": 1,
+            "org_net_value": -1876814.08,
+            "hot_money_net_value": 1247858.6
+          },
+          {
+            "thscode": "920866.BJ",
+            "ticker": "920866",
+            "name": "绿亨科技",
+            "concept_list": [],
+            "change": 0.216995,
+            "net_value": 845536.84,
+            "net_rate": 0.00575455,
+            "hot_rank": 1980,
+            "buy_value": 15802521.74,
+            "sell_value": 14956984.9,
+            "range_days": 1,
+            "org_net_value": 1723627.27,
+            "hot_money_net_value": -821781.1
+          },
+          {
+            "thscode": "920592.BJ",
+            "ticker": "920592",
+            "name": "华信永道",
+            "concept_list": [],
+            "change": 0.29959,
+            "net_value": 2211145.9,
+            "net_rate": 0.00660992,
+            "hot_rank": 2076,
+            "buy_value": 35056699.65,
+            "sell_value": 32845553.75,
+            "range_days": 1,
+            "hot_money_net_value": -11333802.37
+          },
+          {
+            "thscode": "001326.SZ",
+            "ticker": "001326",
+            "name": "联域股份",
+            "concept_list": [
+              {
+                "name": "物联网"
+              },
+              {
+                "name": "充电桩"
+              },
+              {
+                "name": "粤港澳大湾区"
+              }
+            ],
+            "change": -0.095799,
+            "net_value": -35515063,
+            "net_rate": -0.1325279,
+            "hot_rank": 2618,
+            "buy_value": 60210678,
+            "sell_value": 95725741,
+            "range_days": 1,
+            "org_net_value": -22306768,
+            "hot_money_net_value": -20791675
+          }
+        ],
+        "hot_money_items": []
+      },
+      "meta": {
+        "source": "remote",
+        "request_id": "a6dd05cd26734cebb0127855fa5c6c4a",
+        "truncated": false,
+        "schema_version": "1"
+      }
+    },
+    "hotspot_summary": {
+      "limit_up_pool_count": 80,
+      "top_reason_tokens": [
+        {
+          "theme": "AI应用",
+          "count": 8
+        },
+        {
+          "theme": "半年报增长",
+          "count": 4
+        },
+        {
+          "theme": "创新药",
+          "count": 4
+        },
+        {
+          "theme": "业绩增长",
+          "count": 4
+        },
+        {
+          "theme": "数字人民币",
+          "count": 3
+        },
+        {
+          "theme": "零售",
+          "count": 3
+        },
+        {
+          "theme": "中报增长",
+          "count": 3
+        },
+        {
+          "theme": "粮食概念",
+          "count": 3
+        },
+        {
+          "theme": "种业",
+          "count": 3
+        },
+        {
+          "theme": "AI教育",
+          "count": 2
+        },
+        {
+          "theme": "无人驾驶",
+          "count": 2
+        },
+        {
+          "theme": "转基因玉米",
+          "count": 2
+        },
+        {
+          "theme": "玉米种业",
+          "count": 2
+        },
+        {
+          "theme": "智算中心",
+          "count": 2
+        },
+        {
+          "theme": "转基因",
+          "count": 2
+        },
+        {
+          "theme": "短剧",
+          "count": 2
+        },
+        {
+          "theme": "控制权变更",
+          "count": 2
+        },
+        {
+          "theme": "生物育种",
+          "count": 2
+        },
+        {
+          "theme": "供销社",
+          "count": 2
+        },
+        {
+          "theme": "白酒",
+          "count": 1
+        }
+      ],
+      "highest_continuation": [
+        {
+          "thscode": "002084.SZ",
+          "ticker": "002084",
+          "name": "海鸥住工",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 7.02,
+          "price_change_ratio_pct": 10.0313,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "控制权拟变更+装配式厨卫+越南制造",
+          "continue_day_text": "7连板",
+          "continue_day_cnt": 7,
+          "seal_money": 171719950,
+          "max_seal_money": 438346244.7
+        },
+        {
+          "thscode": "600371.SH",
+          "ticker": "600371",
+          "name": "万向德农",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 13.96,
+          "price_change_ratio_pct": 10.0079,
+          "limit_up_time": "09:32",
+          "limit_up_reason": "转基因玉米+玉米种业+新品研发",
+          "continue_day_text": "6连板",
+          "continue_day_cnt": 6,
+          "seal_money": 118696087,
+          "max_seal_money": 168673933.6
+        },
+        {
+          "thscode": "002855.SZ",
+          "ticker": "002855",
+          "name": "捷荣技术",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 17.71,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "折叠屏+精密结构件+亏损收窄",
+          "continue_day_text": "6连板",
+          "continue_day_cnt": 6,
+          "seal_money": 79563946,
+          "max_seal_money": 95968719
+        },
+        {
+          "thscode": "600540.SH",
+          "ticker": "600540",
+          "name": "新赛股份",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 6.12,
+          "price_change_ratio_pct": 10.0719,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "棉花全产业链+业绩增长+棉蛋白",
+          "continue_day_text": "4连板",
+          "continue_day_cnt": 4,
+          "seal_money": 201047670,
+          "max_seal_money": 260413270.56
+        },
+        {
+          "thscode": "002679.SZ",
+          "ticker": "002679",
+          "name": "福建金森",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 12.91,
+          "price_change_ratio_pct": 9.9659,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "林业主业+海峡两岸+国有控股+中报亏损收窄",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 352819580,
+          "max_seal_money": 364420510.7
+        },
+        {
+          "thscode": "003005.SZ",
+          "ticker": "003005",
+          "name": "竞业达",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 18.18,
+          "price_change_ratio_pct": 9.9819,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "AI教育+智能体+智慧招考+智慧轨道",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 211773180,
+          "max_seal_money": 416520162
+        },
+        {
+          "thscode": "601086.SH",
+          "ticker": "601086",
+          "name": "国芳集团",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 10.09,
+          "price_change_ratio_pct": 10.0327,
+          "limit_up_time": "09:31",
+          "limit_up_reason": "连锁零售+新零售+半年报增长",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 195748020,
+          "max_seal_money": 312261092.29
+        },
+        {
+          "thscode": "000560.SZ",
+          "ticker": "000560",
+          "name": "我爱我家",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 3.19,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:33",
+          "limit_up_reason": "房产经纪+净利增长+AI应用",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 46942716,
+          "max_seal_money": 316825303.63
+        },
+        {
+          "thscode": "600551.SH",
+          "ticker": "600551",
+          "name": "时代出版",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 9.08,
+          "price_change_ratio_pct": 10.0606,
+          "limit_up_time": "09:30",
+          "limit_up_reason": "中报扣非增长+AI出版+教育服务+出版主业",
+          "continue_day_text": "3连板",
+          "continue_day_cnt": 3,
+          "seal_money": 43444713,
+          "max_seal_money": 145824091.76
+        },
+        {
+          "thscode": "000892.SZ",
+          "ticker": "000892",
+          "name": "欢瑞世纪",
+          "is_st": false,
+          "is_new": false,
+          "last_price": 4.73,
+          "price_change_ratio_pct": 10,
+          "limit_up_time": "09:25",
+          "limit_up_reason": "AIGC影视+互动影游+影视制作",
+          "continue_day_text": "2连板",
+          "continue_day_cnt": 2,
+          "seal_money": 327185460,
+          "max_seal_money": 1062778970
+        }
+      ]
+    }
+  },
+  "source_raw": {
+    "market_overview": [
+      {
+        "info": {
+          "type": "summary",
+          "code": "market_statis_summary",
+          "desc": "市场画像总评（14 维度得分 + 状态文案）",
+          "group": "综合"
+        },
+        "listName": "市场统计画像总结",
+        "date": "2026-09-01",
+        "schema": {
+          "ADJ_SCORE": "调整评分",
+          "CAP_ROTATION_SCORE": "大小盘轮动得分",
+          "CAP_ROTATION_STATUS": "大小盘轮动状态",
+          "RAW_SCORE": "原始评分",
+          "SECTOR_ROTATION_SCORE": "行业轮动得分",
+          "SECTOR_ROTATION_STATUS": "行业轮动状态",
+          "SECTOR_WIDTH_SCORE": "板块宽度得分",
+          "SECTOR_WIDTH_STATUS": "板块宽度状态",
+          "SENTIMENT_SCORE": "情绪指标得分",
+          "SENTIMENT_STATUS": "情绪指标状态",
+          "STOCK_WIDTH_SCORE": "个股宽度得分",
+          "STOCK_WIDTH_STATUS": "个股宽度状态",
+          "STYLE_ROTATION_SCORE": "风格轮动得分",
+          "STYLE_ROTATION_STATUS": "风格轮动状态",
+          "TECHNICAL_SCORE": "技术指标得分",
+          "TECHNICAL_STATUS": "技术指标状态",
+          "TREND_LONG_DIRECTION_SCORE": "中长期趋势方向得分",
+          "TREND_LONG_DIRECTION_STATUS": "中长期趋势方向状态",
+          "TREND_LONG_STRENGTH_SCORE": "中长期趋势强度得分",
+          "TREND_LONG_STRENGTH_STATUS": "中长期趋势强度状态",
+          "TREND_SHORT_DIRECTION_SCORE": "短期趋势方向得分",
+          "TREND_SHORT_DIRECTION_STATUS": "短期趋势方向状态",
+          "TREND_SHORT_STRENGTH_SCORE": "短期趋势强度得分",
+          "TREND_SHORT_STRENGTH_STATUS": "短期趋势强度状态",
+          "VALUATION_SCORE": "估值水平得分",
+          "VALUATION_STATUS": "估值水平状态",
+          "VOLUME_ENERGE_SCORE": "成交量能得分",
+          "VOLUME_ENERGE_STATUS": "成交量能状态"
+        },
+        "row": {
+          "ADJ_SCORE": 34.76,
+          "CAP_ROTATION_SCORE": 4,
+          "CAP_ROTATION_STATUS": "小盘占优(中证1000 > 沪深300 +3%~+8%)",
+          "RAW_SCORE": 25.27,
+          "SECTOR_ROTATION_SCORE": 3,
+          "SECTOR_ROTATION_STATUS": "温和分化(头部在涨,尾部在跌,头部尾部相差在2%~5%)",
+          "SECTOR_WIDTH_SCORE": 4,
+          "SECTOR_WIDTH_STATUS": "主线清晰(上涨板块60~80%)",
+          "SENTIMENT_SCORE": 5,
+          "SENTIMENT_STATUS": "情绪狂热(涨停>50只，或者涨股比>70%，两融周增>2% )",
+          "STOCK_WIDTH_SCORE": 5,
+          "STOCK_WIDTH_STATUS": "普涨(创新高>200只，或者破位<10只)",
+          "STYLE_ROTATION_SCORE": 3,
+          "STYLE_ROTATION_STATUS": "均衡(成长/价值差异 < ±2%)",
+          "TECHNICAL_SCORE": 5,
+          "TECHNICAL_STATUS": "极强(MACD金叉向上发散，或者RSI多头排列，或者突破布林上轨)",
+          "TREND_LONG_DIRECTION_SCORE": 2,
+          "TREND_LONG_DIRECTION_STATUS": "弱势下跌(均线空头排列,或者短线下穿中线且距离中线以下距离较小)",
+          "TREND_LONG_STRENGTH_SCORE": 3,
+          "TREND_LONG_STRENGTH_STATUS": "震荡",
+          "TREND_SHORT_DIRECTION_SCORE": 4,
+          "TREND_SHORT_DIRECTION_STATUS": "温和上涨(均线多头排列,或者短线上穿中线且距离中线以上距离较小)",
+          "TREND_SHORT_STRENGTH_SCORE": 4,
+          "TREND_SHORT_STRENGTH_STATUS": "温和上涨",
+          "VALUATION_SCORE": 4,
+          "VALUATION_STATUS": "偏高区间(PE分位数70%~90%)",
+          "VOLUME_ENERGE_SCORE": 3,
+          "VOLUME_ENERGE_STATUS": "缩量震荡(成交额90~110%均值)"
+        }
+      },
+      {
+        "info": {
+          "type": "trade",
+          "code": "market_statis_daily_trade",
+          "desc": "三大指数收盘统计（OHLC + 两市成交额多周期均值）",
+          "group": "行情"
+        },
+        "listName": "市场行情收盘统计",
+        "date": "2026-09-01",
+        "schema": {
+          "CHANGE_PCT_CYBZ": "涨跌幅(创业板指)",
+          "CHANGE_PCT_SZCZ": "涨跌幅(深证成指)",
+          "CHANGE_PCT_SZZS": "涨跌幅(上证指数)",
+          "CLOSE_PRICE_CYBZ": "收盘(创业板指)",
+          "CLOSE_PRICE_SZCZ": "收盘(深证成指)",
+          "CLOSE_PRICE_SZZS": "收盘(上证指数)",
+          "HIGH_PRICE_CYBZ": "最高(创业板指)",
+          "HIGH_PRICE_SZCZ": "最高(深证成指)",
+          "HIGH_PRICE_SZZS": "最高(上证指数)",
+          "LOW_PRICE_CYBZ": "最低(创业板指)",
+          "LOW_PRICE_SZCZ": "最低(深证成指)",
+          "LOW_PRICE_SZZS": "最低(上证指数)",
+          "MONEY": "两市成交额(亿)",
+          "MONEY_10DAVG": "两市成交额(亿)10日均值",
+          "MONEY_10DAVG_RATIO": "当日两市成交额/10日均值(%)",
+          "MONEY_120DAVG": "两市成交额(亿)120日均值",
+          "MONEY_120DAVG_RATIO": "当日两市成交额/120日均值(%)",
+          "MONEY_20DAVG": "两市成交额(亿)20日均值",
+          "MONEY_20DAVG_RATIO": "当日两市成交额/20日均值(%)",
+          "MONEY_250DAVG": "两市成交额(亿)250日均值",
+          "MONEY_250DAVG_RATIO": "当日两市成交额/250日均值(%)",
+          "MONEY_5DAVG": "两市成交额(亿)5日均值",
+          "MONEY_5DAVG_RATIO": "当日两市成交额/5日均值(%)",
+          "MONEY_60DAVG": "两市成交额(亿)60日均值",
+          "MONEY_60DAVG_RATIO": "当日两市成交额/60日均值(%)",
+          "OPEN_PRICE_CYBZ": "今开(创业板指)",
+          "OPEN_PRICE_SZCZ": "今开(深证成指)",
+          "OPEN_PRICE_SZZS": "今开(上证指数)"
+        },
+        "row": {
+          "CHANGE_PCT_CYBZ": -1.32,
+          "CHANGE_PCT_SZCZ": -1.02,
+          "CHANGE_PCT_SZZS": -0.16,
+          "CLOSE_PRICE_CYBZ": 3393.43,
+          "CLOSE_PRICE_SZCZ": 13872.38,
+          "CLOSE_PRICE_SZZS": 3979.89,
+          "HIGH_PRICE_CYBZ": 3442.48,
+          "HIGH_PRICE_SZCZ": 14018.51,
+          "HIGH_PRICE_SZZS": 3995.18,
+          "LOW_PRICE_CYBZ": 3375.01,
+          "LOW_PRICE_SZCZ": 13845.55,
+          "LOW_PRICE_SZZS": 3976.47,
+          "MONEY": 20334.03,
+          "MONEY_10DAVG": 20509.767999999996,
+          "MONEY_10DAVG_RATIO": 99.14,
+          "MONEY_120DAVG": 26271.375583333323,
+          "MONEY_120DAVG_RATIO": 77.4,
+          "MONEY_20DAVG": 22420.554000000004,
+          "MONEY_20DAVG_RATIO": 90.69,
+          "MONEY_250DAVG": 24609.943919999998,
+          "MONEY_250DAVG_RATIO": 82.63,
+          "MONEY_5DAVG": 20401.595999999998,
+          "MONEY_5DAVG_RATIO": 99.67,
+          "MONEY_60DAVG": 26447.017666666667,
+          "MONEY_60DAVG_RATIO": 76.89,
+          "OPEN_PRICE_CYBZ": 3435.32,
+          "OPEN_PRICE_SZCZ": 14017.42,
+          "OPEN_PRICE_SZZS": 3979.88
+        }
+      },
+      {
+        "info": {
+          "type": "interval",
+          "code": "market_statis_interval_trade",
+          "desc": "三大指数区间统计（5/10/20/60/120/250D 涨跌幅 + 52W 高低）",
+          "group": "行情"
+        },
+        "listName": "市场行情区间统计",
+        "date": "2026-09-01",
+        "schema": {
+          "52WEEK_HIGH_CYBZ": "52周最高(创业板指)",
+          "52WEEK_HIGH_SZCZ": "52周最高(深证成指)",
+          "52WEEK_HIGH_SZZS": "52周最高(上证指数)",
+          "52WEEK_LOW_CYBZ": "52周最低(创业板指)",
+          "52WEEK_LOW_SZCZ": "52周最低(深证成指)",
+          "52WEEK_LOW_SZZS": "52周最低(上证指数)",
+          "CHG_10D_CYBZ": "10日涨跌幅(创业板指)",
+          "CHG_10D_SZCZ": "10日涨跌幅(深证成指)",
+          "CHG_10D_SZZS": "10日涨跌幅(上证指数)",
+          "CHG_120D_CYBZ": "120日涨跌幅(创业板指)",
+          "CHG_120D_SZCZ": "120日涨跌幅(深证成指)",
+          "CHG_120D_SZZS": "120日涨跌幅(上证指数)",
+          "CHG_20D_CYBZ": "20日涨跌幅(创业板指)",
+          "CHG_20D_SZCZ": "20日涨跌幅(深证成指)",
+          "CHG_20D_SZZS": "20日涨跌幅(上证指数)",
+          "CHG_250D_CYBZ": "250日涨跌幅(创业板指)",
+          "CHG_250D_SZCZ": "250日涨跌幅(深证成指)",
+          "CHG_250D_SZZS": "250日涨跌幅(上证指数)",
+          "CHG_5D_CYBZ": "5日涨跌幅(创业板指)",
+          "CHG_5D_SZCZ": "5日涨跌幅(深证成指)",
+          "CHG_5D_SZZS": "5日涨跌幅(上证指数)",
+          "CHG_60D_CYBZ": "60日涨跌幅(创业板指)",
+          "CHG_60D_SZCZ": "60日涨跌幅(深证成指)",
+          "CHG_60D_SZZS": "60日涨跌幅(上证指数)"
+        },
+        "row": {
+          "52WEEK_HIGH_CYBZ": 4380.41,
+          "52WEEK_HIGH_SZCZ": 16374.02,
+          "52WEEK_HIGH_SZZS": 4258.86,
+          "52WEEK_LOW_CYBZ": 2529.25,
+          "52WEEK_LOW_SZCZ": 11642.59,
+          "52WEEK_LOW_SZZS": 3702.38,
+          "CHG_10D_CYBZ": -8.42,
+          "CHG_10D_SZCZ": -5.13,
+          "CHG_10D_SZZS": -0.26,
+          "CHG_120D_CYBZ": 2.64,
+          "CHG_120D_SZCZ": -3.36,
+          "CHG_120D_SZZS": -3.47,
+          "CHG_20D_CYBZ": -2.74,
+          "CHG_20D_SZCZ": -0.1,
+          "CHG_20D_SZZS": 4.12,
+          "CHG_250D_CYBZ": 30.13,
+          "CHG_250D_SZCZ": 16.31,
+          "CHG_250D_SZZS": 5.67,
+          "CHG_5D_CYBZ": -0.12,
+          "CHG_5D_SZCZ": 0.92,
+          "CHG_5D_SZZS": 2.33,
+          "CHG_60D_CYBZ": -10.98,
+          "CHG_60D_SZCZ": -6.4,
+          "CHG_60D_SZZS": 0.52
+        }
+      },
+      {
+        "info": {
+          "type": "technical",
+          "code": "market_statis_technical",
+          "desc": "大盘技术指标（MACD/KDJ/RSI/BOLL/MA + 神奇九转）",
+          "group": "技术"
+        },
+        "listName": "市场指数技术指标",
+        "date": "2026-09-01",
+        "schema": {
+          "BOLL_LOWER": "布林带下轨线",
+          "BOLL_MID": "布林带中轨线",
+          "BOLL_UPPER": "布林带上轨线",
+          "DEA": "MACD离差平均值(dea)",
+          "DIF": "MACD离差值(dif)",
+          "KDJ_D": "D线指标值",
+          "KDJ_J": "J线指标值",
+          "KDJ_K": "K线指标值",
+          "MACD": "MACD值",
+          "MA_10": "基于10个交易日的收盘价移动平均值",
+          "MA_120": "基于120个交易日的收盘价移动平均值",
+          "MA_20": "基于20个交易日的收盘价移动平均值",
+          "MA_250": "基于250个交易日的收盘价移动平均值",
+          "MA_5": "基于5个交易日的收盘价移动平均值",
+          "MA_60": "基于60个交易日的收盘价移动平均值",
+          "NINETURN_GREEN9": "神奇九转：是否绿9(下跌结构)",
+          "NINETURN_RED9": "神奇九转：是否红9(上涨结构)",
+          "RSI_12": "基于12个交易日的RSI指标值",
+          "RSI_24": "基于24个交易日的RSI指标值",
+          "RSI_6": "基于6个交易日的RSI指标值"
+        },
+        "row": {
+          "BOLL_LOWER": 3859.9008,
+          "BOLL_MID": 3932.776,
+          "BOLL_UPPER": 4005.6512,
+          "DEA": 1.9524,
+          "DIF": 11.0358,
+          "KDJ_D": 62.3975,
+          "KDJ_J": 105.4467,
+          "KDJ_K": 76.7472,
+          "MACD": 18.1668,
+          "MA_10": 3926.225,
+          "MA_120": 4006.4191,
+          "MA_20": 3932.776,
+          "MA_250": 3985.5072,
+          "MA_5": 3957.492,
+          "MA_60": 3957.516,
+          "NINETURN_GREEN9": 0,
+          "NINETURN_RED9": 0,
+          "RSI_12": 59.0313,
+          "RSI_24": 52.7925,
+          "RSI_6": 67.5557
+        }
+      },
+      {
+        "info": {
+          "type": "updown",
+          "code": "market_statis_updown",
+          "desc": "A 股涨跌分布（涨跌停/红绿盘/多周期新高新低数）",
+          "group": "宽度"
+        },
+        "listName": "市场个股涨跌分布",
+        "date": "2026-09-01",
+        "schema": {
+          "CNT_GREEN": "A股下跌股票数",
+          "CNT_HIGH10": "A股创10日新高个股数",
+          "CNT_HIGH120": "A股创120日新高个股数",
+          "CNT_HIGH20": "A股创20日新高个股数",
+          "CNT_HIGH250": "A股创250日新高个股数",
+          "CNT_HIGH5": "A股创5日新高个股数",
+          "CNT_HIGH60": "A股创60日新高个股数",
+          "CNT_LOW10": "A股创10日新低个股数",
+          "CNT_LOW120": "A股创120日新低个股数",
+          "CNT_LOW20": "A股创20日新低个股数",
+          "CNT_LOW250": "A股创250日新低个股数",
+          "CNT_LOW5": "A股创5日新低个股数",
+          "CNT_LOW60": "A股创60日新低个股数",
+          "CNT_REACH_DNLIMIT": "A股跌停股票数",
+          "CNT_REACH_UPLIMIT": "A股涨停股票数",
+          "CNT_RED": "A股上涨股票数",
+          "CNT_TOTAL": "A股股票数",
+          "CNT_ZERO": "A股平盘股票数",
+          "RATIO_DOWN": "A股下跌股票比例(%)",
+          "RATIO_DOWNLIMIT": "A股跌停股票比例(%)",
+          "RATIO_UP": "A股上涨股票比例(%)",
+          "RATIO_UPDOWN": "A股涨跌比",
+          "RATIO_UPLIMIT": "A股涨停股票比例(%)"
+        },
+        "row": {
+          "CNT_GREEN": 2040,
+          "CNT_HIGH10": 1964,
+          "CNT_HIGH120": 103,
+          "CNT_HIGH20": 1243,
+          "CNT_HIGH250": 60,
+          "CNT_HIGH5": 2632,
+          "CNT_HIGH60": 503,
+          "CNT_LOW10": 225,
+          "CNT_LOW120": 21,
+          "CNT_LOW20": 130,
+          "CNT_LOW250": 16,
+          "CNT_LOW5": 494,
+          "CNT_LOW60": 22,
+          "CNT_REACH_DNLIMIT": 0,
+          "CNT_REACH_UPLIMIT": 80,
+          "CNT_RED": 3386,
+          "CNT_TOTAL": 5553,
+          "CNT_ZERO": 127,
+          "RATIO_DOWN": 36.74,
+          "RATIO_DOWNLIMIT": 0,
+          "RATIO_UP": 60.98,
+          "RATIO_UPDOWN": 1.66,
+          "RATIO_UPLIMIT": 1.44
+        }
+      },
+      {
+        "info": {
+          "type": "margin",
+          "code": "market_statis_margin_chg",
+          "desc": "两融余额多周期变动（融资/融券/合计）",
+          "group": "资金"
+        },
+        "listName": "市场两融余额变动",
+        "date": "2026-09-01",
+        "schema": {
+          "MARGINTRADE_CHG_10D": "融资融券余额变动比例(10日)(%)",
+          "MARGINTRADE_CHG_120D": "融资融券余额变动比例(120日)(%)",
+          "MARGINTRADE_CHG_20D": "融资融券余额变动比例(20日)(%)",
+          "MARGINTRADE_CHG_250D": "融资融券余额变动比例(250日)(%)",
+          "MARGINTRADE_CHG_5D": "融资融券余额变动比例(5日)(%)",
+          "MARGINTRADE_CHG_60D": "融资融券余额变动比例(60日)(%)",
+          "MARGINTRADE_DIF_10D": "融资融券余额变动额(10日)(万)",
+          "MARGINTRADE_DIF_120D": "融资融券余额变动额(120日)(万)",
+          "MARGINTRADE_DIF_20D": "融资融券余额变动额(20日)(万)",
+          "MARGINTRADE_DIF_250D": "融资融券余额变动额(250日)(万)",
+          "MARGINTRADE_DIF_5D": "融资融券余额变动额(5日)(万)",
+          "MARGINTRADE_DIF_60D": "融资融券余额变动额(60日)(万)",
+          "TOTAL_FINANCEVALUE": "融资余额(万)",
+          "TOTAL_SECURITYVALUE": "融券余额(万)",
+          "TOTAL_TRADINGVALUE": "融资融券余额(万)"
+        },
+        "row": null
+      },
+      {
+        "info": {
+          "type": "valuation",
+          "code": "market_statis_valuation",
+          "desc": "中证全指估值（PE/PB/PS/DIV TTM + 历史百分位）",
+          "group": "估值"
+        },
+        "listName": "市场指数估值水平",
+        "date": "2026-08-31",
+        "schema": {
+          "DIV_TTM": "中证全指divttm",
+          "PB_LF": "中证全指pblf",
+          "PCF_TTM": "中证全指pcfttm",
+          "PE_TTM": "中证全指pettm",
+          "PE_TTM_PCT_10Y": "中证全指pettm百分位(10年)",
+          "PE_TTM_PCT_3Y": "中证全指pettm百分位(3年)",
+          "PE_TTM_PCT_5Y": "中证全指pettm百分位(5年)",
+          "PS_TTM": "中证全指psttm"
+        },
+        "row": {
+          "DIV_TTM": 1.82,
+          "PB_LF": 1.78,
+          "PCF_TTM": 5.74,
+          "PE_TTM": 20.67,
+          "PE_TTM_PCT_10Y": 81.71,
+          "PE_TTM_PCT_3Y": 66.8,
+          "PE_TTM_PCT_5Y": 80.08,
+          "PS_TTM": 1.64
+        }
+      },
+      {
+        "info": {
+          "type": "rotation",
+          "code": "market_statis_rotation",
+          "desc": "风格指数轮动（沪深300/中证1000/全指成长/全指价值 多周期）",
+          "group": "风格"
+        },
+        "listName": "市场指数风格切换",
+        "date": "2026-09-01",
+        "schema": {
+          "CHG_10D_HS300": "10日涨跌幅(沪深300)",
+          "CHG_10D_QZCZ": "10日涨跌幅(全指成长)",
+          "CHG_10D_QZJZ": "10日涨跌幅(全指价值)",
+          "CHG_10D_ZZ1000": "10日涨跌幅(中证1000)",
+          "CHG_120D_HS300": "120日涨跌幅(沪深300)",
+          "CHG_120D_QZCZ": "120日涨跌幅(全指成长)",
+          "CHG_120D_QZJZ": "120日涨跌幅(全指价值)",
+          "CHG_120D_ZZ1000": "120日涨跌幅(中证1000)",
+          "CHG_20D_HS300": "20日涨跌幅(沪深300)",
+          "CHG_20D_QZCZ": "20日涨跌幅(全指成长)",
+          "CHG_20D_QZJZ": "20日涨跌幅(全指价值)",
+          "CHG_20D_ZZ1000": "20日涨跌幅(中证1000)",
+          "CHG_250D_HS300": "250日涨跌幅(沪深300)",
+          "CHG_250D_QZCZ": "250日涨跌幅(全指成长)",
+          "CHG_250D_QZJZ": "250日涨跌幅(全指价值)",
+          "CHG_250D_ZZ1000": "250日涨跌幅(中证1000)",
+          "CHG_5D_HS300": "5日涨跌幅(沪深300)",
+          "CHG_5D_QZCZ": "5日涨跌幅(全指成长)",
+          "CHG_5D_QZJZ": "5日涨跌幅(全指价值)",
+          "CHG_5D_ZZ1000": "5日涨跌幅(中证1000)",
+          "CHG_60D_HS300": "60日涨跌幅(沪深300)",
+          "CHG_60D_QZCZ": "60日涨跌幅(全指成长)",
+          "CHG_60D_QZJZ": "60日涨跌幅(全指价值)",
+          "CHG_60D_ZZ1000": "60日涨跌幅(中证1000)"
+        },
+        "row": {
+          "CHG_10D_HS300": -2.42,
+          "CHG_10D_QZCZ": -3.17,
+          "CHG_10D_QZJZ": 4.17,
+          "CHG_10D_ZZ1000": -3.2,
+          "CHG_120D_HS300": -1.35,
+          "CHG_120D_QZCZ": -2.23,
+          "CHG_120D_QZJZ": -3.85,
+          "CHG_120D_ZZ1000": -7.89,
+          "CHG_20D_HS300": 0.23,
+          "CHG_20D_QZCZ": 3.81,
+          "CHG_20D_QZJZ": 2.92,
+          "CHG_20D_ZZ1000": 5.66,
+          "CHG_250D_HS300": 7.96,
+          "CHG_250D_QZCZ": 10.42,
+          "CHG_250D_QZJZ": -2.56,
+          "CHG_250D_ZZ1000": 5.28,
+          "CHG_5D_HS300": 1.31,
+          "CHG_5D_QZCZ": 1.68,
+          "CHG_5D_QZJZ": 2.52,
+          "CHG_5D_ZZ1000": 2.18,
+          "CHG_60D_HS300": -2.17,
+          "CHG_60D_QZCZ": 3.37,
+          "CHG_60D_QZJZ": 3.45,
+          "CHG_60D_ZZ1000": -4.82
+        }
+      }
+    ],
+    "changedist": {
+      "upCount": 1627,
+      "downCount": 3812,
+      "flatCount": 115,
+      "upLimitCount": 47,
+      "downLimitCount": 3,
+      "suspensionCount": 7,
+      "upRatio": 29,
+      "upRatioComment": "当前市场上涨家数占比全市场29%，市场情绪偏低。",
+      "detail": [
+        {
+          "section": "涨停",
+          "count": 47,
+          "flag": 1
+        },
+        {
+          "section": ">7%",
+          "count": 53,
+          "flag": 1
+        },
+        {
+          "section": "7~5%",
+          "count": 84,
+          "flag": 1
+        },
+        {
+          "section": "5~2%",
+          "count": 503,
+          "flag": 1
+        },
+        {
+          "section": "2~0%",
+          "count": 940,
+          "flag": 1
+        },
+        {
+          "section": "平",
+          "count": 115,
+          "flag": 0
+        },
+        {
+          "section": "0~2%",
+          "count": 2697,
+          "flag": -1
+        },
+        {
+          "section": "2~5%",
+          "count": 1010,
+          "flag": -1
+        },
+        {
+          "section": "5~7%",
+          "count": 62,
+          "flag": -1
+        },
+        {
+          "section": "7%<",
+          "count": 40,
+          "flag": -1
+        },
+        {
+          "section": "跌停",
+          "count": 3,
+          "flag": -1
+        }
+      ],
+      "totalAmount": 1328626387281.7212,
+      "amountChange": -195450819435.84863
+    }
+  },
+  "commands": [
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js trade-calendar --date 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:35+08:00",
+      "ended_at": "2026-09-02T13:27:36+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 1
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js market-overview --type all --date 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:36+08:00",
+      "ended_at": "2026-09-02T13:27:37+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 8
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js changedist --raw",
+      "started_at": "2026-09-02T13:27:37+08:00",
+      "ended_at": "2026-09-02T13:27:38+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 1
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js lhb --date 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:38+08:00",
+      "ended_at": "2026-09-02T13:27:39+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 192
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js macro indicator cn_core --date 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:39+08:00",
+      "ended_at": "2026-09-02T13:27:40+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 22
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js sector constituent pt01801053,pt01801952,pt01801951,pt01801016,pt01801194,pt01801785,pt01801125,pt01801055,pt01801033,pt01801081,pt01801102,pt01801152,pt01801044,pt01801711,pt01801077,pt01801181,pt01801963,pt01801093,pt01801111,pt01801124,pt01801127,pt01801104,pt01801101,pt01801735,pt01801085,pt01801161,pt01801163,pt01801193,pt01801151 --raw",
+      "started_at": "2026-09-02T13:27:40+08:00",
+      "ended_at": "2026-09-02T13:27:42+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 1820
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js kline pt01801053,pt01801952,pt01801951,pt01801016,pt01801194,pt01801785,pt01801125,pt01801055,pt01801033,pt01801081,pt01801102,pt01801152,pt01801044,pt01801711,pt01801077,pt01801181,pt01801963,pt01801093,pt01801111,pt01801124,pt01801127,pt01801104,pt01801101,pt01801735,pt01801085,pt01801161,pt01801163,pt01801193,pt01801151 --period day --start 2025-06-01 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:42+08:00",
+      "ended_at": "2026-09-02T13:27:47+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 8903
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js kline sh000001,sz399001 --period day --start 2025-06-01 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:47+08:00",
+      "ended_at": "2026-09-02T13:27:48+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 614
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh600801,sh600802,sh600803,sh600808,sh600809,sh600812,sh600815,sh600821,sh600841,sh600844,sh600848,sh600851,sh600854,sh600863,sh600864,sh600867,sh600868,sh600877,sh600882,sh600883,sh600886,sh600887,sh600888,sh600895,sh600900,sh600903,sh600905,sh600906,sh600908,sh600909,sh600917,sh600918,sh600925,sh600929,sh600930,sh600933,sh600935,sh600955,sh600956,sh600958,sh600960,sh600961,sh600969,sh600971,sh600979,sh600982,sh600983,sh600984,sh600985,sh600988,sh600989,sh600995,sh600997,sh600999,sh601001,sh601003,sh601005,sh601011,sh601012,sh601015,sh601016,sh601020,sh601058,sh601059,sh601065,sh601066,sh601069,sh601077,sh601088,sh601089,sh601099,sh601100,sh601101,sh601108,sh601118,sh601128,sh601136,sh601138,sh601139,sh601155 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:48+08:00",
+      "ended_at": "2026-09-02T13:27:51+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh600597,sh600598,sh600602,sh600604,sh600606,sh600609,sh600610,sh600613,sh600615,sh600617,sh600618,sh600621,sh600622,sh600623,sh600624,sh600626,sh600635,sh600638,sh600639,sh600641,sh600642,sh600644,sh600648,sh600649,sh600651,sh600654,sh600657,sh600658,sh600660,sh600663,sh600664,sh600665,sh600668,sh600674,sh600675,sh600678,sh600681,sh600683,sh600688,sh600690,sh600692,sh600698,sh600699,sh600702,sh600708,sh600711,sh600714,sh600716,sh600719,sh600722,sh600725,sh600726,sh600727,sh600732,sh600734,sh600736,sh600739,sh600740,sh600741,sh600742,sh600744,sh600745,sh600746,sh600748,sh600758,sh600761,sh600768,sh600773,sh600774,sh600775,sh600776,sh600779,sh600780,sh600782,sh600784,sh600789,sh600791,sh600792,sh600795,sh600800 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:48+08:00",
+      "ended_at": "2026-09-02T13:27:51+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh600007,sh600010,sh600011,sh600019,sh600021,sh600022,sh600023,sh600025,sh600027,sh600028,sh600030,sh600031,sh600032,sh600048,sh600052,sh600061,sh600062,sh600064,sh600073,sh600075,sh600079,sh600081,sh600082,sh600094,sh600095,sh600098,sh600100,sh600101,sh600105,sh600108,sh600109,sh600116,sh600121,sh600123,sh600126,sh600130,sh600148,sh600149,sh600151,sh600155,sh600157,sh600159,sh600161,sh600162,sh600163,sh600167,sh600171,sh600173,sh600178,sh600182,sh600188,sh600189,sh600196,sh600197,sh600198,sh600199,sh600203,sh600206,sh600207,sh600208,sh600211,sh600216,sh600218,sh600219,sh600226,sh600231,sh600236,sh600239,sh600246,sh600256,sh600266,sh600267,sh600276,sh600288,sh600292,sh600300,sh600307,sh600310,sh600313,sh600319 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:48+08:00",
+      "ended_at": "2026-09-02T13:27:51+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh600322,sh600325,sh600326,sh600328,sh600333,sh600336,sh600338,sh600340,sh600345,sh600346,sh600348,sh600354,sh600359,sh600360,sh600361,sh600362,sh600363,sh600367,sh600369,sh600371,sh600376,sh600380,sh600381,sh600383,sh600395,sh600396,sh600403,sh600408,sh600409,sh600419,sh600420,sh600423,sh600425,sh600429,sh600438,sh600449,sh600452,sh600455,sh600460,sh600463,sh600469,sh600475,sh600480,sh600481,sh600483,sh600487,sh600488,sh600489,sh600490,sh600497,sh600498,sh600503,sh600505,sh600506,sh600508,sh600509,sh600510,sh600513,sh600515,sh600519,sh600521,sh600522,sh600523,sh600530,sh600531,sh600533,sh600537,sh600540,sh600546,sh600547,sh600559,sh600569,sh600570,sh600575,sh600578,sh600581,sh600584,sh600585,sh600588,sh600595 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:48+08:00",
+      "ended_at": "2026-09-02T13:27:52+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh603067,sh603068,sh603071,sh603080,sh603083,sh603085,sh603087,sh603089,sh603102,sh603105,sh603106,sh603107,sh603109,sh603113,sh603118,sh603119,sh603121,sh603132,sh603156,sh603158,sh603160,sh603161,sh603166,sh603168,sh603178,sh603179,sh603185,sh603189,sh603190,sh603194,sh603197,sh603198,sh603201,sh603202,sh603207,sh603210,sh603211,sh603212,sh603213,sh603223,sh603229,sh603232,sh603236,sh603237,sh603239,sh603262,sh603266,sh603271,sh603273,sh603280,sh603286,sh603290,sh603293,sh603296,sh603298,sh603299,sh603305,sh603306,sh603316,sh603318,sh603319,sh603323,sh603327,sh603335,sh603336,sh603338,sh603341,sh603345,sh603348,sh603351,sh603352,sh603353,sh603358,sh603367,sh603369,sh603375,sh603376,sh603380,sh603381,sh603383 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:51+08:00",
+      "ended_at": "2026-09-02T13:27:54+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh603390,sh603393,sh603396,sh603398,sh603409,sh603418,sh603421,sh603496,sh603501,sh603508,sh603516,sh603520,sh603527,sh603528,sh603536,sh603538,sh603586,sh603589,sh603590,sh603595,sh603596,sh603611,sh603616,sh603626,sh603628,sh603629,sh603633,sh603638,sh603655,sh603660,sh603663,sh603669,sh603676,sh603689,sh603690,sh603693,sh603701,sh603706,sh603707,sh603711,sh603730,sh603758,sh603767,sh603768,sh603778,sh603786,sh603788,sh603798,sh603803,sh603806,sh603809,sh603811,sh603876,sh603878,sh603890,sh603893,sh603917,sh603919,sh603922,sh603926,sh603927,sh603937,sh603938,sh603949,sh603950,sh603960,sh603979,sh603982,sh603986,sh603990,sh603991,sh603993,sh603997,sh605005,sh605011,sh605018,sh605028,sh605068,sh605088,sh605089 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:51+08:00",
+      "ended_at": "2026-09-02T13:27:54+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh601162,sh601163,sh601168,sh601198,sh601211,sh601212,sh601216,sh601225,sh601231,sh601233,sh601236,sh601279,sh601318,sh601319,sh601336,sh601360,sh601375,sh601377,sh601388,sh601456,sh601500,sh601512,sh601519,sh601528,sh601555,sh601568,sh601588,sh601600,sh601601,sh601609,sh601619,sh601628,sh601666,sh601677,sh601678,sh601686,sh601688,sh601689,sh601696,sh601699,sh601702,sh601778,sh601788,sh601799,sh601825,sh601857,sh601860,sh601865,sh601869,sh601878,sh601881,sh601898,sh601899,sh601901,sh601908,sh601918,sh601952,sh601966,sh601985,sh601990,sh601991,sh601992,sh601995,sh603005,sh603006,sh603007,sh603009,sh603013,sh603019,sh603023,sh603035,sh603037,sh603039,sh603040,sh603042,sh603048,sh603049,sh603052,sh603053,sh603061 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:51+08:00",
+      "ended_at": "2026-09-02T13:27:55+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh605090,sh605111,sh605116,sh605117,sh605118,sh605122,sh605128,sh605133,sh605151,sh605162,sh605169,sh605177,sh605179,sh605208,sh605228,sh605255,sh605277,sh605300,sh605305,sh605319,sh605333,sh605337,sh605338,sh605358,sh605368,sh605388,sh605389,sh605499,sh605507,sh605567,sh605580,sh688002,sh688007,sh688008,sh688012,sh688018,sh688021,sh688023,sh688027,sh688030,sh688031,sh688032,sh688036,sh688037,sh688038,sh688041,sh688045,sh688047,sh688048,sh688049,sh688052,sh688058,sh688060,sh688061,sh688062,sh688072,sh688076,sh688078,sh688080,sh688082,sh688083,sh688091,sh688095,sh688099,sh688100,sh688105,sh688107,sh688109,sh688110,sh688111,sh688117,sh688118,sh688120,sh688123,sh688126,sh688130,sh688135,sh688136,sh688137,sh688138 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:52+08:00",
+      "ended_at": "2026-09-02T13:27:55+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh688362,sh688368,sh688369,sh688372,sh688373,sh688380,sh688381,sh688382,sh688385,sh688387,sh688390,sh688391,sh688396,sh688401,sh688403,sh688408,sh688409,sh688416,sh688418,sh688419,sh688425,sh688428,sh688429,sh688432,sh688435,sh688443,sh688449,sh688458,sh688469,sh688472,sh688475,sh688478,sh688479,sh688484,sh688486,sh688488,sh688489,sh688498,sh688503,sh688505,sh688506,sh688507,sh688508,sh688512,sh688513,sh688515,sh688516,sh688520,sh688521,sh688525,sh688530,sh688533,sh688535,sh688536,sh688553,sh688556,sh688560,sh688561,sh688566,sh688578,sh688579,sh688582,sh688584,sh688588,sh688589,sh688590,sh688591,sh688592,sh688593,sh688595,sh688599,sh688601,sh688605,sh688608,sh688612,sh688615,sh688618,sh688619,sh688620,sh688631 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:54+08:00",
+      "ended_at": "2026-09-02T13:27:57+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh688141,sh688143,sh688146,sh688147,sh688152,sh688153,sh688159,sh688163,sh688166,sh688167,sh688168,sh688171,sh688172,sh688173,sh688176,sh688177,sh688180,sh688182,sh688185,sh688188,sh688189,sh688192,sh688197,sh688200,sh688201,sh688205,sh688206,sh688208,sh688209,sh688210,sh688213,sh688216,sh688220,sh688221,sh688223,sh688225,sh688230,sh688232,sh688233,sh688234,sh688235,sh688244,sh688246,sh688247,sh688249,sh688252,sh688256,sh688259,sh688260,sh688261,sh688262,sh688266,sh688270,sh688276,sh688278,sh688279,sh688280,sh688283,sh688286,sh688288,sh688291,sh688292,sh688293,sh688296,sh688302,sh688303,sh688313,sh688318,sh688319,sh688321,sh688325,sh688326,sh688331,sh688332,sh688336,sh688347,sh688348,sh688352,sh688356,sh688361 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:54+08:00",
+      "ended_at": "2026-09-02T13:27:57+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sh688635,sh688651,sh688652,sh688653,sh688657,sh688658,sh688661,sh688667,sh688668,sh688670,sh688678,sh688680,sh688687,sh688689,sh688690,sh688691,sh688692,sh688693,sh688695,sh688699,sh688702,sh688709,sh688711,sh688717,sh688720,sh688721,sh688726,sh688727,sh688728,sh688729,sh688737,sh688739,sh688758,sh688759,sh688765,sh688766,sh688775,sh688783,sh688785,sh688790,sh688795,sh688797,sh688798,sh688799,sh688802,sh688806,sh688807,sh688809,sh688820,sh688825,sh688981,sz000002,sz000006,sz000011,sz000014,sz000016,sz000021,sz000027,sz000029,sz000030,sz000031,sz000036,sz000037,sz000042,sz000059,sz000060,sz000063,sz000066,sz000069,sz000070,sz000090,sz000096,sz000153,sz000155,sz000157,sz000159,sz000166,sz000301,sz000333,sz000338 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:55+08:00",
+      "ended_at": "2026-09-02T13:27:58+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz000401,sz000402,sz000403,sz000407,sz000425,sz000426,sz000503,sz000506,sz000507,sz000510,sz000513,sz000514,sz000517,sz000518,sz000521,sz000528,sz000529,sz000531,sz000534,sz000537,sz000539,sz000543,sz000545,sz000552,sz000554,sz000559,sz000566,sz000568,sz000570,sz000571,sz000573,sz000581,sz000586,sz000589,sz000591,sz000593,sz000595,sz000596,sz000597,sz000599,sz000600,sz000601,sz000603,sz000608,sz000609,sz000612,sz000620,sz000630,sz000631,sz000635,sz000637,sz000639,sz000651,sz000656,sz000661,sz000668,sz000669,sz000672,sz000678,sz000680,sz000683,sz000686,sz000690,sz000691,sz000692,sz000698,sz000700,sz000703,sz000707,sz000709,sz000712,sz000713,sz000717,sz000718,sz000722,sz000723,sz000728,sz000736,sz000737,sz000739 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:55+08:00",
+      "ended_at": "2026-09-02T13:27:58+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz000750,sz000751,sz000756,sz000758,sz000761,sz000766,sz000767,sz000776,sz000778,sz000783,sz000788,sz000789,sz000791,sz000797,sz000799,sz000807,sz000813,sz000816,sz000818,sz000819,sz000821,sz000822,sz000830,sz000838,sz000848,sz000858,sz000860,sz000862,sz000863,sz000875,sz000877,sz000878,sz000883,sz000887,sz000895,sz000897,sz000898,sz000899,sz000901,sz000903,sz000908,sz000909,sz000915,sz000919,sz000921,sz000926,sz000931,sz000932,sz000933,sz000937,sz000948,sz000952,sz000953,sz000958,sz000959,sz000963,sz000965,sz000966,sz000975,sz000977,sz000980,sz000981,sz000983,sz000985,sz000990,sz000993,sz000995,sz000997,sz000998,sz001210,sz001215,sz001217,sz001226,sz001229,sz001233,sz001239,sz001248,sz001258,sz001260,sz001267 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:57+08:00",
+      "ended_at": "2026-09-02T13:27:59+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz001269,sz001278,sz001282,sz001285,sz001286,sz001289,sz001299,sz001309,sz001311,sz001314,sz001316,sz001318,sz001319,sz001331,sz001337,sz001339,sz001365,sz001367,sz001376,sz001380,sz001387,sz001896,sz001979,sz002004,sz002007,sz002015,sz002016,sz002017,sz002019,sz002020,sz002038,sz002039,sz002041,sz002045,sz002048,sz002049,sz002053,sz002055,sz002056,sz002063,sz002077,sz002079,sz002085,sz002092,sz002097,sz002099,sz002101,sz002102,sz002104,sz002109,sz002110,sz002114,sz002119,sz002126,sz002128,sz002129,sz002133,sz002136,sz002139,sz002145,sz002146,sz002150,sz002152,sz002153,sz002155,sz002156,sz002160,sz002171,sz002178,sz002180,sz002185,sz002190,sz002194,sz002197,sz002203,sz002205,sz002208,sz002212,sz002213,sz002215 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:57+08:00",
+      "ended_at": "2026-09-02T13:28:00+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz002216,sz002218,sz002221,sz002230,sz002233,sz002236,sz002237,sz002239,sz002241,sz002244,sz002252,sz002253,sz002256,sz002259,sz002261,sz002262,sz002265,sz002267,sz002268,sz002274,sz002279,sz002281,sz002283,sz002284,sz002294,sz002295,sz002296,sz002298,sz002302,sz002304,sz002305,sz002310,sz002313,sz002314,sz002322,sz002328,sz002329,sz002330,sz002332,sz002351,sz002355,sz002362,sz002363,sz002365,sz002369,sz002370,sz002371,sz002376,sz002377,sz002379,sz002386,sz002393,sz002396,sz002399,sz002402,sz002405,sz002406,sz002408,sz002409,sz002410,sz002415,sz002422,sz002426,sz002434,sz002437,sz002439,sz002448,sz002454,sz002459,sz002472,sz002475,sz002476,sz002479,sz002480,sz002488,sz002491,sz002493,sz002500,sz002501,sz002506 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:58+08:00",
+      "ended_at": "2026-09-02T13:28:01+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz002510,sz002512,sz002515,sz002516,sz002528,sz002532,sz002536,sz002537,sz002540,sz002547,sz002550,sz002553,sz002570,sz002577,sz002578,sz002581,sz002583,sz002590,sz002592,sz002596,sz002600,sz002601,sz002608,sz002616,sz002617,sz002623,sz002626,sz002635,sz002646,sz002648,sz002653,sz002655,sz002660,sz002661,sz002662,sz002664,sz002668,sz002670,sz002671,sz002673,sz002675,sz002681,sz002685,sz002693,sz002700,sz002702,sz002703,sz002708,sz002715,sz002716,sz002725,sz002726,sz002732,sz002736,sz002742,sz002748,sz002755,sz002765,sz002766,sz002772,sz002773,sz002792,sz002793,sz002796,sz002797,sz002806,sz002807,sz002813,sz002817,sz002824,sz002826,sz002835,sz002839,sz002840,sz002841,sz002855,sz002861,sz002863,sz002865,sz002866 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:58+08:00",
+      "ended_at": "2026-09-02T13:28:01+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz002869,sz002870,sz002872,sz002880,sz002881,sz002888,sz002893,sz002897,sz002900,sz002902,sz002906,sz002910,sz002911,sz002912,sz002920,sz002921,sz002923,sz002925,sz002926,sz002937,sz002939,sz002940,sz002945,sz002946,sz002947,sz002958,sz002965,sz002970,sz002976,sz002981,sz002984,sz002986,sz002987,sz002988,sz002990,sz002993,sz002996,sz002997,sz003004,sz003007,sz003017,sz003020,sz003022,sz003026,sz003029,sz003031,sz003035,sz003037,sz003038,sz003040,sz003043,sz003816,sz300006,sz300009,sz300016,sz300032,sz300033,sz300036,sz300040,sz300042,sz300046,sz300047,sz300051,sz300053,sz300055,sz300057,sz300059,sz300074,sz300075,sz300077,sz300080,sz300082,sz300085,sz300086,sz300087,sz300093,sz300098,sz300100,sz300106,sz300110 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:27:59+08:00",
+      "ended_at": "2026-09-02T13:28:02+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz300111,sz300115,sz300118,sz300122,sz300125,sz300128,sz300130,sz300134,sz300135,sz300136,sz300139,sz300142,sz300146,sz300155,sz300176,sz300183,sz300188,sz300189,sz300194,sz300199,sz300201,sz300204,sz300205,sz300209,sz300213,sz300223,sz300226,sz300229,sz300233,sz300235,sz300237,sz300239,sz300248,sz300249,sz300253,sz300254,sz300255,sz300256,sz300258,sz300267,sz300270,sz300274,sz300275,sz300294,sz300302,sz300304,sz300308,sz300311,sz300316,sz300317,sz300318,sz300322,sz300324,sz300327,sz300328,sz300332,sz300333,sz300335,sz300337,sz300345,sz300348,sz300352,sz300353,sz300357,sz300365,sz300366,sz300368,sz300369,sz300373,sz300375,sz300377,sz300378,sz300380,sz300381,sz300386,sz300393,sz300394,sz300401,sz300414,sz300428 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:28:00+08:00",
+      "ended_at": "2026-09-02T13:28:02+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz300433,sz300434,sz300436,sz300446,sz300449,sz300451,sz300452,sz300454,sz300455,sz300456,sz300458,sz300462,sz300465,sz300468,sz300469,sz300473,sz300479,sz300483,sz300485,sz300497,sz300502,sz300504,sz300507,sz300508,sz300511,sz300520,sz300525,sz300531,sz300542,sz300546,sz300547,sz300548,sz300550,sz300551,sz300552,sz300555,sz300556,sz300558,sz300559,sz300561,sz300563,sz300565,sz300570,sz300573,sz300579,sz300580,sz300583,sz300584,sz300585,sz300588,sz300590,sz300598,sz300601,sz300602,sz300604,sz300605,sz300608,sz300611,sz300613,sz300615,sz300620,sz300623,sz300624,sz300627,sz300628,sz300636,sz300638,sz300643,sz300645,sz300647,sz300652,sz300659,sz300661,sz300663,sz300666,sz300671,sz300672,sz300679,sz300680,sz300681 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:28:01+08:00",
+      "ended_at": "2026-09-02T13:28:04+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz300686,sz300689,sz300691,sz300694,sz300695,sz300697,sz300698,sz300702,sz300705,sz300706,sz300707,sz300709,sz300710,sz300711,sz300716,sz300723,sz300724,sz300730,sz300733,sz300735,sz300743,sz300745,sz300751,sz300763,sz300765,sz300766,sz300768,sz300771,sz300776,sz300782,sz300784,sz300787,sz300789,sz300790,sz300791,sz300793,sz300803,sz300807,sz300812,sz300816,sz300822,sz300827,sz300830,sz300831,sz300839,sz300841,sz300842,sz300843,sz300845,sz300847,sz300857,sz300863,sz300866,sz300868,sz300884,sz300891,sz300892,sz300893,sz300898,sz300912,sz300913,sz300915,sz300916,sz300925,sz300926,sz300927,sz300928,sz300935,sz300941,sz300951,sz300956,sz300966,sz300968,sz300969,sz300970,sz300976,sz300978,sz300996,sz300997,sz300998 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:28:01+08:00",
+      "ended_at": "2026-09-02T13:28:04+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz301387,sz301389,sz301391,sz301393,sz301397,sz301398,sz301419,sz301446,sz301486,sz301488,sz301491,sz301499,sz301503,sz301507,sz301529,sz301535,sz301536,sz301539,sz301550,sz301552,sz301560,sz301567,sz301577,sz301581,sz301583,sz301589,sz301600,sz301606,sz301607,sz301608,sz301611,sz301613,sz301626,sz301629,sz301631,sz301636,sz301655,sz301656,sz301658,sz301666,sz301667,sz301678,sz301680,sz301717 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:28:02+08:00",
+      "ended_at": "2026-09-02T13:28:04+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 1396
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/westock-data-skillhub/index.js fund flow sz301000,sz301005,sz301007,sz301020,sz301022,sz301030,sz301042,sz301047,sz301051,sz301065,sz301067,sz301069,sz301072,sz301075,sz301079,sz301080,sz301086,sz301089,sz301095,sz301117,sz301118,sz301119,sz301123,sz301130,sz301133,sz301153,sz301159,sz301161,sz301162,sz301165,sz301166,sz301168,sz301170,sz301173,sz301180,sz301181,sz301182,sz301186,sz301189,sz301190,sz301191,sz301192,sz301195,sz301202,sz301205,sz301207,sz301211,sz301221,sz301225,sz301229,sz301233,sz301246,sz301256,sz301258,sz301263,sz301266,sz301269,sz301270,sz301277,sz301278,sz301279,sz301281,sz301285,sz301297,sz301298,sz301301,sz301308,sz301310,sz301314,sz301315,sz301318,sz301326,sz301329,sz301330,sz301337,sz301339,sz301348,sz301369,sz301378,sz301383 --start 2026-07-20 --end 2026-09-01 --raw",
+      "started_at": "2026-09-02T13:28:02+08:00",
+      "ended_at": "2026-09-02T13:28:05+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 2560
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/@hithink-tech/hithink-finance-cli/dist/cli/main.js special limit-up-pool --date-ms 1788192000000 --page 1 --size 200 --format json",
+      "started_at": "2026-09-02T13:28:05+08:00",
+      "ended_at": "2026-09-02T13:28:06+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 80
+    },
+    {
+      "command": "C:/Users/tizytian/.workbuddy/binaries/node/versions/22.22.2-2/node.exe C:/Users/tizytian/.workbuddy/binaries/node/workspace/node_modules/@hithink-tech/hithink-finance-cli/dist/cli/main.js special dragon-tiger --format json",
+      "started_at": "2026-09-02T13:28:06+08:00",
+      "ended_at": "2026-09-02T13:28:07+08:00",
+      "attempts": 1,
+      "exit_code": 0,
+      "ok": true,
+      "row_count": 1
+    }
+  ],
+  "failures": [],
+  "data_conflicts": [
+    {
+      "topic": "市场宽度与涨跌停家数",
+      "market_overview": {
+        "上涨": 3386,
+        "下跌": 2040,
+        "平盘": 127,
+        "涨停": 80,
+        "跌停": 0
+      },
+      "changedist": {
+        "upCount": 1627,
+        "downCount": 3812,
+        "flatCount": 115,
+        "upLimitCount": 47,
+        "downLimitCount": 3,
+        "suspensionCount": 7,
+        "upRatio": 29,
+        "upRatioComment": "当前市场上涨家数占比全市场29%，市场情绪偏低。",
+        "detail": [
+          {
+            "section": "涨停",
+            "count": 47,
+            "flag": 1
+          },
+          {
+            "section": ">7%",
+            "count": 53,
+            "flag": 1
+          },
+          {
+            "section": "7~5%",
+            "count": 84,
+            "flag": 1
+          },
+          {
+            "section": "5~2%",
+            "count": 503,
+            "flag": 1
+          },
+          {
+            "section": "2~0%",
+            "count": 940,
+            "flag": 1
+          },
+          {
+            "section": "平",
+            "count": 115,
+            "flag": 0
+          },
+          {
+            "section": "0~2%",
+            "count": 2697,
+            "flag": -1
+          },
+          {
+            "section": "2~5%",
+            "count": 1010,
+            "flag": -1
+          },
+          {
+            "section": "5~7%",
+            "count": 62,
+            "flag": -1
+          },
+          {
+            "section": "7%<",
+            "count": 40,
+            "flag": -1
+          },
+          {
+            "section": "跌停",
+            "count": 3,
+            "flag": -1
+          }
+        ],
+        "totalAmount": 1328626387281.7212,
+        "amountChange": -195450819435.84863
+      },
+      "handling": "分别保留，不静默合并；主证据采用带目标日期的market-overview，changedist作为盘后实时口径复核"
+    }
+  ],
+  "limitations": [
+    "WeStock changedist为查询时点实时口径且不接受历史日期，与带日期的market-overview可能存在样本范围差异",
+    "hithink-finance龙虎榜接口返回2026-09-01，若不等于2026-09-01则不作为当日龙虎榜使用",
+    "北交所成份股不在WeStock个股资金接口支持范围内，未替代或补造",
+    "catalyst和fundamental没有统一可审计的行业横截面结构化证据，sector input保持null"
+  ]
+}

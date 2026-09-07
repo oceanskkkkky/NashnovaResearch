@@ -1,0 +1,245 @@
+{
+  "schema": "MarketEnvironmentDeterministicScore/v1",
+  "as_of_date": "2026-09-01",
+  "timezone": "Asia/Shanghai",
+  "market_phase": "盘后",
+  "score_type": "确定性评分",
+  "input_file": "E:/WS/NashnovaResearch/evidence/2026-09-01-market-raw.json",
+  "method": {
+    "formula": "30%×指数与风格趋势 + 25%×市场宽度和情绪 + 20%×成交与流动性 + 15%×国内宏观流动性 + 10%×全球风险",
+    "normalization": "分项0-100；错日或盘中数据排除；缺失叶子按50分并降低置信度。",
+    "market_state_mapping": {
+      ">=65": "进攻",
+      "45-64.9": "中性",
+      "<45": "防守"
+    }
+  },
+  "dimensions": [
+    {
+      "id": "index_style_trend",
+      "name": "指数与风格趋势",
+      "weight": 0.3,
+      "score": 47.0,
+      "weighted_contribution": 14.1,
+      "status": "指数分化明显：上证5日与20日仍为正，深证与创业板20日、60日双双转负，风格从成长切向低波与题材",
+      "leaf_scores": [
+        {
+          "name": "上证指数趋势",
+          "score": 58,
+          "basis": "收盘3979.89，日涨跌-0.16%；5日+2.33%、20日+4.12%、60日+0.52%；收盘位于MA20(3932.78)与MA60(3957.52)之上，但低于MA120(4006.42)与MA250(3985.51)。"
+        },
+        {
+          "name": "深证成指趋势",
+          "score": 47,
+          "basis": "收盘13872.38，日涨跌-1.02%；5日+0.92%、20日-0.10%、60日-6.40%。"
+        },
+        {
+          "name": "创业板指趋势",
+          "score": 36,
+          "basis": "收盘3393.43，日涨跌-1.32%；5日-0.12%、20日-2.74%、60日-10.98%，为三大指数中最弱。"
+        }
+      ],
+      "degradation": "风格指数仅取沪深300/中证1000/成长/价值的区间收益，未引入额外加权。"
+    },
+    {
+      "id": "breadth_sentiment",
+      "name": "市场宽度和情绪",
+      "weight": 0.25,
+      "score": 70.7,
+      "weighted_contribution": 17.7,
+      "status": "指数回落但个股明显涨多跌少，涨停80家且无跌停，新高家数远多于新低，赚钱效应集中在中小市值与题材",
+      "leaf_scores": [
+        {
+          "name": "上涨占比",
+          "score": 61,
+          "basis": "上涨3386、下跌2040、平盘127，上涨占比60.98%，涨跌比1.66。"
+        },
+        {
+          "name": "涨跌停结构",
+          "score": 75,
+          "basis": "带日期口径涨停80家、跌停0家，无跌停。"
+        },
+        {
+          "name": "新高新低结构",
+          "score": 76,
+          "basis": "5日新高/新低 2632/494，20日 1243/130，60日 503/22，250日 60/16。"
+        }
+      ],
+      "degradation": "changedist为查询时点实时口径（今日盘中），与带日期总览存在样本与日期差异，主评分采用market-overview。"
+    },
+    {
+      "id": "turnover_liquidity",
+      "name": "成交与流动性",
+      "weight": 0.2,
+      "score": 49.3,
+      "weighted_contribution": 9.9,
+      "status": "成交与5日、10日均量基本持平，但持续低于20日以上各期均量，增量资金不足",
+      "leaf_scores": [
+        {
+          "name": "两市成交额",
+          "score": 55,
+          "basis": "两市成交20334.03亿元，为5日均量99.67%、10日均量99.14%。"
+        },
+        {
+          "name": "20日相对量能",
+          "score": 52,
+          "basis": "成交为20日均值90.69%。"
+        },
+        {
+          "name": "中长期量能",
+          "score": 45,
+          "basis": "成交为60日均值76.89%、120日77.40%、250日82.63%。"
+        },
+        {
+          "name": "量价配合",
+          "score": 45,
+          "basis": "三大指数收跌而成交未能站上20日均量，量价配合偏弱，属于存量博弈下的结构轮动。"
+        }
+      ]
+    },
+    {
+      "id": "domestic_macro_liquidity",
+      "name": "国内宏观流动性",
+      "weight": 0.15,
+      "score": 59.5,
+      "weighted_contribution": 8.9,
+      "status": "资金面平稳宽松、工业利润明显修复，但PMI仍处荣枯线下、社融当月新增同比转负、地产投资继续深跌",
+      "leaf_scores": [
+        {
+          "name": "资金成本",
+          "score": 66,
+          "basis": "截至2026-08-31：DR007(FDR007)1.41%、SHIBOR隔夜1.413%、1个月1.4168%、1年1.48%，短端利率平稳偏低。"
+        },
+        {
+          "name": "货币与信用",
+          "score": 54,
+          "basis": "截至2026-07-31：M2同比+7.7%、M1同比+4.0%，M1-M2剪刀差-3.7但环比改善7.5；社融存量同比+7.4%，当月新增2.225万亿元、同比-7.25%，其中企业贷款同比-17.36%、政府债同比-12.88%。"
+        },
+        {
+          "name": "增长动能",
+          "score": 52,
+          "basis": "2026-08-31：制造业PMI 49.8（环比+0.81）、新订单50.6、生产50.4，仍在荣枯线下；非制造业商务活动49.0、非制造业新订单44.1继续走弱；综合PMI 49.5。2026年二季度实际GDP累计同比+4.7%。"
+        },
+        {
+          "name": "盈利与价格",
+          "score": 66,
+          "basis": "截至2026-07-31：工业利润累计同比+17.6%，其中有色金属+91.8%、化学原料+56.6%、煤炭+50.4%；工业增加值累计同比+5.3%，高技术+13.8%、TMT+15.4%。CPI同比+0.5%、核心+0.9%，CPI-PPI剪刀差-3.0，价格端仍偏弱。"
+        }
+      ],
+      "degradation": "宏观为低频数据，最新已发布期不等于目标日当日变化；两融余额后端当日未更新，按中性处理。"
+    },
+    {
+      "id": "global_risk",
+      "name": "全球风险",
+      "weight": 0.1,
+      "score": 50.0,
+      "weighted_contribution": 5.0,
+      "status": "缺少同一时点结构化全球风险数据，按中性降级",
+      "leaf_scores": [
+        {
+          "name": "VIX、美元、美债和海外指数",
+          "score": 50,
+          "basis": "未取得统一可审计时点数据。"
+        }
+      ]
+    }
+  ],
+  "result": {
+    "total_score": 55.6,
+    "calculation": "0.30×47.0 + 0.25×70.7 + 0.20×49.3 + 0.15×59.5 + 0.10×50.0 = 55.6",
+    "market_state": "中性",
+    "summary": "指数回落但个股涨多跌少，赚钱效应集中在中小市值与题材；成交持续低于20日以上均量，增量资金不足，维持中性而非进攻。"
+  },
+  "confidence": {
+    "effective_weight_pct": 90.0,
+    "grade": "B",
+    "caveat": "置信度是数据覆盖率估算，不是行情预测概率；全球风险分项按中性降级拉低整体有效性。"
+  },
+  "data_quality": {
+    "trade_date_confirmed": true,
+    "market_data_through_close": true,
+    "conflicts": [
+      {
+        "topic": "市场宽度与涨跌停家数",
+        "market_overview": {
+          "上涨": 3386,
+          "下跌": 2040,
+          "平盘": 127,
+          "涨停": 80,
+          "跌停": 0
+        },
+        "changedist": {
+          "upCount": 1627,
+          "downCount": 3812,
+          "flatCount": 115,
+          "upLimitCount": 47,
+          "downLimitCount": 3,
+          "suspensionCount": 7,
+          "upRatio": 29,
+          "upRatioComment": "当前市场上涨家数占比全市场29%，市场情绪偏低。",
+          "detail": [
+            {
+              "section": "涨停",
+              "count": 47,
+              "flag": 1
+            },
+            {
+              "section": ">7%",
+              "count": 53,
+              "flag": 1
+            },
+            {
+              "section": "7~5%",
+              "count": 84,
+              "flag": 1
+            },
+            {
+              "section": "5~2%",
+              "count": 503,
+              "flag": 1
+            },
+            {
+              "section": "2~0%",
+              "count": 940,
+              "flag": 1
+            },
+            {
+              "section": "平",
+              "count": 115,
+              "flag": 0
+            },
+            {
+              "section": "0~2%",
+              "count": 2697,
+              "flag": -1
+            },
+            {
+              "section": "2~5%",
+              "count": 1010,
+              "flag": -1
+            },
+            {
+              "section": "5~7%",
+              "count": 62,
+              "flag": -1
+            },
+            {
+              "section": "7%<",
+              "count": 40,
+              "flag": -1
+            },
+            {
+              "section": "跌停",
+              "count": 3,
+              "flag": -1
+            }
+          ],
+          "totalAmount": 1328626387281.7212,
+          "amountChange": -195450819435.84863
+        },
+        "handling": "分别保留，不静默合并；主证据采用带目标日期的market-overview，changedist作为盘后实时口径复核"
+      }
+    ],
+    "no_fabrication": true
+  }
+}
